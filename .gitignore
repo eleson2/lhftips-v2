@@ -1,0 +1,15 @@
+node_modules/
+
+# Runtime/scraped data — regenerated locally, not part of the app itself
+*.db
+guesses*.csv
+review-report.txt
+standings.txt
+data/scrape-state.json
+
+# Local tool config
+.claude/settings.local.json
+
+# OS cruft
+.DS_Store
+Thumbs.db

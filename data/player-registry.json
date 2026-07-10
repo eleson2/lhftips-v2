@@ -1,0 +1,409 @@
+{
+  "season": "2026-27",
+  "players": {
+    "Matteus Ward": {
+      "number": 31,
+      "position": "goalie",
+      "variations": [
+        "ward",
+        "m. ward",
+        "m ward",
+        "matteus ward"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Joel Lassinantti": {
+      "number": 34,
+      "position": "goalie",
+      "variations": [
+        "lassinantti",
+        "j. lassinantti",
+        "j lassinantti",
+        "joel lassinantti"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Oliwer Sjöström": {
+      "number": 2,
+      "position": "defense",
+      "variations": [
+        "sjöström",
+        "sjostrom",
+        "o. sjöström",
+        "o. sjostrom",
+        "o sjöström",
+        "o sjostrom",
+        "oliwer sjöström",
+        "oliwer sjostrom"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "William Håkansson": {
+      "number": 8,
+      "position": "defense",
+      "variations": [
+        "håkansson",
+        "hakansson",
+        "w. håkansson",
+        "w. hakansson",
+        "w håkansson",
+        "w hakansson",
+        "william håkansson",
+        "william hakansson"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Jesper Sellgren": {
+      "number": 23,
+      "position": "defense",
+      "variations": [
+        "sellgren",
+        "j. sellgren",
+        "j sellgren",
+        "jesper sellgren"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Oskari Laaksonen": {
+      "number": 27,
+      "position": "defense",
+      "variations": [
+        "laaksonen",
+        "o. laaksonen",
+        "o laaksonen",
+        "oskari laaksonen"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Erik Gustafsson": {
+      "number": 29,
+      "position": "defense",
+      "variations": [
+        "gustafsson",
+        "e. gustafsson",
+        "e gustafsson",
+        "erik gustafsson"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Oscar Engsund": {
+      "number": 32,
+      "position": "defense",
+      "variations": [
+        "engsund",
+        "o. engsund",
+        "o engsund",
+        "oscar engsund"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Pontus Själin": {
+      "number": 39,
+      "position": "defense",
+      "variations": [
+        "själin",
+        "sjalin",
+        "p. själin",
+        "p. sjalin",
+        "p själin",
+        "p sjalin",
+        "pontus själin",
+        "pontus sjalin"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Otto Leskinen": {
+      "number": 82,
+      "position": "defense",
+      "variations": [
+        "leskinen",
+        "o. leskinen",
+        "o leskinen",
+        "otto leskinen"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Isac Hedqvist": {
+      "number": 6,
+      "position": "forward",
+      "variations": [
+        "hedqvist",
+        "i. hedqvist",
+        "i hedqvist",
+        "isac hedqvist"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "David Granberg": {
+      "number": 15,
+      "position": "forward",
+      "variations": [
+        "granberg",
+        "d. granberg",
+        "d granberg",
+        "david granberg"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Isac Brännström": {
+      "number": 17,
+      "position": "forward",
+      "variations": [
+        "brännström",
+        "brannstrom",
+        "i. brännström",
+        "i. brannstrom",
+        "i brännström",
+        "i brannstrom",
+        "isac brännström",
+        "isac brannstrom"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Casper Juustovaara": {
+      "number": 20,
+      "position": "forward",
+      "variations": [
+        "juustovaara",
+        "c. juustovaara",
+        "c juustovaara",
+        "casper juustovaara"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Filip Eriksson": {
+      "number": 25,
+      "position": "forward",
+      "variations": [
+        "eriksson",
+        "f. eriksson",
+        "f eriksson",
+        "filip eriksson"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Joona Koppanen": {
+      "number": 45,
+      "position": "forward",
+      "variations": [
+        "koppanen",
+        "j. koppanen",
+        "j koppanen",
+        "joona koppanen"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Valtteri Puustinen": {
+      "number": 48,
+      "position": "forward",
+      "variations": [
+        "puustinen",
+        "v. puustinen",
+        "v puustinen",
+        "valtteri puustinen"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Markus Nurmi": {
+      "number": 51,
+      "position": "forward",
+      "variations": [
+        "nurmi",
+        "m. nurmi",
+        "m nurmi",
+        "markus nurmi"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Jakob Ihs-Wozniak": {
+      "number": 71,
+      "position": "forward",
+      "variations": [
+        "ihs-wozniak",
+        "j. ihs-wozniak",
+        "j ihs-wozniak",
+        "jakob ihs-wozniak"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Ben Tardif": {
+      "number": 72,
+      "position": "forward",
+      "variations": [
+        "tardif",
+        "b. tardif",
+        "b tardif",
+        "ben tardif"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Anton Levtchi": {
+      "number": 76,
+      "position": "forward",
+      "variations": [
+        "levtchi",
+        "a. levtchi",
+        "a levtchi",
+        "anton levtchi"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Mathias Bromé": {
+      "number": 86,
+      "position": "forward",
+      "variations": [
+        "bromé",
+        "brome",
+        "m. bromé",
+        "m. brome",
+        "m bromé",
+        "m brome",
+        "mathias bromé",
+        "mathias brome"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Brian O'Neill": {
+      "number": 91,
+      "position": "forward",
+      "variations": [
+        "o'neill",
+        "b. o'neill",
+        "b o'neill",
+        "brian o'neill"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    },
+    "Pontus Andreasson": {
+      "number": 96,
+      "position": "forward",
+      "variations": [
+        "andreasson",
+        "p. andreasson",
+        "p andreasson",
+        "pontus andreasson"
+      ],
+      "seasonsActive": [
+        "2026-27"
+      ],
+      "active": true,
+      "source": "roster",
+      "learned": []
+    }
+  }
+}

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LHFTips – Guess review</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1a1d21; --muted: #67707c;
+    --border: #d9dee5; --ok: #1a7f37; --bad: #c0392b; --okbg: #e6f4ea; --badbg: #fdecea;
+    --accent: #1f5eff; --accent-text: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171b; --card: #1e2329; --text: #e8eaed; --muted: #9aa4b0;
+      --border: #333b45; --ok: #4ac26b; --bad: #ef8377; --okbg: #16321f; --badbg: #3a201c;
+      --accent: #5b8aff; --accent-text: #0d1117;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 1.5rem; font: 15px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  h1 { font-size: 1.3rem; margin: 0 0 .25rem; }
+  .sub { color: var(--muted); margin-bottom: 1.25rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1rem; max-width: 60rem; }
+  .card.complete { border-left: 4px solid var(--ok); }
+  .who { font-weight: 600; }
+  .when { color: var(--muted); font-size: .85rem; margin-left: .5rem; }
+  .raw { font-family: ui-monospace, Consolas, monospace; font-size: .85rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: .5rem .75rem; margin: .6rem 0; white-space: pre-wrap; word-break: break-word; color: var(--muted); max-height: 7.5em; overflow-y: auto; }
+  .badges { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: .6rem; }
+  .badge { font-size: .75rem; padding: .1rem .55rem; border-radius: 999px; }
+  .badge.ok { background: var(--okbg); color: var(--ok); }
+  .badge.bad { background: var(--badbg); color: var(--bad); }
+  textarea { width: 100%; font-family: ui-monospace, Consolas, monospace; font-size: .9rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: .5rem .75rem; resize: vertical; min-height: 2.6em; }
+  .preview { font-size: .85rem; margin: .4rem 0 .6rem; min-height: 1.3em; }
+  .preview .ok { color: var(--ok); }
+  .preview .bad { color: var(--bad); }
+  .actions { display: flex; gap: .6rem; align-items: center; }
+  button { font: inherit; font-size: .9rem; border-radius: 6px; padding: .35rem 1rem; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; }
+  button.fix { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  button.fix:disabled { opacity: .45; cursor: not-allowed; }
+  button:hover:not(:disabled) { filter: brightness(1.08); }
+  .empty { color: var(--muted); font-size: 1.05rem; padding: 2rem 0; }
+  .hint { color: var(--muted); font-size: .8rem; margin-left: auto; }
+  .ai-note { font-size: .85rem; margin-top: .5rem; color: var(--muted); }
+  .ai-note .ok { color: var(--ok); }
+  .ai-note .bad { color: var(--bad); }
+</style>
+</head>
+<body>
+<h1>Guess review</h1>
+<div class="sub"><span id="file"></span> — <span id="count"></span> pending. Fixed rows are inserted directly below their commented original in the CSV.</div>
+<div id="list"></div>
+<script>
+const badgeNames = { date: 'datum', teams: 'lag', score: 'resultat', scorer: 'målskytt' };
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+async function api(path, body) {
+  const res = await fetch(path, body === undefined ? {} : {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+
+let pendingCount = 0;
+function setCount(delta) {
+  pendingCount += delta;
+  document.getElementById('count').textContent = pendingCount;
+  if (pendingCount === 0) {
+    document.getElementById('list').appendChild(el('div', 'empty', 'Nothing left to review \u{1F389}'));
+  }
+}
+
+function render(items, file) {
+  document.getElementById('file').textContent = file;
+  pendingCount = items.length;
+  document.getElementById('count').textContent = pendingCount;
+  const list = document.getElementById('list');
+  if (items.length === 0) { setCount(0); return; }
+
+  for (const item of items) {
+    const card = el('div', 'card' + (item.diagnosis.complete ? ' complete' : ''));
+
+    const head = el('div');
+    head.appendChild(el('span', 'who', item.username));
+    if (item.timestamp) head.appendChild(el('span', 'when', item.timestamp.replace('T', ' ')));
+    if (item.diagnosis.complete) head.appendChild(el('span', 'badge ok', 'parses with current parser'));
+    card.appendChild(head);
+
+    card.appendChild(el('div', 'raw', item.content));
+
+    const badges = el('div', 'badges');
+    for (const [key, label] of Object.entries(badgeNames)) {
+      const ok = item.diagnosis.found[key];
+      badges.appendChild(el('span', 'badge ' + (ok ? 'ok' : 'bad'), label + (ok ? ' ✓' : ' ?')));
+    }
+    card.appendChild(badges);
+
+    const ta = el('textarea');
+    ta.value = item.diagnosis.suggestion;
+    ta.rows = Math.max(1, item.diagnosis.suggestion.split('\n').length);
+    card.appendChild(ta);
+
+    const preview = el('div', 'preview');
+    card.appendChild(preview);
+
+    const actions = el('div', 'actions');
+    const fixBtn = el('button', 'fix', 'Save fix');
+    const dismissBtn = el('button', '', 'Dismiss (not a guess)');
+    actions.appendChild(fixBtn);
+    actions.appendChild(dismissBtn);
+
+    // Only offered for lines the local parser genuinely couldn't handle —
+    // items already showing "parses with current parser" don't need it.
+    let aiBtn = null;
+    const aiNote = el('div', 'ai-note');
+    if (!item.diagnosis.complete) {
+      aiBtn = el('button', '', 'Ask AI');
+      actions.appendChild(aiBtn);
+    }
+
+    actions.appendChild(el('span', 'hint', 'one guess per line'));
+    card.appendChild(actions);
+    if (aiBtn) card.appendChild(aiNote);
+
+    let timer = null;
+    async function validate() {
+      try {
+        const r = await api('/api/preview', { text: ta.value });
+        preview.replaceChildren();
+        for (const line of r.lines) {
+          const d = el('div', line.ok ? 'ok' : 'bad', (line.ok ? '✓ ' : '✗ ') + line.summary);
+          preview.appendChild(d);
+        }
+        fixBtn.disabled = !r.ok;
+      } catch (e) {
+        preview.replaceChildren(el('div', 'bad', e.message));
+        fixBtn.disabled = true;
+      }
+    }
+    ta.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(validate, 300); });
+    validate();
+
+    async function runAction(btn, endpoint, body) {
+      btn.disabled = true;
+      try {
+        await api(endpoint, body);
+        card.remove();
+        setCount(-1);
+      } catch (e) {
+        alert(e.message + '\n\nThe file may have changed — reload the page.');
+        btn.disabled = false;
+      }
+    }
+
+    fixBtn.addEventListener('click', () =>
+      runAction(fixBtn, '/api/fix', { index: item.index, expect: item.line, text: ta.value }));
+
+    dismissBtn.addEventListener('click', () =>
+      runAction(dismissBtn, '/api/dismiss', { index: item.index, expect: item.line }));
+
+    if (aiBtn) {
+      aiBtn.addEventListener('click', async () => {
+        aiBtn.disabled = true;
+        aiNote.replaceChildren(el('span', '', 'Asking AI…'));
+        try {
+          const r = await api('/api/ai-suggest', { index: item.index });
+          if (!r.ok) {
+            aiNote.replaceChildren(el('span', r.enabled === false ? '' : 'bad', r.message || r.error));
+          } else if (r.isGuess) {
+            ta.value = r.suggestion;
+            ta.rows = Math.max(1, r.suggestion.split('\n').length);
+            aiNote.replaceChildren(el('span', 'ok', 'AI: ' + r.reasoning));
+            validate();
+          } else {
+            aiNote.replaceChildren(el('span', '', 'AI: ' + r.reasoning));
+          }
+        } catch (e) {
+          aiNote.replaceChildren(el('span', 'bad', e.message));
+        } finally {
+          aiBtn.disabled = false;
+        }
+      });
+    }
+
+    list.appendChild(card);
+  }
+}
+
+api('/api/items').then(d => render(d.items, d.file)).catch(e => {
+  document.getElementById('list').appendChild(el('div', 'empty', 'Failed to load: ' + e.message));
+});
+</script>
+</body>
+</html>

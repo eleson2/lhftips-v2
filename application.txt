@@ -1,0 +1,18 @@
+I want an application for collecting guesses om game outcomes:
+guesses are given on the webpage :
+https://www.luleahockeyforum.com/t2534-tipstavling-lulea-hockeys-grundserie-2023-2024-i-shl
+and on the following pages in the same thread.
+Gueeses are given in the format Date ( format ÅÅÅÅ-MM-DD) , Team 1 - Team 2, result, One goalscorer.
+
+Rules are in the file rules.txt and is in Swedish. 
+
+Application ahould allow for minor discrepancy from agree input format. 
+
+At any point in time it shouild be possible to create reports on who leads to guessing competition.
+Preferable it should be possible to take out reports given any from and to dates. 
+
+guesses needs to be collected and saved so that 
+
+I don't like python , so I prefer Javascript and node js. 
+
+

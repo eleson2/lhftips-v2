@@ -2,8 +2,10 @@ import {
   getMatches,
   getGuessesByMatch,
   getGoalscorers,
+  getScoredGuessIds,
   upsertScore
 } from '../db/queries.js';
+import { beginTransaction, commit, rollback } from '../db/database.js';
 import { isLulea } from '../utils/team-matcher.js';
 import { calculateScore } from '../utils/scoring.js';
 import { matchScorer } from '../utils/player-matcher.js';
@@ -17,9 +19,9 @@ import { CONFIDENT } from '../utils/scorer-cases.js';
  * @param {object} options - Command options
  */
 export async function calculateScores(options = {}) {
-  const { dryRun = false, matchId = null, from: fromDate = null, to: toDate = null } = options;
+  const { dryRun = false, matchId = null, from: fromDate = null, to: toDate = null, force = false } = options;
 
-  console.log(`\nCalculating scores`);
+  console.log(`\nCalculating scores${force ? ' (forced: recomputing everything)' : ''}`);
   if (fromDate || toDate) {
     console.log(`Date range: ${fromDate || 'start'} to ${toDate || 'end'}`);
   }
@@ -43,11 +45,24 @@ export async function calculateScores(options = {}) {
   let totalPoints = 0;
   let learnedCount = 0;
   let verdictCount = 0;
+  let skippedAlreadyScored = 0;
+
+  // Incremental by default: a guess that already carries a score is not scored
+  // again. Anything that CHANGES a score — a scorer verdict, a map-player
+  // mapping, a corrected result — therefore needs `calculate --force`, which is
+  // what those commands tell you to run.
+  const alreadyScored = force ? new Set() : await getScoredGuessIds();
 
   const review = new ReviewCollector();
   const registry = loadRegistry(); // for auto-learning confident scorer spellings
   const verdicts = loadVerdicts(); // human judgement on scorers — overrides the matcher
 
+  // One transaction around the whole pass. Without it every upsertScore exports
+  // the entire database to disk (see prepare().run in db/database.js), which is
+  // where essentially all of the runtime went.
+  if (!dryRun) beginTransaction();
+
+  try {
   for (const match of matches) {
     // Skip matches without results
     if (match.home_score === null) {
@@ -132,6 +147,13 @@ export async function calculateScores(options = {}) {
         }
       }
 
+      // Already scored on an earlier run — the review pass above still ran, so
+      // nothing disappears from the report, but there is no work to redo here.
+      if (alreadyScored.has(guess.id)) {
+        skippedAlreadyScored++;
+        continue;
+      }
+
       if (dryRun) {
         if (scores.total > 0) {
           console.log(`${guess.forum_username}: ${match.home_team} ${guess.predicted_home_score}-${guess.predicted_away_score} ${match.away_team}`);
@@ -155,6 +177,11 @@ export async function calculateScores(options = {}) {
       totalPoints += scores.total;
     }
   }
+  } catch (error) {
+    if (!dryRun) rollback();
+    throw error;
+  }
+  if (!dryRun) commit();
 
   // Persist any newly learned scorer spellings.
   if (!dryRun && learnedCount > 0) {
@@ -164,6 +191,9 @@ export async function calculateScores(options = {}) {
   console.log(`\nResults:`);
   console.log(`  Matches with results: ${matches.filter(m => m.home_score !== null).length}`);
   console.log(`  Guesses scored: ${scoredGuesses}`);
+  if (skippedAlreadyScored > 0) {
+    console.log(`  Skipped (already scored): ${skippedAlreadyScored}`);
+  }
   console.log(`  Total points awarded: ${totalPoints}`);
   if (scoredGuesses > 0) {
     console.log(`  Average points per guess: ${(totalPoints / scoredGuesses).toFixed(2)}`);
@@ -182,6 +212,12 @@ export async function calculateScores(options = {}) {
 
   if (dryRun) {
     console.log('\nDry run - scores not saved to database');
+  }
+
+  if (skippedAlreadyScored > 0 && !force) {
+    console.log(`\nScoring is incremental: ${skippedAlreadyScored} guess(es) already had a score and were left alone.`);
+    console.log('After recording a scorer verdict, a map-player mapping, or a corrected');
+    console.log('result, re-run with --force so those reach the guesses they affect.');
   }
 }
 

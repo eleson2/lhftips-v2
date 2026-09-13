@@ -86,7 +86,8 @@
 <section id="tab-scorers" hidden>
   <div class="sub">
     Guesses whose scorer the matcher could not settle. Your verdict is saved to
-    <code>data/scorer-verdicts.json</code> and applied on the next <code>calculate</code>.
+    <code>data/scorer-verdicts.json</code> and applied on the next <code>calculate --force</code>.
+    Run <code>suggest scorers</code> first to have every card pre-filled by the local model.
     <label style="margin-left:.5rem"><input type="checkbox" id="show-all"> show already-decided</label>
   </div>
   <div id="scorer-list"></div>
@@ -319,7 +320,7 @@ function renderScorerCard(item, onDone) {
 
   const actions = el('div', 'actions');
   const saveBtn = el('button', 'fix', 'Save verdict');
-  const aiBtn = el('button', '', 'Ask AI');
+  const aiBtn = el('button', '', item.suggestion ? 'Re-ask AI' : 'Ask AI');
   actions.appendChild(saveBtn);
   actions.appendChild(aiBtn);
   let clearBtn = null;
@@ -332,7 +333,29 @@ function renderScorerCard(item, onDone) {
   const aiNote = el('div', 'ai-note');
   card.appendChild(aiNote);
 
-  let aiResult = null;
+  let aiResult = item.suggestion || null;
+
+  // A suggestion already computed by `suggest scorers` is applied on render, so
+  // a batch-prepared queue reads straight through with no waiting and no clicks.
+  function applySuggestion(r, prefix) {
+    if (r.player) {
+      for (const rad of radios) rad.label.classList.toggle('suggested', rad.player === r.player);
+      const hit = radios.find(rad => rad.player === r.player);
+      if (hit) {
+        hit.input.checked = true;
+        if (!hit.label.querySelector('.tag')) hit.label.appendChild(el('span', 'tag', 'AI'));
+      }
+      aiNote.replaceChildren(el('span', 'ok',
+        prefix + 'suggests ' + r.player + ' (confidence ' + r.confidence + ') — ' + r.reasoning));
+    } else if (r.rejected) {
+      aiNote.replaceChildren(el('span', 'bad',
+        prefix + 'proposed ' + r.rejected.player + ' but that failed the name-plausibility check, so it is not offered. Its reasoning was: ' + r.rejected.reasoning));
+    } else {
+      aiNote.replaceChildren(el('span', '', prefix + 'says none of these players matches this guess.'));
+    }
+  }
+
+  if (item.suggestion) applySuggestion(item.suggestion, 'AI (pre-computed) ');
 
   aiBtn.addEventListener('click', async () => {
     aiBtn.disabled = true;
@@ -341,23 +364,9 @@ function renderScorerCard(item, onDone) {
       const r = await api('/api/scorer-ai', { guessedScorer: item.guessedScorer, candidates: item.candidates });
       if (!r.ok) {
         aiNote.replaceChildren(el('span', r.enabled === false ? '' : 'bad', r.message || r.error));
-      } else if (r.player) {
-        aiResult = r;
-        for (const rad of radios) rad.label.classList.toggle('suggested', rad.player === r.player);
-        const hit = radios.find(rad => rad.player === r.player);
-        if (hit) {
-          hit.input.checked = true;
-          if (!hit.label.querySelector('.tag')) hit.label.appendChild(el('span', 'tag', 'AI'));
-        }
-        aiNote.replaceChildren(el('span', 'ok',
-          'AI suggests ' + r.player + ' (confidence ' + r.confidence + ') — ' + r.reasoning));
-      } else if (r.rejected) {
-        aiResult = r;
-        aiNote.replaceChildren(el('span', 'bad',
-          'AI proposed ' + r.rejected.player + ' but that failed the name-plausibility check, so it is not offered. Its reasoning was: ' + r.rejected.reasoning));
       } else {
         aiResult = r;
-        aiNote.replaceChildren(el('span', '', 'AI: none of these players matches this guess.'));
+        applySuggestion(r, 'AI ');
       }
     } catch (e) {
       aiNote.replaceChildren(el('span', 'bad', e.message));

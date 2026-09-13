@@ -4,7 +4,7 @@ import { normalizeName } from '../utils/name-normalize.js';
 /**
  * Manually map a spelling/nickname to a canonical player in the registry.
  * This is how a human "clears" a SCORER_UNMATCHED review item: after mapping,
- * re-run `calculate` and the scorer point will be awarded.
+ * re-run `calculate --force` and the scorer point will be awarded.
  *
  * @param {string} canonical - Exact canonical player name (as in the registry)
  * @param {string} spelling - The nickname/spelling to attach
@@ -45,7 +45,8 @@ export async function mapPlayer(canonical, spelling) {
 
   console.log(`Mapped "${spelling}" -> ${key}`);
   console.log(`Saved ${getRegistryPath()}`);
-  console.log('Re-run `calculate` to award any withheld scorer points.');
+  console.log('Re-run `calculate --force` to award any withheld scorer points.');
+  console.log('(--force is needed: scoring is incremental and skips guesses already scored.)');
 }
 
 export default mapPlayer;

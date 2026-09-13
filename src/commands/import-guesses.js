@@ -4,6 +4,7 @@ import { getOrCreateUser, getMatchByDateAndTeams, upsertGuess } from '../db/quer
 import { beginTransaction, commit, rollback } from '../db/database.js';
 import { parseISO, isBefore, parse } from 'date-fns';
 import { ReviewCollector, REVIEW } from '../utils/review.js';
+import { repairGuessDate } from '../utils/date-repair.js';
 
 /**
  * Check if a guess was posted before match start
@@ -74,6 +75,7 @@ export async function importGuesses(csvFile, options = {}) {
   let skippedNoMatch = 0;
   let skippedDate = 0;
   let skippedAfterMatch = 0;
+  let repairedDates = 0;
   const review = new ReviewCollector();
 
   // Use transaction for bulk import (only if not dry run)
@@ -107,7 +109,38 @@ export async function importGuesses(csvFile, options = {}) {
       }
 
       // Find matching match in database
-      const match = await getMatchByDateAndTeams(date, homeTeam, awayTeam);
+      let match = await getMatchByDateAndTeams(date, homeTeam, awayTeam);
+      let effectiveDate = date;
+
+      // No fixture on the written date? Almost always a typo in one field of
+      // the date, and the post timestamp says what it should have been. Try the
+      // corrections that timestamp allows, and accept one only if it lands on a
+      // real scheduled game between these two teams. See utils/date-repair.js.
+      if (!match) {
+        const repair = await repairGuessDate(
+          { date, timestamp, homeTeam, awayTeam },
+          getMatchByDateAndTeams
+        );
+
+        if (repair.repaired) {
+          match = repair.match;
+          effectiveDate = repair.date;
+          repairedDates++;
+          review.add(REVIEW.DATE_REPAIRED, {
+            username, date,
+            detail: `wrote ${date}, posted ${timestamp} — imported as ${repair.date} (${homeTeam} vs ${awayTeam})`,
+            raw: rawText,
+          });
+        } else if (repair.ambiguous) {
+          skippedNoMatch++;
+          review.add(REVIEW.DATE_AMBIGUOUS, {
+            username, date,
+            detail: `${homeTeam} vs ${awayTeam} — more than one correction fits: ${repair.tried.join(', ')}`,
+            raw: rawText,
+          });
+          continue;
+        }
+      }
 
       if (!match) {
         if (!dryRun) {
@@ -133,7 +166,7 @@ export async function importGuesses(csvFile, options = {}) {
       }
 
       if (dryRun) {
-        console.log(`  ${username}: ${date} ${homeTeam} ${homeScore}-${awayScore} ${awayTeam}${scorer ? ', ' + scorer : ''}`);
+        console.log(`  ${username}: ${effectiveDate}${effectiveDate !== date ? ` (written ${date})` : ''} ${homeTeam} ${homeScore}-${awayScore} ${awayTeam}${scorer ? ', ' + scorer : ''}`);
       } else {
         // Get or create user
         const user = await getOrCreateUser(username);
@@ -173,6 +206,9 @@ export async function importGuesses(csvFile, options = {}) {
   console.log(`  Skipped (invalid/marked with #): ${skippedInvalid}`);
   console.log(`  Skipped (no match in database): ${skippedNoMatch}`);
   console.log(`  Skipped (posted after match): ${skippedAfterMatch}`);
+  if (repairedDates > 0) {
+    console.log(`  Typo'd dates auto-corrected: ${repairedDates}`);
+  }
   if (fromDate) {
     console.log(`  Skipped (before ${fromDate}): ${skippedDate}`);
   }

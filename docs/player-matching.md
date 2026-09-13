@@ -153,6 +153,30 @@ silently; now they are shown to a person. The threshold is the same 0.85 the
 registry already required before it would learn a spelling — a match too weak to
 learn from is a match too weak to apply unseen.
 
+### The two-step loop: batch first, judge later
+
+Matching is batch and always was — `calculate` walks every guess and only the
+residue reaches the queue. The AI pass is batch too, and deliberately a separate
+command, so the slow part happens while you are elsewhere:
+
+```
+node src/index.js calculate          # match everything; queue what it can't settle
+node src/index.js suggest scorers    # ask the model about the whole queue, once
+node src/index.js review             # read a pre-filled queue, rule on each
+node src/index.js calculate          # verdicts now apply
+```
+
+`suggest scorers` asks one question per distinct *(spelling, goalscorer set)*,
+not per guess — five users writing the same nickname for the same game is one
+model call. Answers are cached in `data/scorer-suggestions.json`, keyed on the
+question, so re-running is free and only genuinely new questions cost anything.
+Change the spelling or the goalscorer list and the key changes, so a stale answer
+can never be reused. It saves after every answer, so an interrupted batch keeps
+its work. `--force` re-asks, `--limit` caps a first run.
+
+Skipping it is fine: the review UI keeps a per-card **Ask AI** button, and
+answers it caches are shared with the batch command.
+
 ### Ruling on them — `review`, Scorers tab
 
 ```
@@ -160,8 +184,9 @@ node src/index.js review
 ```
 
 Each card shows the guess, the players who actually scored, and what the matcher
-made of it. Pick the player, or "Not correct". **Ask AI** pre-fills a suggestion
-(below). Optionally tick *also teach the registry* to generalise the ruling into a
+made of it. If `suggest scorers` has run, the suggested player is already
+selected and its reasoning shown — no clicking, no waiting. Pick the player, or
+"Not correct". Optionally tick *also teach the registry* to generalise the ruling into a
 `map-player`-style variation, so the spelling resolves by itself from then on —
 otherwise the verdict stays a one-off. Re-run `calculate` and the verdict applies.
 

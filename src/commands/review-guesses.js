@@ -12,6 +12,8 @@ import {
   loadVerdicts, saveVerdicts, setVerdict, removeVerdict, VERDICT
 } from '../utils/scorer-verdicts.js';
 import { loadRegistry, saveRegistry, learnVariation } from '../utils/player-registry.js';
+import { loadSuggestions, saveSuggestions, setSuggestion } from '../utils/scorer-suggestions.js';
+import { loadCorrections, saveCorrections, setCorrection, CORRECTION } from '../utils/guess-corrections.js';
 import { reloadRegistry } from '../utils/player-matcher.js';
 import { guessToCsvRow } from '../utils/csv.js';
 import {
@@ -132,7 +134,20 @@ export async function reviewGuesses(options = {}) {
         const { lines, comment } = pending;
         const rows = validation.lines.map(l => guessToCsvRow(l.guess, comment.username, comment.timestamp));
         writeLines(file, applyFix(lines, index, expect, rows));
-        console.log(`  fixed: ${comment.username} -> ${rows.length} row(s)`);
+
+        // Record it outside the CSV too, so a later `--fresh` re-scrape replays
+        // this fix instead of throwing it away with the regenerated file.
+        const corrections = loadCorrections();
+        setCorrection(corrections, {
+          username: comment.username,
+          timestamp: comment.timestamp,
+          kind: CORRECTION.FIXED,
+          rows,
+          originalText: comment.content,
+        });
+        saveCorrections(corrections);
+
+        console.log(`  fixed: ${comment.username} -> ${rows.length} row(s) (saved as a correction)`);
         sendJson(res, 200, { ok: true, rows });
         return;
       }
@@ -188,6 +203,11 @@ export async function reviewGuesses(options = {}) {
         }
         try {
           const result = await suggestScorerWithAI(guessedScorer, candidates);
+          // Cache it the same way the batch command does, so re-opening the UI
+          // (or a later batch run) does not pay for this question twice.
+          const store = loadSuggestions();
+          setSuggestion(store, guessedScorer, candidates, result);
+          saveSuggestions(store);
           sendJson(res, 200, { ok: true, ...result });
         } catch (error) {
           if (error instanceof AIProviderDisabledError) {
@@ -256,7 +276,17 @@ export async function reviewGuesses(options = {}) {
         if (!pending) return;
         const { lines, comment } = pending;
         writeLines(file, applyDismiss(lines, index, expect));
-        console.log(`  dismissed: ${comment.username}`);
+
+        const dismissals = loadCorrections();
+        setCorrection(dismissals, {
+          username: comment.username,
+          timestamp: comment.timestamp,
+          kind: CORRECTION.DISMISSED,
+          originalText: comment.content,
+        });
+        saveCorrections(dismissals);
+
+        console.log(`  dismissed: ${comment.username} (saved as a correction)`);
         sendJson(res, 200, { ok: true });
         return;
       }

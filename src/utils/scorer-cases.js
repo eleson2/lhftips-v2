@@ -2,6 +2,7 @@ import { getMatches, getGuessesByMatch, getGoalscorers } from '../db/queries.js'
 import { isLulea } from './team-matcher.js';
 import { matchScorer } from './player-matcher.js';
 import { findVerdict } from './scorer-verdicts.js';
+import { loadSuggestions, getSuggestion } from './scorer-suggestions.js';
 
 /**
  * How a scorer guess currently stands, before any human judgement.
@@ -51,6 +52,7 @@ export function scorerCandidates(allGoalscorers, match) {
  */
 export async function collectScorerCases(verdictStore, { from = null, to = null, pendingOnly = true } = {}) {
   const matches = await getMatches(from, to);
+  const suggestions = loadSuggestions(); // pre-computed by `suggest scorers`, if it has been run
   const cases = [];
 
   for (const match of matches) {
@@ -98,6 +100,7 @@ export async function collectScorerCases(verdictStore, { from = null, to = null,
         autoMatch: sm.matched
           ? { player: sm.actualName, method: sm.method, confidence: Number(sm.confidence.toFixed(3)), ambiguous: sm.ambiguous }
           : null,
+        suggestion: getSuggestion(suggestions, guess.predicted_scorer, candidates),
         verdict: found.verdict,
         staleVerdict: found.stale ? (verdictStore.verdicts?.[found.key] ?? null) : null,
         rawText: guess.raw_text,

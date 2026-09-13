@@ -9,6 +9,8 @@ export const REVIEW = {
   UNPARSEABLE: 'UNPARSEABLE',       // a forum post that produced no valid guess
   INCOMPLETE: 'INCOMPLETE',         // parsed row missing required fields
   DATE_NO_FIXTURE: 'DATE_NO_FIXTURE', // no scheduled Luleå game matches date+teams
+  DATE_REPAIRED: 'DATE_REPAIRED',   // a typo'd date was auto-corrected against the schedule
+  DATE_AMBIGUOUS: 'DATE_AMBIGUOUS', // a typo'd date could be repaired more than one way
   TEAM_LOW_CONF: 'TEAM_LOW_CONF',   // teams matched only weakly
   LATE: 'LATE',                     // posted after the match had started
   DUPLICATE: 'DUPLICATE',           // superseded by a later guess for same match
@@ -22,10 +24,12 @@ const REASON_HELP = {
   [REVIEW.UNPARSEABLE]: 'Post could not be parsed into a guess — held from scoring. Fix the CSV line (drop the leading #) if it is a real guess.',
   [REVIEW.INCOMPLETE]: 'Parsed but missing required fields — held from scoring. Complete the row and re-import.',
   [REVIEW.DATE_NO_FIXTURE]: 'No scheduled game matches this date + teams — held from scoring. Check the date/teams, or scrape results first.',
+  [REVIEW.DATE_REPAIRED]: 'The written date matched no fixture, but changing only the year (or month) to agree with when the post was made lands on a real scheduled game between those teams — so it was corrected and imported. Informational: check one or two if you like.',
+  [REVIEW.DATE_AMBIGUOUS]: 'The written date matched no fixture and more than one correction would fit a real game — NOT guessed at, and not imported. Fix it with: correct set <user> <timestamp> "<corrected guess>"',
   [REVIEW.TEAM_LOW_CONF]: 'Team names matched only weakly — verify they are correct.',
   [REVIEW.LATE]: 'Guess was posted after the match started — held from scoring.',
   [REVIEW.DUPLICATE]: 'A later guess for the same match superseded this one — informational.',
-  [REVIEW.SCORER_UNMATCHED]: 'Named a scorer that matched no actual goalscorer — only the scorer point is withheld. Adjudicate it in `review` (Scorers tab), or map the nickname once with: map-player "<Canonical Name>" "<spelling>".',
+  [REVIEW.SCORER_UNMATCHED]: 'Named a scorer that matched no actual goalscorer — only the scorer point is withheld. Adjudicate it in `review` (Scorers tab), or map the nickname once with: map-player "<Canonical Name>" "<spelling>". Then re-run `calculate --force`.',
   [REVIEW.SCORER_AMBIGUOUS]: 'Matched more than one actual goalscorer equally well (e.g. a shared surname with no first name). The point is still awarded to the best match — flagged so you can confirm it or overturn it in `review` (Scorers tab).',
   [REVIEW.SCORER_LOW_CONF]: 'Matched a goalscorer only on a loose fuzzy score, so it may be the wrong player. The point is still awarded — flagged so you can confirm it or overturn it in `review` (Scorers tab).',
   [REVIEW.SCORER_VERDICT_STALE]: 'A human verdict was recorded for this guess, but the guessed scorer has changed since — the old verdict is NOT applied. Re-decide it in `review` (Scorers tab).',

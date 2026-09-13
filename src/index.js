@@ -13,6 +13,9 @@ import mapPlayer from './commands/map-player.js';
 import generateStandings from './commands/standings.js';
 import publishStandings from './commands/publish-standings.js';
 import reviewGuesses from './commands/review-guesses.js';
+import { suggestScorers } from './commands/suggest-scorers.js';
+import correctGuess from './commands/correct-guess.js';
+import cursorCommand from './commands/cursor.js';
 
 const program = new Command();
 
@@ -69,25 +72,29 @@ scrapeCmd
   .option('-m, --max-pages <n>', 'Maximum pages to scrape', '100')
   .option('-a, --append', 'Append to existing CSV file')
   .option('--fresh', 'Ignore the saved cursor and re-scrape the whole thread from page 1')
+  .option('--from-post <id>', 'Re-read the thread from this post id onward (one-off; ignores the saved cursor)')
   .action(async (options) => {
     await scrapeGuesses({
       output: options.output,
       startPage: options.startPage ? parseInt(options.startPage, 10) : null,
       maxPages: parseInt(options.maxPages, 10),
       append: options.append,
-      fresh: options.fresh
+      fresh: options.fresh,
+      fromPost: options.fromPost ? parseInt(options.fromPost, 10) : null
     });
   });
 
 scrapeCmd
   .command('results')
-  .description('Scrape match results from swehockey')
+  .description('Scrape match results from swehockey (skips games whose goalscorers are already stored and unchanged)')
   .option('--no-goalscorers', 'Skip scraping goalscorers')
+  .option('--refresh-goalscorers', 'Re-fetch goalscorers for every played game, even unchanged ones')
   .option('--dry-run', 'Preview without saving')
   .action(async (options) => {
     await initDatabase();
     await scrapeResults({
       includeGoalscorers: options.goalscorers !== false,
+      refreshGoalscorers: !!options.refreshGoalscorers,
       dryRun: options.dryRun
     });
     closeDatabase();
@@ -150,6 +157,106 @@ program
     });
   });
 
+// Batch: pre-compute AI suggestions for every scorer awaiting judgement, so the
+// review queue opens ready to read instead of one slow card at a time.
+const suggest = program
+  .command('suggest')
+  .description('Pre-compute AI suggestions for review');
+
+suggest
+  .command('scorers')
+  .description('Ask the local model about every scorer awaiting judgement and cache the answers for `review`')
+  .option('-d, --db <file>', 'Database file', 'lhftips.db')
+  .option('--from <date>', 'Start date (YYYY-MM-DD)')
+  .option('--to <date>', 'End date (YYYY-MM-DD)')
+  .option('--limit <n>', 'Only ask about the first N questions')
+  .option('--force', 'Re-ask questions that already have a cached suggestion')
+  .action(async (options) => {
+    await suggestScorers({
+      db: options.db,
+      from: options.from,
+      to: options.to,
+      limit: options.limit ? parseInt(options.limit, 10) : null,
+      force: !!options.force,
+    });
+  });
+
+// The forum scrape cursor: inspect it, or deliberately move it back so old
+// posts get read again.
+const cursor = program
+  .command('cursor')
+  .description('Inspect or move the forum scrape cursor');
+
+cursor
+  .command('show')
+  .description('Show where the next scrape will start')
+  .action(async () => {
+    await cursorCommand('show');
+  });
+
+cursor
+  .command('set <post-id>')
+  .description('Restart scraping from this post id, e.g. cursor set 4711')
+  .option('--page <n>', 'Page to start fetching from (default 1)')
+  .action(async (postId, options) => {
+    await cursorCommand('set', postId, options);
+  });
+
+cursor
+  .command('reset')
+  .description('Forget the cursor — the next scrape reads the whole thread')
+  .action(async () => {
+    await cursorCommand('reset');
+  });
+
+// Manual corrections to guesses that parsed but parsed WRONGLY (a typo'd date,
+// a misread score). Recorded outside the CSV so a --fresh re-scrape replays
+// them instead of discarding them.
+const correct = program
+  .command('correct')
+  .description('Record a manual correction to a guess (survives a --fresh re-scrape)');
+
+correct
+  .command('list')
+  .description('List every recorded manual correction')
+  .action(async () => {
+    await correctGuess('list');
+  });
+
+correct
+  .command('set <username> <timestamp> <text>')
+  .description('Replace a post\'s guess row(s), e.g. correct set PM 2026-10-14T18:00:00 "2026-10-14, Lulea - Frolunda, 3-2, Brannstrom"')
+  .option('-f, --file <file>', 'Guesses CSV file', 'guesses.csv')
+  .option('-n, --note <text>', 'Why, kept with the correction')
+  .action(async (username, timestamp, text, options) => {
+    await correctGuess('set', username, timestamp, text, options);
+  });
+
+correct
+  .command('dismiss <username> <timestamp>')
+  .description('Mark a post as not a guess at all, removing its row(s)')
+  .option('-f, --file <file>', 'Guesses CSV file', 'guesses.csv')
+  .option('-n, --note <text>', 'Why, kept with the correction')
+  .action(async (username, timestamp, options) => {
+    await correctGuess('dismiss', username, timestamp, null, options);
+  });
+
+correct
+  .command('date <written> <corrected>')
+  .description('Rewrite one mistyped date everywhere it appears, e.g. correct date 2023-09-08 2023-09-28')
+  .option('-f, --file <file>', 'Guesses CSV file', 'guesses.csv')
+  .option('-n, --note <text>', 'Why, kept with the correction')
+  .action(async (written, corrected, options) => {
+    await correctGuess('date', written, corrected, null, options);
+  });
+
+correct
+  .command('remove <username> <timestamp>')
+  .description('Forget a recorded correction (the parser decides again on the next --fresh)')
+  .action(async (username, timestamp) => {
+    await correctGuess('remove', username, timestamp);
+  });
+
 // Map a nickname/spelling to a canonical player (clears SCORER_UNMATCHED)
 program
   .command('map-player <canonical> <spelling>')
@@ -161,10 +268,11 @@ program
 // Calculate scores command
 program
   .command('calculate')
-  .description('Calculate scores for guesses')
+  .description('Calculate scores for guesses (skips guesses that already have a score)')
   .option('--from <date>', 'Start date (YYYY-MM-DD)')
   .option('--to <date>', 'End date (YYYY-MM-DD)')
   .option('--match <id>', 'Calculate for specific match only')
+  .option('--force', 'Recompute every guess, including ones already scored')
   .option('--dry-run', 'Preview without saving')
   .action(async (options) => {
     await initDatabase();
@@ -172,6 +280,7 @@ program
       from: options.from,
       to: options.to,
       matchId: options.match,
+      force: !!options.force,
       dryRun: options.dryRun
     });
     closeDatabase();

@@ -218,6 +218,21 @@ export async function upsertScore(guessId, exactResult, outcome, scorer, luleaGo
   return stmt.run(guessId, exactResult, outcome, scorer, luleaGoals, luleaConceded, total);
 }
 
+/**
+ * The ids of every guess that already carries a score.
+ *
+ * One query rather than a lookup per guess: `calculate` uses this to skip
+ * guesses it has already scored, and asking the database 1000 times would cost
+ * more than the scoring it is trying to avoid.
+ *
+ * @returns {Promise<Set<number>>}
+ */
+export async function getScoredGuessIds() {
+  const db = await getDatabase();
+  const rows = prepare('SELECT guess_id FROM scores').all();
+  return new Set(rows.map(r => r.guess_id));
+}
+
 export async function getLeaderboard(fromDate = null, toDate = null) {
   const db = await getDatabase();
   let query = `

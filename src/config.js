@@ -11,7 +11,13 @@ const DEFAULT_CONFIG = {
   forumUrl: '',
   swehockeyUrl: '',
   rosterUrl: 'https://www.luleahockey.se/herr-laget-2026-2027',
-  team: 'Luleå HF'
+  team: 'Luleå HF',
+  // AI assistance is suggestion-only (see src/parsers/ai/index.js) — it never
+  // awards a point. Turning it off just empties the "Ask AI" button.
+  aiEnabled: true,
+  ollamaUrl: 'http://127.0.0.1:11434',
+  ollamaModel: 'llama3.1:8b',
+  ollamaTimeoutMs: 60000
 };
 
 /**

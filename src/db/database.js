@@ -105,11 +105,15 @@ export function prepare(sql) {
   return {
     run: (...params) => {
       db.run(sql, params);
-      saveDatabase();
-      return {
+      // Read the row id BEFORE persisting: sql.js implements export() by closing
+      // and reopening the connection, which resets last_insert_rowid() to 0.
+      // Reading it afterwards handed every fresh INSERT an id of 0.
+      const result = {
         changes: db.getRowsModified(),
         lastInsertRowid: getLastInsertRowId()
       };
+      saveDatabase();
+      return result;
     },
     get: (...params) => {
       const stmt = db.prepare(sql);

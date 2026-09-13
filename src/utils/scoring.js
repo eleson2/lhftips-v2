@@ -96,12 +96,22 @@ export function checkOutcome(guess, match) {
 }
 
 /**
- * Check if the guess has a correct goalscorer
+ * Check if the guess has a correct goalscorer.
+ *
+ * A human verdict, when present, wins outright — that is the whole point of it.
+ * This function stays pure: the caller looks the verdict up (see
+ * src/utils/scorer-verdicts.js) and passes the result in, so the scoring maths
+ * remains file-free and directly testable.
+ *
  * @param {string|null} predictedScorer - Predicted scorer name
  * @param {string[]} luleaScorerNames - Array of actual Luleå scorer names
+ * @param {'correct'|'incorrect'|null} [override] - Human verdict, if one exists
  * @returns {number} - Points awarded (1 or 0)
  */
-export function checkScorer(predictedScorer, luleaScorerNames) {
+export function checkScorer(predictedScorer, luleaScorerNames, override = null) {
+  if (override === 'correct') return POINTS.CORRECT_SCORER;
+  if (override === 'incorrect') return 0;
+
   if (!predictedScorer || luleaScorerNames.length === 0) return 0;
 
   for (const scorerName of luleaScorerNames) {
@@ -145,9 +155,10 @@ export function checkGoalsConceded(guess, match) {
  * @param {object} guess - Guess object
  * @param {object} match - Match object
  * @param {string[]} luleaScorerNames - Array of Luleå scorer names
+ * @param {'correct'|'incorrect'|null} [scorerOverride] - Human verdict on the scorer, if one exists
  * @returns {object} - Score breakdown with all categories and total
  */
-export function calculateScore(guess, match, luleaScorerNames) {
+export function calculateScore(guess, match, luleaScorerNames, scorerOverride = null) {
   // Check if match has a result
   if (match.home_score === null || match.away_score === null) {
     return { exactResult: 0, outcome: 0, scorer: 0, luleaGoals: 0, luleaConceded: 0, total: 0 };
@@ -160,7 +171,7 @@ export function calculateScore(guess, match, luleaScorerNames) {
 
   const exactResult = checkExactResult(guess, match);
   const outcome = checkOutcome(guess, match);
-  const scorer = checkScorer(guess.predicted_scorer, luleaScorerNames);
+  const scorer = checkScorer(guess.predicted_scorer, luleaScorerNames, scorerOverride);
   const luleaGoals = checkLuleaGoals(guess, match);
   const luleaConceded = checkGoalsConceded(guess, match);
   const total = exactResult + outcome + scorer + luleaGoals + luleaConceded;

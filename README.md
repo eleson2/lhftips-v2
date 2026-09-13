@@ -139,11 +139,21 @@ re-parsed — post ids only ever increase). Use `--fresh` for a one-off full
 re-scrape (e.g. after fixing a parser bug and wanting to regenerate the
 whole CSV).
 
-#### Review and fix unparsed guesses
+#### Review: fix unparsed guesses, rule on unresolved scorers
 
 ```bash
 node src/index.js review [options]
 ```
+
+Two tabs. **Unparsed guesses** is described below. **Scorers** lists guesses
+whose goalscorer automatic matching could not settle — no match, an ambiguous
+surname, or a match so weak it should not stand unseen. Pick the player the
+guess meant (or "Not correct"), optionally with a note, and the ruling is saved
+to `data/scorer-verdicts.json` and applied on the next `calculate`. **Ask AI**
+pre-fills the choice using a local Ollama model; it only ever pre-fills, and the
+tab works fully with AI switched off. See
+[docs/player-matching.md](docs/player-matching.md) for the verdict store, the
+queue statuses, and why the AI layer is guarded the way it is.
 
 Opens a local web UI (default `http://127.0.0.1:4321/`) listing every
 pending `#` line in the CSV. Each item shows the original post text, badges
@@ -160,6 +170,7 @@ handled items never reappear in the UI.
 |--------|-------------|
 | `-f, --file <file>` | Guesses CSV file (default: `guesses.csv`) |
 | `-p, --port <n>` | Local port for the UI (default: 4321) |
+| `-d, --db <file>` | Database file, for the Scorers tab (default: `lhftips.db`) |
 | `--no-open` | Don't open the browser automatically |
 
 ### Calculate Scores

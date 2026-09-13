@@ -44,12 +44,53 @@
   .ai-note { font-size: .85rem; margin-top: .5rem; color: var(--muted); }
   .ai-note .ok { color: var(--ok); }
   .ai-note .bad { color: var(--bad); }
+
+  /* Tabs */
+  .tabs { display: flex; gap: .25rem; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; max-width: 60rem; }
+  .tab { font: inherit; font-size: .95rem; background: none; border: none; border-bottom: 2px solid transparent; border-radius: 0; padding: .5rem .9rem; color: var(--muted); cursor: pointer; }
+  .tab.active { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+  .tab .n { font-size: .75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 0 .4rem; margin-left: .4rem; }
+  section[hidden] { display: none; }
+
+  /* Scorer adjudication */
+  .card.settled { border-left: 4px solid var(--ok); }
+  .card.stale { border-left: 4px solid var(--bad); }
+  .match { color: var(--muted); font-size: .9rem; margin: .15rem 0 .6rem; }
+  .guessed { font-size: 1.05rem; margin: .5rem 0; }
+  .guessed strong { font-family: ui-monospace, Consolas, monospace; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: .1rem .45rem; }
+  .choices { display: flex; flex-direction: column; gap: .3rem; margin: .6rem 0; }
+  .choice { display: flex; align-items: center; gap: .5rem; padding: .3rem .5rem; border: 1px solid transparent; border-radius: 6px; cursor: pointer; }
+  .choice:hover { background: var(--bg); }
+  .choice.suggested { border-color: var(--accent); background: var(--bg); }
+  .choice .tag { font-size: .72rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0 .45rem; }
+  .choice .auto { font-size: .72rem; color: var(--muted); }
+  .note-in { width: 100%; font: inherit; font-size: .9rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: .4rem .6rem; margin: .2rem 0 .6rem; }
+  .teach { display: flex; align-items: center; gap: .45rem; font-size: .85rem; color: var(--muted); margin-bottom: .6rem; }
+  .verdict-was { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
 </style>
 </head>
 <body>
 <h1>Guess review</h1>
-<div class="sub"><span id="file"></span> — <span id="count"></span> pending. Fixed rows are inserted directly below their commented original in the CSV.</div>
-<div id="list"></div>
+<div class="sub">AI proposes, you decide. Nothing here is applied until you save it.</div>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="parse">Unparsed guesses<span class="n" id="n-parse">–</span></button>
+  <button class="tab" data-tab="scorers">Scorers<span class="n" id="n-scorers">–</span></button>
+</nav>
+
+<section id="tab-parse">
+  <div class="sub"><span id="file"></span> — <span id="count"></span> pending. Fixed rows are inserted directly below their commented original in the CSV.</div>
+  <div id="list"></div>
+</section>
+
+<section id="tab-scorers" hidden>
+  <div class="sub">
+    Guesses whose scorer the matcher could not settle. Your verdict is saved to
+    <code>data/scorer-verdicts.json</code> and applied on the next <code>calculate</code>.
+    <label style="margin-left:.5rem"><input type="checkbox" id="show-all"> show already-decided</label>
+  </div>
+  <div id="scorer-list"></div>
+</section>
 <script>
 const badgeNames = { date: 'datum', teams: 'lag', score: 'resultat', scorer: 'målskytt' };
 
@@ -196,9 +237,223 @@ function render(items, file) {
   }
 }
 
-api('/api/items').then(d => render(d.items, d.file)).catch(e => {
+// ---------------------------------------------------------------- scorers --
+
+const STATUS_LABEL = {
+  UNMATCHED: 'no match',
+  AMBIGUOUS: 'ambiguous',
+  LOW_CONFIDENCE: 'weak match',
+  STALE_VERDICT: 'verdict out of date',
+  AUTO_MATCHED: 'auto-matched',
+};
+
+function renderScorerCard(item, onDone) {
+  const card = el('div', 'card' + (item.verdict ? ' settled' : item.status === 'STALE_VERDICT' ? ' stale' : ''));
+
+  const head = el('div');
+  head.appendChild(el('span', 'who', item.username));
+  head.appendChild(el('span', 'when', item.date));
+  head.appendChild(el('span', 'badge ' + (item.status === 'AUTO_MATCHED' ? 'ok' : 'bad'), STATUS_LABEL[item.status] || item.status));
+  card.appendChild(head);
+
+  card.appendChild(el('div', 'match', item.matchLabel));
+  if (item.rawText) card.appendChild(el('div', 'raw', item.rawText));
+
+  const g = el('div', 'guessed');
+  g.appendChild(document.createTextNode('Guessed scorer: '));
+  g.appendChild(el('strong', '', item.guessedScorer));
+  card.appendChild(g);
+
+  if (item.status === 'STALE_VERDICT' && item.staleVerdict) {
+    card.appendChild(el('div', 'verdict-was',
+      'Earlier verdict "' + item.staleVerdict.verdict + '" was recorded for "' +
+      item.staleVerdict.guessedScorer + '" — not applied, please decide again.'));
+  }
+
+  // Radio choices: each actual goalscorer, plus an explicit "not correct".
+  const name = 'c' + Math.random().toString(36).slice(2);
+  const choices = el('div', 'choices');
+  const radios = [];
+  for (const player of item.candidates) {
+    const lab = el('label', 'choice');
+    const r = el('input');
+    r.type = 'radio'; r.name = name; r.value = player;
+    lab.appendChild(r);
+    lab.appendChild(el('span', '', player));
+    if (item.autoMatch && item.autoMatch.player === player) {
+      lab.appendChild(el('span', 'auto', 'matcher: ' + item.autoMatch.method + ' ' + item.autoMatch.confidence));
+    }
+    radios.push({ input: r, label: lab, player });
+    choices.appendChild(lab);
+  }
+  const noLab = el('label', 'choice');
+  const noR = el('input');
+  noR.type = 'radio'; noR.name = name; noR.value = '';
+  noLab.appendChild(noR);
+  noLab.appendChild(el('span', '', 'Not correct — no point for this guess'));
+  radios.push({ input: noR, label: noLab, player: null });
+  choices.appendChild(noLab);
+  card.appendChild(choices);
+
+  // Pre-select what is already true: an existing verdict, else the matcher's pick.
+  if (item.verdict) {
+    const pre = radios.find(r => r.player === item.verdict.resolvedTo)
+      || (item.verdict.verdict === 'incorrect' ? radios[radios.length - 1] : null);
+    if (pre) pre.input.checked = true;
+  } else if (item.autoMatch) {
+    const pre = radios.find(r => r.player === item.autoMatch.player);
+    if (pre) pre.input.checked = true;
+  }
+
+  const note = el('input', 'note-in');
+  note.placeholder = 'Why (optional) — kept with the verdict as an audit trail';
+  note.value = item.verdict ? (item.verdict.note || '') : '';
+  card.appendChild(note);
+
+  const teach = el('label', 'teach');
+  const teachBox = el('input');
+  teachBox.type = 'checkbox';
+  teach.appendChild(teachBox);
+  teach.appendChild(el('span', '', 'Also teach the registry this spelling, so it resolves automatically everywhere from now on'));
+  card.appendChild(teach);
+
+  const actions = el('div', 'actions');
+  const saveBtn = el('button', 'fix', 'Save verdict');
+  const aiBtn = el('button', '', 'Ask AI');
+  actions.appendChild(saveBtn);
+  actions.appendChild(aiBtn);
+  let clearBtn = null;
+  if (item.verdict) {
+    clearBtn = el('button', '', 'Clear verdict');
+    actions.appendChild(clearBtn);
+  }
+  card.appendChild(actions);
+
+  const aiNote = el('div', 'ai-note');
+  card.appendChild(aiNote);
+
+  let aiResult = null;
+
+  aiBtn.addEventListener('click', async () => {
+    aiBtn.disabled = true;
+    aiNote.replaceChildren(el('span', '', 'Asking the local model… (the first call loads it, ~1 min)'));
+    try {
+      const r = await api('/api/scorer-ai', { guessedScorer: item.guessedScorer, candidates: item.candidates });
+      if (!r.ok) {
+        aiNote.replaceChildren(el('span', r.enabled === false ? '' : 'bad', r.message || r.error));
+      } else if (r.player) {
+        aiResult = r;
+        for (const rad of radios) rad.label.classList.toggle('suggested', rad.player === r.player);
+        const hit = radios.find(rad => rad.player === r.player);
+        if (hit) {
+          hit.input.checked = true;
+          if (!hit.label.querySelector('.tag')) hit.label.appendChild(el('span', 'tag', 'AI'));
+        }
+        aiNote.replaceChildren(el('span', 'ok',
+          'AI suggests ' + r.player + ' (confidence ' + r.confidence + ') — ' + r.reasoning));
+      } else if (r.rejected) {
+        aiResult = r;
+        aiNote.replaceChildren(el('span', 'bad',
+          'AI proposed ' + r.rejected.player + ' but that failed the name-plausibility check, so it is not offered. Its reasoning was: ' + r.rejected.reasoning));
+      } else {
+        aiResult = r;
+        aiNote.replaceChildren(el('span', '', 'AI: none of these players matches this guess.'));
+      }
+    } catch (e) {
+      aiNote.replaceChildren(el('span', 'bad', e.message));
+    } finally {
+      aiBtn.disabled = false;
+    }
+  });
+
+  saveBtn.addEventListener('click', async () => {
+    const picked = radios.find(r => r.input.checked);
+    if (!picked) { alert('Choose a player, or "Not correct".'); return; }
+    saveBtn.disabled = true;
+    try {
+      await api('/api/scorer-verdict', {
+        username: item.username, date: item.date,
+        homeTeam: item.homeTeam, awayTeam: item.awayTeam,
+        guessedScorer: item.guessedScorer,
+        verdict: picked.player ? 'correct' : 'incorrect',
+        resolvedTo: picked.player,
+        note: note.value,
+        ai: aiResult,
+        mapPlayer: teachBox.checked,
+      });
+      card.remove();
+      onDone(-1);
+    } catch (e) {
+      alert(e.message);
+      saveBtn.disabled = false;
+    }
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', async () => {
+      clearBtn.disabled = true;
+      try {
+        await api('/api/scorer-clear', { key: item.key });
+        card.remove();
+        onDone(0);
+      } catch (e) {
+        alert(e.message);
+        clearBtn.disabled = false;
+      }
+    });
+  }
+
+  return card;
+}
+
+let scorerCount = 0;
+async function loadScorers() {
+  const list = document.getElementById('scorer-list');
+  list.replaceChildren(el('div', 'empty', 'Loading…'));
+  const all = document.getElementById('show-all').checked;
+  try {
+    const d = await api('/api/scorers' + (all ? '?all=1' : ''));
+    list.replaceChildren();
+    if (!d.available) {
+      list.appendChild(el('div', 'empty', d.message));
+      document.getElementById('n-scorers').textContent = '–';
+      return;
+    }
+    scorerCount = d.items.filter(i => !i.verdict).length;
+    document.getElementById('n-scorers').textContent = scorerCount;
+    if (d.items.length === 0) {
+      list.appendChild(el('div', 'empty', 'No scorers awaiting judgement \u{1F389}'));
+      return;
+    }
+    for (const item of d.items) {
+      list.appendChild(renderScorerCard(item, (delta) => {
+        scorerCount += delta;
+        document.getElementById('n-scorers').textContent = scorerCount;
+      }));
+    }
+  } catch (e) {
+    list.replaceChildren(el('div', 'empty', 'Failed to load: ' + e.message));
+  }
+}
+
+document.getElementById('show-all').addEventListener('change', loadScorers);
+
+for (const tab of document.querySelectorAll('.tab')) {
+  tab.addEventListener('click', () => {
+    for (const t of document.querySelectorAll('.tab')) t.classList.toggle('active', t === tab);
+    document.getElementById('tab-parse').hidden = tab.dataset.tab !== 'parse';
+    document.getElementById('tab-scorers').hidden = tab.dataset.tab !== 'scorers';
+  });
+}
+
+api('/api/items').then(d => {
+  document.getElementById('n-parse').textContent = d.items.length;
+  render(d.items, d.file);
+}).catch(e => {
   document.getElementById('list').appendChild(el('div', 'empty', 'Failed to load: ' + e.message));
 });
+
+loadScorers();
 </script>
 </body>
 </html>

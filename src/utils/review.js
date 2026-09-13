@@ -13,6 +13,9 @@ export const REVIEW = {
   LATE: 'LATE',                     // posted after the match had started
   DUPLICATE: 'DUPLICATE',           // superseded by a later guess for same match
   SCORER_UNMATCHED: 'SCORER_UNMATCHED', // named a scorer that matched no real goalscorer
+  SCORER_AMBIGUOUS: 'SCORER_AMBIGUOUS', // matched more than one real goalscorer equally well
+  SCORER_LOW_CONF: 'SCORER_LOW_CONF',   // matched, but only on a loose fuzzy score
+  SCORER_VERDICT_STALE: 'SCORER_VERDICT_STALE', // a human verdict exists but the guess changed under it
 };
 
 const REASON_HELP = {
@@ -22,7 +25,10 @@ const REASON_HELP = {
   [REVIEW.TEAM_LOW_CONF]: 'Team names matched only weakly — verify they are correct.',
   [REVIEW.LATE]: 'Guess was posted after the match started — held from scoring.',
   [REVIEW.DUPLICATE]: 'A later guess for the same match superseded this one — informational.',
-  [REVIEW.SCORER_UNMATCHED]: 'Named a scorer that matched no actual goalscorer — only the scorer point is withheld. If it is a nickname for a real scorer, run: map-player "<Canonical Name>" "<spelling>" then re-run calculate.',
+  [REVIEW.SCORER_UNMATCHED]: 'Named a scorer that matched no actual goalscorer — only the scorer point is withheld. Adjudicate it in `review` (Scorers tab), or map the nickname once with: map-player "<Canonical Name>" "<spelling>".',
+  [REVIEW.SCORER_AMBIGUOUS]: 'Matched more than one actual goalscorer equally well (e.g. a shared surname with no first name). The point is still awarded to the best match — flagged so you can confirm it or overturn it in `review` (Scorers tab).',
+  [REVIEW.SCORER_LOW_CONF]: 'Matched a goalscorer only on a loose fuzzy score, so it may be the wrong player. The point is still awarded — flagged so you can confirm it or overturn it in `review` (Scorers tab).',
+  [REVIEW.SCORER_VERDICT_STALE]: 'A human verdict was recorded for this guess, but the guessed scorer has changed since — the old verdict is NOT applied. Re-decide it in `review` (Scorers tab).',
 };
 
 /**

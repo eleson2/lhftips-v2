@@ -136,14 +136,16 @@ importCmd
 // Review UI: fix/dismiss unparsed guesses (# lines) in the CSV
 program
   .command('review')
-  .description('Open a local web UI to review and fix unparsed guesses in the CSV')
+  .description('Open a local web UI to fix unparsed guesses and rule on unresolved goalscorers')
   .option('-f, --file <file>', 'Guesses CSV file', 'guesses.csv')
   .option('-p, --port <n>', 'Local port for the UI', '4321')
+  .option('-d, --db <file>', 'Database file (for the scorer queue)', 'lhftips.db')
   .option('--no-open', 'Do not open the browser automatically')
   .action(async (options) => {
     await reviewGuesses({
       file: options.file,
       port: parseInt(options.port, 10),
+      db: options.db,
       open: options.open
     });
   });

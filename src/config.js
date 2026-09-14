@@ -17,7 +17,11 @@ const DEFAULT_CONFIG = {
   aiEnabled: true,
   ollamaUrl: 'http://127.0.0.1:11434',
   ollamaModel: 'llama3.1:8b',
-  ollamaTimeoutMs: 60000
+  ollamaTimeoutMs: 60000,
+  // Seconds the model stays in VRAM after a call. Short by default so it does
+  // not sit on ~5 GB of an 8 GB card; '30m' if you want it warm for a long
+  // review session and are not gaming.
+  ollamaKeepAlive: '60s'
 };
 
 /**

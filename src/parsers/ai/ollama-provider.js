@@ -115,7 +115,7 @@ export function plausibleLink(guess, player) {
  *
  * @param {string} guessedScorer - what the user wrote
  * @param {string[]} candidates - the players who actually scored
- * @param {{ model?:string, url?:string, timeoutMs?:number }} [opts]
+ * @param {{ model?:string, url?:string, timeoutMs?:number, keepAlive?:string }} [opts]
  * @returns {Promise<{ player: string|null, candidateIndex: number|null, confidence: number, reasoning: string, model: string }>}
  */
 export async function ollamaScorerProvider(guessedScorer, candidates, opts = {}) {
@@ -127,6 +127,7 @@ export async function ollamaScorerProvider(guessedScorer, candidates, opts = {})
   const url = opts.url || config.ollamaUrl || 'http://127.0.0.1:11434';
   const model = opts.model || config.ollamaModel || 'llama3.1:8b';
   const timeoutMs = opts.timeoutMs ?? config.ollamaTimeoutMs ?? 60000;
+  const keepAlive = opts.keepAlive ?? config.ollamaKeepAlive ?? '60s';
 
   if (!guessedScorer || !Array.isArray(candidates) || candidates.length === 0) {
     return { player: null, candidateIndex: null, confidence: 0, reasoning: 'No candidates to choose from.', model };
@@ -161,7 +162,12 @@ Which option did the user mean? Answer with its number.`;
           temperature: 0,   // same input -> same suggestion, run to run
           num_predict: 150, // hard stop: a runaway generation must not hang the UI
         },
-        keep_alive: '30m',  // stay resident between reviews (first load is ~50s)
+        // How long the model stays resident after a call. Kept SHORT by default:
+        // an 8B model at Q4 occupies ~5 GB, which on an 8 GB card is most of it,
+        // and this runs on a machine that is also used for games. Raise
+        // ollamaKeepAlive in config/settings.json if you would rather trade VRAM
+        // for not paying the ~50s reload during a long review session.
+        keep_alive: keepAlive,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           { role: 'user', content: userPrompt },

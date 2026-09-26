@@ -143,7 +143,11 @@ export function parseGuess(guessLine, defaultYear = new Date().getFullYear()) {
   // (just whitespace) the same way. The lookbehind-free version below only
   // fires when the character right before the whitespace is alphanumeric
   // (i.e. NOT already a comma), so it's a no-op on already well-formed input.
+  // A leading yyyy-mm-dd date written with stray blanks ("2026 -09 - 26",
+  // "2026 -09 24") is rejoined first — the date is the only part of the line
+  // that does not already tolerate blanks around its separators.
   const normalized = cleaned
+    .replace(/^(\d{4})\s*[-/.\s]\s*(\d{1,2})\s*[-/.\s]\s*(\d{1,2})(?!\d)/, '$1-$2-$3')
     .replace(/:\s*(?=\d+\s*[-–—]\s*\d+)/g, ', ')
     .replace(/([A-Za-zÅÄÖåäö0-9])\s+(?=\d+\s*[-–—]\s*\d+)/g, '$1, ');
 

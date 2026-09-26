@@ -70,6 +70,15 @@ describe('parseTeams', () => {
 });
 
 describe('parseGuess', () => {
+  test('should rejoin a leading date written with stray blanks', () => {
+    const a = parseGuess("2026 -09 - 26, Brynäs - Luleå, 4 - 5, Brian O'Neil");
+    assert.strictEqual(a.date, '2026-09-26');
+    assert.strictEqual(a.awayScore, 5);
+    assert.strictEqual(a.scorer, "Brian O'Neil");
+    assert.strictEqual(parseGuess('2026 -09 24, Luleå - Frölunda, 4-2, Brian O\'Neill').date, '2026-09-24');
+    assert.strictEqual(parseGuess('2026 09 26 Brynäs - Luleå 2-4 Nurmi').date, '2026-09-26');
+  });
+
   test('parses standard guess format', () => {
     const result = parseGuess('2023-09-14, Oskarshamn - Luleå, 1-3, Linus Omark', 2023);
 

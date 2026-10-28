@@ -34,6 +34,10 @@ CREATE TABLE IF NOT EXISTS guesses (
   id INTEGER PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   match_id INTEGER REFERENCES matches(id),
+  -- Which forum post this guess came from. Decides which of a user's posts is
+  -- their latest (see upsertGuess); NULL for guesses imported from a CSV
+  -- written before the column existed, which fall back to post_timestamp.
+  post_id INTEGER,
   post_timestamp DATETIME NOT NULL,
   raw_text TEXT NOT NULL,
   predicted_home_score INTEGER,

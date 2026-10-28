@@ -236,3 +236,64 @@ describe('correct date — fixing one mistyped date everywhere at once', () => {
     rmSync(csv);
   });
 });
+
+describe('post id as the correction key', () => {
+  test('files the correction under the post id when there is one', () => {
+    const store = empty();
+    setCorrection(store, { ...POST, kind: CORRECTION.FIXED, rows: [FIXED_ROW], originalText: POST.content });
+    assert.deepStrictEqual(Object.keys(store.corrections), ['p4711']);
+  });
+
+  test('finds a correction filed before ids, for the same post', () => {
+    // Recorded by the `correct` CLI, which addresses posts by name and date.
+    const store = empty();
+    setCorrection(store, {
+      username: POST.username, timestamp: POST.timestamp,
+      kind: CORRECTION.FIXED, rows: [FIXED_ROW], originalText: POST.content,
+    });
+    assert.deepStrictEqual(Object.keys(store.corrections), ['urken|2026-10-01t18:30:00']);
+
+    const found = findCorrection(store, { ...POST, content: POST.content });
+    assert.ok(found.correction, 'the id-keyed lookup must fall back to the composite key');
+  });
+
+  test('re-deciding a post under its id does not leave the old entry behind', () => {
+    const store = empty();
+    setCorrection(store, {
+      username: POST.username, timestamp: POST.timestamp,
+      kind: CORRECTION.FIXED, rows: [FIXED_ROW], originalText: POST.content,
+    });
+    setCorrection(store, { ...POST, kind: CORRECTION.DISMISSED, originalText: POST.content });
+    assert.deepStrictEqual(Object.keys(store.corrections), ['p4711']);
+  });
+
+  test('applies to a post whose timestamp the scraper could not read', () => {
+    // The composite key is unusable here; the id still identifies the post.
+    const store = empty();
+    setCorrection(store, {
+      username: POST.username, timestamp: null, postId: POST.postId,
+      kind: CORRECTION.FIXED, rows: [FIXED_ROW], originalText: POST.content,
+    });
+    const applied = applyCorrection(
+      { username: POST.username, timestamp: null, postId: POST.postId, content: POST.content },
+      [],
+      store
+    );
+    assert.strictEqual(applied.applied, true);
+    assert.deepStrictEqual(applied.rows, [FIXED_ROW]);
+  });
+
+  test('does not apply one post\'s ruling to another by the same user in the same minute', () => {
+    // Same user, same minute, same text — the composite key cannot tell these
+    // apart and the staleness check cannot either. Only the id can.
+    const store = empty();
+    setCorrection(store, { ...POST, kind: CORRECTION.DISMISSED, originalText: POST.content });
+    const other = applyCorrection(
+      { username: POST.username, timestamp: POST.timestamp, postId: 4715, content: POST.content },
+      ['some,row'],
+      store
+    );
+    assert.strictEqual(other.applied, false);
+    assert.deepStrictEqual(other.rows, ['some,row']);
+  });
+});

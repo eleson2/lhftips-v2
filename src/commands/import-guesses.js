@@ -4,6 +4,7 @@ import { getOrCreateUser, getMatchByDateAndTeams, upsertGuess } from '../db/quer
 import { beginTransaction, commit, rollback } from '../db/database.js';
 import { parseISO, isBefore, parse } from 'date-fns';
 import { ReviewCollector, REVIEW } from '../utils/review.js';
+import { CSV_HEADER } from '../utils/csv.js';
 import { repairGuessDate } from '../utils/date-repair.js';
 
 /**
@@ -65,7 +66,7 @@ export async function importGuesses(csvFile, options = {}) {
   // Verify required columns exist
   const firstRecord = records[0];
   if (!('username' in firstRecord) || !('date' in firstRecord)) {
-    console.error('Invalid CSV format. Expected columns: username,timestamp,date,home_team,away_team,home_score,away_score,scorer,raw_text');
+    console.error(`Invalid CSV format. Expected columns: ${CSV_HEADER}`);
     process.exit(1);
   }
 
@@ -94,6 +95,9 @@ export async function importGuesses(csvFile, options = {}) {
       const awayScore = record.away_score ? parseInt(record.away_score, 10) : null;
       const scorer = record.scorer || '';
       const rawText = record.raw_text || '';
+      // Absent in files written before the column existed; the guess is then
+      // ordered by timestamp, as it always was.
+      const postId = record.post_id ? parseInt(record.post_id, 10) : null;
 
       // Skip if missing required fields
       if (!username || !date || !homeTeam || !awayTeam || homeScore === null || awayScore === null) {
@@ -180,7 +184,8 @@ export async function importGuesses(csvFile, options = {}) {
           homeScore,
           awayScore,
           scorer || null,
-          true
+          true,
+          postId
         );
 
         if (result.changes > 0) {

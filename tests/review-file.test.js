@@ -1,7 +1,7 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
 import {
-  parseCommentLine, listPending, applyFix, applyDismiss, MARK_FIXED, MARK_DISMISSED
+  parseCommentLine, commentLine, listPending, applyFix, applyDismiss, MARK_FIXED, MARK_DISMISSED
 } from '../src/utils/review-file.js';
 
 describe('parseCommentLine', () => {
@@ -91,5 +91,43 @@ describe('applyDismiss', () => {
     const out = applyDismiss(lines, 1, '#Urken: chatter');
     assert.strictEqual(out[1], MARK_DISMISSED + 'Urken: chatter');
     assert.strictEqual(out.length, 3);
+  });
+});
+
+describe('the post id on a review comment line', () => {
+  test('is written after the timestamp and read back', () => {
+    const line = commentLine('Puckad', '2026-09-24T19:02:00', 413325, 'reserverat');
+    assert.strictEqual(line, '#Puckad @2026-09-24T19:02:00 p413325: reserverat');
+    const r = parseCommentLine(line);
+    assert.strictEqual(r.username, 'Puckad');
+    assert.strictEqual(r.timestamp, '2026-09-24T19:02:00');
+    assert.strictEqual(r.postId, 413325);
+    assert.strictEqual(r.content, 'reserverat');
+  });
+
+  test('survives a post whose date the scraper could not read', () => {
+    const line = commentLine('Puckad', null, 413325, 'reserverat');
+    assert.strictEqual(line, '#Puckad p413325: reserverat');
+    const r = parseCommentLine(line);
+    assert.strictEqual(r.username, 'Puckad');
+    assert.strictEqual(r.timestamp, null);
+    assert.strictEqual(r.postId, 413325);
+  });
+
+  test('is absent, not invented, on lines written before the column existed', () => {
+    const r = parseCommentLine('#NallePhu @2026-09-19T18:00:00: hejsan');
+    assert.strictEqual(r.postId, null);
+    assert.strictEqual(r.timestamp, '2026-09-19T18:00:00');
+  });
+
+  test('does not mistake a trailing number in the text for an id', () => {
+    const r = parseCommentLine('#Sigge75 @2026-09-19T18:00:00: luleå p2 i andra perioden');
+    assert.strictEqual(r.postId, null);
+    assert.strictEqual(r.content, 'luleå p2 i andra perioden');
+  });
+
+  test('collapses newlines so one post stays one line', () => {
+    const line = commentLine('Puckad', null, 7, 'first\nsecond');
+    assert.strictEqual(line, '#Puckad p7: first second');
   });
 });

@@ -133,6 +133,18 @@ describe('matchScorer', () => {
     assert.strictEqual(r.matched, false);
   });
 
+  test('a guess naming a different roster player never fuzzes onto a scorer', () => {
+    // "Leskinen" is Otto Leskinen; it once matched Valtteri Puustinen at 0.61.
+    const r = matchScorer('Leskinen', ['Mikkel Aagaard', 'Hudson Fasching', 'Valtteri Puustinen', 'Jonathan Pudas']);
+    assert.strictEqual(r.matched, false);
+  });
+
+  test('a roster-player guess still matches an opposing scorer on equal surname', () => {
+    const r = matchScorer('Leskinen', ['Mikko Leskinen', 'Valtteri Puustinen']);
+    assert.strictEqual(r.matched, true);
+    assert.strictEqual(r.actualName, 'Mikko Leskinen');
+  });
+
   test('returns no match for empty scorer list', () => {
     assert.strictEqual(matchScorer('Brännström', []).matched, false);
   });

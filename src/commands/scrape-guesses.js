@@ -1,9 +1,10 @@
 import { writeFileSync, existsSync, appendFileSync, readFileSync } from 'fs';
 import { scrapeForumThread } from '../scrapers/forum-scraper.js';
-import { extractGuessesFromPost } from '../parsers/guess-parser.js';
+import { extractGuessesFromPost, startsWithDate } from '../parsers/guess-parser.js';
 import { loadConfig } from '../config.js';
 import { loadScrapeState, saveScrapeState } from '../utils/scrape-state.js';
-import { guessToCsvRow, postKey, removeRowsForPosts } from '../utils/csv.js';
+import { guessToCsvRow, postKeysOf, removeRowsForPosts, CSV_HEADER, CSV_COLUMNS } from '../utils/csv.js';
+import { commentLine } from '../utils/review-file.js';
 import { loadCorrections, applyCorrection } from '../utils/guess-corrections.js';
 
 /**
@@ -119,8 +120,12 @@ export async function scrapeGuesses(options = {}) {
   for (const post of newPosts) {
     if (post.postId > maxPostIdSeen) maxPostIdSeen = post.postId;
 
-    const guesses = extractGuessesFromPost(post.content, defaultYear);
-    const parsedRows = guesses.map(g => guessToCsvRow(g, post.username, post.timestamp));
+    // Only a post that starts with a date and quotes nobody is a guess.
+    // Anything else is skipped without being raised for review (a saved
+    // manual correction still wins).
+    const isGuessPost = !post.hasQuote && startsWithDate(post.content);
+    const guesses = isGuessPost ? extractGuessesFromPost(post.content, defaultYear) : [];
+    const parsedRows = guesses.map(g => guessToCsvRow(g, post.username, post.timestamp, post.postId));
 
     const corrected = applyCorrection(post, parsedRows, corrections);
 
@@ -139,13 +144,14 @@ export async function scrapeGuesses(options = {}) {
     // A dismissal is a decision, not a failure — don't re-raise it for review.
     if (corrected.dismissed) continue;
 
-    if (guesses.length === 0) {
-      // No parseable guesses - store raw line with # prefix for the review
-      // UI. Include the post timestamp so a manual fix keeps the
-      // posted-before-match check meaningful.
-      const ts = post.timestamp ? ` @${post.timestamp}` : '';
-      const rawLine = `${post.username}${ts}: ${post.content.substring(0, 300).replace(/\n/g, ' ')}`;
-      csvInvalidRows.push('#' + rawLine.replace(/\n/g, ' '));
+    if (isGuessPost && guesses.length === 0) {
+      // No parseable guesses - store raw line with # prefix for the review UI,
+      // carrying the post's timestamp and id so a manual fix is filed against
+      // the same post the scraper saw.
+      csvInvalidRows.push(commentLine(
+        post.username, post.timestamp, post.postId,
+        post.content.substring(0, 300)
+      ));
     }
   }
 
@@ -164,31 +170,43 @@ export async function scrapeGuesses(options = {}) {
   console.log(`  Valid: ${csvValidRows.length}`);
   console.log(`  Invalid (marked with #): ${csvInvalidRows.length}`);
 
-  // Write CSV file
-  const header = 'username,timestamp,date,home_team,away_team,home_score,away_score,scorer,raw_text';
-
   // Combine all rows
   const allCsvRows = [...csvValidRows, ...csvInvalidRows];
+
+  // A file written before post_id existed gets the wider header, so the rows
+  // appended below are read under the right column names. Existing rows keep
+  // their nine fields and read back with an empty post_id, which is the truth
+  // about them — the id was never recorded.
+  function upgradeHeader(lines) {
+    const i = lines.findIndex(l => l.startsWith('username,'));
+    if (i === -1 || lines[i] === CSV_HEADER) return lines;
+    if (lines[i].split(',').includes('post_id')) return lines;
+    const out = lines.slice();
+    out[i] = CSV_HEADER;
+    console.log(`Added the ${CSV_COLUMNS[CSV_COLUMNS.length - 1]} column to ${output}; existing rows keep an empty one.`);
+    return out;
+  }
 
   if (allCsvRows.length === 0) {
     console.log(`\nNo new rows to write.`);
   } else if (effectiveAppend && existsSync(output)) {
     // Anything we just re-read may already be in the file. Drop those lines
-    // first so a rewind replaces them rather than writing them twice.
-    const keys = new Set(newPosts.map(p => postKey(p.username, p.timestamp)));
-    const existing = readFileSync(output, 'utf-8').split(/\r?\n/);
+    // first so a rewind replaces them rather than writing them twice. Match on
+    // every key a post answers to: rows written before the post_id column know
+    // the post only by username and timestamp.
+    const keys = new Set(newPosts.flatMap(p => postKeysOf(p.username, p.timestamp, p.postId)));
+    const existing = upgradeHeader(readFileSync(output, 'utf-8').split(/\r?\n/));
     const { lines: kept, removed } = removeRowsForPosts(existing, keys);
 
+    while (kept.length > 0 && kept[kept.length - 1].trim() === '') kept.pop();
+    writeFileSync(output, [...kept, ...allCsvRows].join('\n'));
     if (removed > 0) {
-      while (kept.length > 0 && kept[kept.length - 1].trim() === '') kept.pop();
-      writeFileSync(output, [...kept, ...allCsvRows].join('\n'));
       console.log(`\nReplaced ${removed} existing row(s) and wrote ${allCsvRows.length} to ${output}`);
     } else {
-      appendFileSync(output, '\n' + allCsvRows.join('\n'));
       console.log(`\nAppended ${allCsvRows.length} rows to ${output}`);
     }
   } else {
-    writeFileSync(output, header + '\n' + allCsvRows.join('\n'));
+    writeFileSync(output, CSV_HEADER + '\n' + allCsvRows.join('\n'));
     console.log(`\nWrote ${allCsvRows.length} rows to ${output}`);
   }
 

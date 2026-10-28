@@ -149,7 +149,7 @@ function parseGoalsFromPage($) {
     const playerText = $(cells[3]).text().trim().replace(/\s+/g, ' ');
 
     // Parse player: "29. LastName, FirstName (goals) ..."
-    const playerMatch = playerText.match(/(\d+)\.\s*([A-Za-zÅÄÖåäö'-]+),?\s*([A-Za-zÅÄÖåäö'-]*)/);
+    const playerMatch = playerText.match(/(\d+)\.\s*([\p{L}'-]+),?\s*([\p{L}'-]*)/u);
 
     if (playerMatch) {
       const lastName = playerMatch[2];

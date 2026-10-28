@@ -56,6 +56,16 @@ export function parseDate(dateStr, year = new Date().getFullYear()) {
 }
 
 /**
+ * A guess post starts with the game's date ("2026-10-10", "2026 - 10 - 10",
+ * "10/10"). Posts that don't are chat, standings or reservations.
+ * @param {string} postText
+ * @returns {boolean}
+ */
+export function startsWithDate(postText) {
+  return /^\d{1,4}\s*[-/.]\s*\d{1,2}/.test((postText || '').trim());
+}
+
+/**
  * Build a { home, away } score object from two numeric-string captures.
  * @param {string} homeStr
  * @param {string} awayStr

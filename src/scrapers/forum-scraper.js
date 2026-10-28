@@ -56,6 +56,132 @@ function parsePaginationInfo($) {
 }
 
 /**
+ * Parse the post timestamp out of a forum post's ".author" line.
+ *
+ * The board does not render dates one way. The guest date format varies from
+ * request to request — three shapes came back within minutes of each other on
+ * 2026-09-24 — so every one of them has to parse, and a new one has to be easy
+ * to add:
+ *  - ISO, 24h:          "av Bamsefar 2026-09-17, 16:32"
+ *  - day first, 24h:    "av Rönken tor 14 sep 2023, 16:34"
+ *  - month first, 12h:  "av Puckad mån jul 06, 2026 9:51 pm"
+ *  - relative:          "av icemask Igår på 11:03" / "av Puckad Idag på 4:20 pm"
+ *    Forumotion renders today's and yesterday's posts this way, and those are
+ *    exactly the posts nearest a game's deadline, so the LATE check depends on
+ *    resolving them.
+ *
+ * The am/pm marker is part of the match rather than an optional extra: "4:20 pm"
+ * read as 04:20 puts the post on the wrong side of both the deadline and any
+ * later repost by the same user, which is worse than not reading it at all.
+ *
+ * @param {string} authorText - Whitespace-collapsed text of the .author element
+ * @param {Date} [now] - Reference "today" for relative dates (injectable for tests)
+ * @returns {string|null} - Local ISO timestamp "YYYY-MM-DDTHH:MM:00", or null
+ */
+const MONTHS = {
+  jan: '01', feb: '02', mar: '03', apr: '04',
+  maj: '05', may: '05', jun: '06', jul: '07', aug: '08',
+  sep: '09', okt: '10', oct: '10', nov: '11', dec: '12'
+};
+
+// A month name in either language, however it is abbreviated: sep, sept, september.
+function monthNumber(word) {
+  return MONTHS[word.toLowerCase().slice(0, 3)] || null;
+}
+
+// "9:51" + "pm" -> "21:51". No marker means the clock was already 24-hour.
+function to24Hour(time, meridiem) {
+  const [h, m] = time.split(':');
+  let hour = parseInt(h, 10);
+  if (meridiem) {
+    const pm = meridiem.toLowerCase().startsWith('p');
+    if (pm && hour !== 12) hour += 12;
+    if (!pm && hour === 12) hour = 0;
+  }
+  return `${String(hour).padStart(2, '0')}:${m}`;
+}
+
+// Time tail shared by all three patterns: "16:34" | "9:51 pm" | "11:03 a.m."
+const TIME = /(\d{1,2}:\d{2})(?:\s*([ap])\.?\s*m\.?)?/;
+
+// The date halves, each glued to TIME below. Written as literals rather than
+// strings so the escapes read the way a regex does.
+const DATE_SEP = /(?:\s*[,-]\s*|\s+)/;
+
+// "2026-09-17, 16:32" | "2026-09-17 4:32 pm"
+const ISO_DATE = new RegExp(
+  /(\d{4})-(\d{2})-(\d{2})/.source + DATE_SEP.source + TIME.source, 'i');
+
+// "14 sep 2023, 16:34" | "6 jul 2026 - 21:51"
+const DAY_FIRST = new RegExp(
+  /(\d{1,2})\s+([a-zåäöé]+)\.?\s+(\d{4})/.source + DATE_SEP.source + TIME.source, 'i');
+
+// "sep 22, 2026 9:16 pm" | "jul 06 2026, 21:51"
+const MONTH_FIRST = new RegExp(
+  /([a-zåäöé]+)\.?\s+(\d{1,2}),?\s+(\d{4})/.source + DATE_SEP.source + TIME.source, 'i');
+
+// "Idag på 18:18" | "Igår kl. 11:03" | "Today at 4:20 pm" | "Yesterday, 11:03 am"
+const RELATIVE = new RegExp(
+  /\b(idag|ig[åa]r|today|yesterday)\b\s*(?:p[åa]|kl\.?|at|,|-)?\s*/.source + TIME.source, 'i');
+
+// One line per unreadable shape, not per post: a format change hits every post
+// on the page at once, and 50 identical warnings would bury the scrape output.
+const warnedAuthorShapes = new Set();
+
+function warnUnreadableAuthorDate(authorText) {
+  const shape = authorText.replace(/\d/g, '0');
+  if (warnedAuthorShapes.has(shape)) return;
+  warnedAuthorShapes.add(shape);
+  console.warn(`WARNING: cannot read the post date in "${authorText}" — those posts get no timestamp.`);
+  console.warn('  The forum has changed its date format; parseAuthorTimestamp needs the new shape.');
+}
+
+export function parseAuthorTimestamp(authorText, now = new Date()) {
+  if (!authorText) return null;
+
+  // ISO first: it is the one shape with nothing to disambiguate.
+  const iso = authorText.match(ISO_DATE);
+  if (iso) {
+    return `${iso[1]}-${iso[2]}-${iso[3]}T${to24Hour(iso[4], iso[5])}:00`;
+  }
+
+  // Then day-first: its leading digits cannot be mistaken for the weekday that
+  // precedes a month-first date, so it never matches one by accident, while the
+  // reverse is not true.
+  const dayFirst = authorText.match(DAY_FIRST);
+  if (dayFirst) {
+    const month = monthNumber(dayFirst[2]);
+    if (month) {
+      const day = dayFirst[1].padStart(2, '0');
+      return `${dayFirst[3]}-${month}-${day}T${to24Hour(dayFirst[4], dayFirst[5])}:00`;
+    }
+  }
+
+  const monthFirst = authorText.match(MONTH_FIRST);
+  if (monthFirst) {
+    // The weekday sits right before the month ("mån jul 06, 2026"), so a word
+    // that is not a month means we matched the wrong token, not a bad date.
+    const month = monthNumber(monthFirst[1]);
+    if (month) {
+      const day = monthFirst[2].padStart(2, '0');
+      return `${monthFirst[3]}-${month}-${day}T${to24Hour(monthFirst[4], monthFirst[5])}:00`;
+    }
+  }
+
+  const relative = authorText.match(RELATIVE);
+  if (relative) {
+    const word = relative[1].toLowerCase();
+    const daysBack = (word === 'idag' || word === 'today') ? 0 : 1;
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - daysBack);
+    const pad = (n) => String(n).padStart(2, '0');
+    const date = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    return `${date}T${to24Hour(relative[2], relative[3])}:00`;
+  }
+
+  return null;
+}
+
+/**
  * Parse a forum post from a DOM element
  * @param {cheerio.Element} postElement - Post DOM element
  * @param {cheerio.CheerioAPI} $ - Cheerio instance
@@ -90,30 +216,33 @@ function parsePost(postElement, $) {
     if (classMatch) postId = parseInt(classMatch[1], 10);
   }
 
-  // Extract post content from .content element
-  const content = $post.find('.content').text().trim();
+  // Extract post content from .content element. <br> becomes a newline so a
+  // guess and the chat after it stay on separate lines instead of gluing the
+  // chat onto the scorer ("LiljaVill poängtera...").
+  const $content = $post.find('.content').first().clone();
+  $content.find('br').replaceWith('\n');
+  const content = $content.text().trim();
 
-  // Extract timestamp from .author text
-  // Format: "av Username day month year, time" e.g., "av Rönken tor 14 sep 2023, 16:34"
-  let timestamp = null;
+  // A post quoting another post is a reply, never a guess — the quoted text
+  // may well hold someone else's guess.
+  const hasQuote = $content.find('blockquote').length > 0;
+
+  // Extract timestamp from .author text (see parseAuthorTimestamp for the
+  // shapes the board serves).
   const authorText = $post.find('.author').text().replace(/\s+/g, ' ').trim();
+  const timestamp = parseAuthorTimestamp(authorText);
 
-  // Parse Swedish date format: "14 sep 2023, 16:34" or "14 sep 2023 16:34"
-  const dateMatch = authorText.match(/(\d{1,2})\s+(\w+)\s+(\d{4})[,\s]+(\d{2}:\d{2})/i);
-  if (dateMatch) {
-    const monthMap = {
-      'jan': '01', 'feb': '02', 'mar': '03', 'apr': '04',
-      'maj': '05', 'may': '05', 'jun': '06', 'jul': '07', 'aug': '08',
-      'sep': '09', 'okt': '10', 'oct': '10', 'nov': '11', 'dec': '12'
-    };
-    const month = monthMap[dateMatch[2].toLowerCase().substring(0, 3)] || '01';
-    const day = dateMatch[1].padStart(2, '0');
-    timestamp = `${dateMatch[3]}-${month}-${day}T${dateMatch[4]}:00`;
+  // The board keeps changing its date format, and a missing timestamp is not a
+  // harmless gap: an empty one counts as "in time" and never beats an earlier
+  // guess by the same user. So say so rather than writing a blank column.
+  if (!timestamp && /\d{1,2}:\d{2}/.test(authorText)) {
+    warnUnreadableAuthorDate(authorText);
   }
 
   return {
     username,
     content,
+    hasQuote,
     timestamp,
     postId
   };

@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { isSponsoredUsername } from '../scrapers/forum-scraper.js';
+import { parseCommentHead } from './csv.js';
 
 // Handled comment lines keep their leading '#' so `import guesses` still
 // treats them as comments; the marker records the review decision in-file.
@@ -7,34 +8,33 @@ export const MARK_FIXED = '#[fixed]';
 export const MARK_DISMISSED = '#[dismissed]';
 
 /**
+ * Write the review-comment line for a post the parser could not read.
+ *
+ * The timestamp is carried so a manual fix keeps the posted-before-match check
+ * meaningful; the post id so the correction that comes out of the review is
+ * filed against the forum's own identifier rather than a name and a date the
+ * board may render differently tomorrow.
+ *
+ * Shape: "#Username @2026-09-24T19:02:00 p413325: content"
+ */
+export function commentLine(username, timestamp, postId, content) {
+  const ts = timestamp ? ` @${timestamp}` : '';
+  const id = postId == null ? '' : ` p${postId}`;
+  return `#${username}${ts}${id}: ${String(content).replace(/\s*\n\s*/g, ' ')}`;
+}
+
+/**
  * Parse an unhandled review-comment line.
  * Formats: "#Username: content"  (legacy)
- *          "#Username @2026-09-19T18:00:00: content"  (with post timestamp)
+ *          "#Username @2026-09-19T18:00:00: content"
+ *          "#Username @2026-09-19T18:00:00 p413325: content"
  * Returns null for non-comment lines and already-handled ([fixed]/[dismissed]) lines.
  */
 export function parseCommentLine(line) {
   if (!line || !line.startsWith('#')) return null;
   if (line.startsWith(MARK_FIXED) || line.startsWith(MARK_DISMISSED)) return null;
 
-  const sep = line.indexOf(': ');
-  if (sep === -1) return null;
-
-  let username = line.slice(1, sep);
-  let timestamp = null;
-
-  const at = username.lastIndexOf(' @');
-  if (at !== -1) {
-    const ts = username.slice(at + 2);
-    if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(ts)) {
-      timestamp = ts;
-      username = username.slice(0, at);
-    }
-  }
-
-  username = username.trim();
-  if (!username) return null;
-
-  return { username, timestamp, content: line.slice(sep + 2) };
+  return parseCommentHead(line);
 }
 
 /**

@@ -38,8 +38,29 @@ export async function initDatabase(path = 'lhftips.db') {
   const schemaPath = join(__dirname, 'schema.sql');
   const schema = readFileSync(schemaPath, 'utf-8');
   database.run(schema);
+  migrate(database);
   saveDatabase();
   return database;
+}
+
+/**
+ * Bring an existing database file up to the current schema.
+ *
+ * schema.sql only creates what is missing, so a column added to an existing
+ * table never reaches a database that already has that table. Each step here is
+ * additive and safe to run on every startup.
+ */
+function migrate(database) {
+  const columns = (table) => {
+    const res = database.exec(`PRAGMA table_info(${table})`);
+    if (!res.length) return [];
+    const nameIndex = res[0].columns.indexOf('name');
+    return res[0].values.map(row => row[nameIndex]);
+  };
+
+  if (columns('guesses').length > 0 && !columns('guesses').includes('post_id')) {
+    database.run('ALTER TABLE guesses ADD COLUMN post_id INTEGER');
+  }
 }
 
 export function saveDatabase() {

@@ -132,7 +132,7 @@ export async function reviewGuesses(options = {}) {
         const pending = loadPendingComment(file, index, res);
         if (!pending) return;
         const { lines, comment } = pending;
-        const rows = validation.lines.map(l => guessToCsvRow(l.guess, comment.username, comment.timestamp));
+        const rows = validation.lines.map(l => guessToCsvRow(l.guess, comment.username, comment.timestamp, comment.postId));
         writeLines(file, applyFix(lines, index, expect, rows));
 
         // Record it outside the CSV too, so a later `--fresh` re-scrape replays
@@ -141,6 +141,7 @@ export async function reviewGuesses(options = {}) {
         setCorrection(corrections, {
           username: comment.username,
           timestamp: comment.timestamp,
+          postId: comment.postId,
           kind: CORRECTION.FIXED,
           rows,
           originalText: comment.content,
@@ -281,6 +282,7 @@ export async function reviewGuesses(options = {}) {
         setCorrection(dismissals, {
           username: comment.username,
           timestamp: comment.timestamp,
+          postId: comment.postId,
           kind: CORRECTION.DISMISSED,
           originalText: comment.content,
         });

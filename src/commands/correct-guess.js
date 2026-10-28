@@ -33,6 +33,28 @@ function belongsToPost(line, username, timestamp) {
   return norm(f[0]) === norm(username) && norm(f[1]) === norm(timestamp);
 }
 
+/**
+ * The forum post id already recorded for that post, if the file knows it.
+ *
+ * This command addresses a post by name and date, which is all a person has to
+ * hand — but the row or review line being replaced may carry the id, and rows
+ * written without one fall back to timestamp ordering. So take it from the file.
+ */
+function postIdFor(lines, username, timestamp) {
+  const norm = (s) => String(s ?? '').trim().toLowerCase();
+  for (const line of lines) {
+    if (belongsToPost(line, username, timestamp)) {
+      const f = fieldsOf(line);
+      if (f && f[9]) return parseInt(f[9], 10);
+    }
+    const c = parseCommentLine(line);
+    if (c && c.postId != null && norm(c.username) === norm(username) && norm(c.timestamp) === norm(timestamp)) {
+      return c.postId;
+    }
+  }
+  return null;
+}
+
 /** The raw_text already recorded for that post, so staleness can be judged later. */
 function originalTextFor(lines, username, timestamp) {
   for (const line of lines) {
@@ -223,10 +245,11 @@ export async function correctGuess(action, username, timestamp, text, options = 
   }
   const lines = readLines(file);
   const originalText = originalTextFor(lines, username, timestamp);
+  const postId = postIdFor(lines, username, timestamp);
 
   if (action === 'dismiss') {
     setCorrection(store, {
-      username, timestamp, kind: CORRECTION.DISMISSED, originalText,
+      username, timestamp, postId, kind: CORRECTION.DISMISSED, originalText,
       note: options.note || '',
     });
     saveCorrections(store);
@@ -251,12 +274,12 @@ export async function correctGuess(action, username, timestamp, text, options = 
       console.error(`Does not parse as a guess: "${line}"`);
       process.exit(1);
     }
-    rows.push(guessToCsvRow(g, username, timestamp));
+    rows.push(guessToCsvRow(g, username, timestamp, postId));
     console.log(`  ${g.date}  ${g.homeTeam} ${g.homeScore}-${g.awayScore} ${g.awayTeam}${g.scorer ? '  (' + g.scorer + ')' : ''}`);
   }
 
   setCorrection(store, {
-    username, timestamp, kind: CORRECTION.FIXED, rows, originalText,
+    username, timestamp, postId, kind: CORRECTION.FIXED, rows, originalText,
     note: options.note || '',
   });
   saveCorrections(store);

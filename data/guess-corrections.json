@@ -1,6 +1,152 @@
 {
   "version": 1,
   "corrections": {
+    "p411875": {
+      "username": "Puckad",
+      "timestamp": "2026-07-06T21:51:00",
+      "postId": 411875,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Ny säsong och vi väcker en gammal tradition till liv!!!!  Egentligen inget nytt för rutinerade tippare, samma förfarande som tidigare år. Lämna tips enligt följande modell:ÅÅÅÅ-MM-DD, Lag 1 - Lag 2, resultat, målskytt (Exempelvis \"2026-07-14,  Björklöven  - Luleå, 1-3, Joel Lassinanti\")AI kommer att",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:01.619Z"
+    },
+    "p413220": {
+      "username": "Puckad",
+      "timestamp": "2026-09-20T13:57:00",
+      "postId": 413220,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Namn:Poäng:PPG:  Metheuz77.0  Bamsefar66.0  LulefanGBG22.0  storeken22.0  Redbear22.0  makkanmakkan22.0  Sigge7511.0  Puckad11.0  Hjalmar_Vuopio11.0  icemask00.0",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:26.315Z"
+    },
+    "p413293": {
+      "username": "LulefanGBG",
+      "timestamp": "2026-09-23T06:58:00",
+      "postId": 413293,
+      "kind": "fixed",
+      "rows": [
+        "LulefanGBG,2026-09-23T06:58:00,2026-09-24,Luleå HF,Frölunda HC,4,2,Brian O'Neill,\"2026-09-24, Luleå - Frölunda, 4-2, Brian O'Neill\",413293"
+      ],
+      "originalText": "",
+      "note": "spaced date 2026 -09 24 the parser cannot read",
+      "decidedAt": "2026-09-24T18:09:29.815Z"
+    },
+    "p413325": {
+      "username": "Puckad",
+      "timestamp": "2026-09-24T19:02:00",
+      "postId": 413325,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "reserverat",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:14.458Z"
+    },
+    "p413488": {
+      "username": "Puckad",
+      "timestamp": "2026-09-24T22:27:00",
+      "postId": 413488,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Ställning i tipstävlingen efter omgång 2 (2026-09-24)PlNamnPoängOmgFullPPGMålskResult1Metheuz8214.0112Bamsefar7203.5113storeken3201.5004NallePhu2102.0105Sigge752201.0006LulefanGBG2201.0007Puckad2201.0008Redbear2201.0009makkanmakkan2201.00010Hjalmar_Vuopio2201.01011icemask0100.000Fullpoängare (7 poän",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:36.486Z"
+    },
+    "p413510": {
+      "username": "LulefanGBG",
+      "timestamp": "2026-09-26T12:10:00",
+      "postId": 413510,
+      "kind": "fixed",
+      "rows": [
+        "LulefanGBG,2026-09-26T12:10:00,2026-09-26,Brynäs IF,Luleå HF,4,5,Brian O'Neill,\"2026-09-26, Brynäs - Luleå, 4-5, Brian O'Neill\",413510"
+      ],
+      "originalText": "",
+      "note": "spaced date 2026 -09 - 26 the parser cannot read",
+      "decidedAt": "2026-09-26T18:03:55.615Z"
+    },
+    "p413518": {
+      "username": "HarryHaffa",
+      "timestamp": "2026-09-26T15:07:00",
+      "postId": 413518,
+      "kind": "fixed",
+      "rows": [
+        "HarryHaffa,2026-09-26T15:07:00,2026-09-26,Brynäs IF,Luleå HF,3,4,Joona Koppanen,\"2026-09-26, Brynäs-Luleå, 3-4, Joona Koppanen\",413518"
+      ],
+      "originalText": "2026-09-27, Brynäs-Luleå, 3-4, Joona Koppanen",
+      "note": "date typo 2026-09-27 -> 2026-09-26 (posted on game day)",
+      "decidedAt": "2026-09-26T18:03:56.080Z"
+    },
+    "p413566": {
+      "username": "Puckad",
+      "timestamp": "2026-09-26T15:45:00",
+      "postId": 413566,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "reserverat",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:16.977Z"
+    },
+    "p413742": {
+      "username": "Puckad",
+      "timestamp": "2026-09-26T20:22:00",
+      "postId": 413742,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Ställning i tipstävlingen efter omgång 3 (2026-09-26)PlNamnPoängOmgFullPPGMålskResult1Metheuz10313.33112Sigge758302.67013Bamsefar7302.33114storeken5301.67005LulefanGBG3301.0006makkanmakkan3301.0007NallePhu2102.0108Hjalmar_Vuopio2201.0109Puckad2300.670010Redbear2300.670011icemask0100.00012HarryHaffa0",
+      "note": "",
+      "decidedAt": "2026-10-12T09:23:52.745Z"
+    },
+    "p413973": {
+      "username": "Puckad",
+      "timestamp": "2026-09-29T22:49:00",
+      "postId": 413973,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Ställning i tipstävlingen efter omgång 4 (2026-09-29)PlNamnPoängOmgFullPPGMålskResult1Metheuz13413.25312Sigge7510402.5113Bamsefar8402.0214storeken8402.0205LulefanGBG5401.25006NallePhu4202.0107makkanmakkan3400.75008Hjalmar_Vuopio2201.0109Puckad2400.50010Redbear2400.50011HarryHaffa1200.50012icemask010",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:34.733Z"
+    },
+    "p414119": {
+      "username": "Puckad",
+      "timestamp": "2026-10-01T20:56:00",
+      "postId": 414119,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "reserverat",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:38.403Z"
+    },
+    "p414333": {
+      "username": "Puckad",
+      "timestamp": "2026-10-03T19:40:00",
+      "postId": 414333,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Reserverad",
+      "note": "",
+      "decidedAt": "2026-10-12T09:24:19.533Z"
+    },
+    "p414591": {
+      "username": "Puckad",
+      "timestamp": "2026-10-09T00:31:00",
+      "postId": 414591,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Ställning i tipstävlingen efter omgång 48 (2026-10-08)PlNamnPoängOmgFullPPGMålskResult1Sigge7518702.57222Metheuz18712.57513storeken13701.86304Bamsefar11701.57215LulefanGBG8701.14106NallePhu7501.4107Puckad6601.0208makkanmakkan5700.71009HarryHaffa4401.01010Hjalmar_Vuopio4500.82011Redbear4700.570012ice",
+      "note": "",
+      "decidedAt": "2026-10-12T09:23:56.506Z"
+    },
+    "p414659": {
+      "username": "Puckad",
+      "timestamp": "2026-10-10T09:58:00",
+      "postId": 414659,
+      "kind": "dismissed",
+      "rows": [],
+      "originalText": "Metheuz skrev:2026-10-10, Luleå-Timrå, 4-1, LiljaVill poängtera att rättningen mellan omgång 5 och 6 ser lite konstig ut för att Sigge lade in två tips (såg det nu). Har skrivit meddelande till dig Puckad men du har kanske inte sett det.jag kollar.Edit: Har kollat och reglerna säger att man kan giss",
+      "note": "",
+      "decidedAt": "2026-10-12T09:23:45.606Z"
+    },
     "pm|2023-09-28t18:00:00": {
       "username": "PM",
       "timestamp": "2023-09-28T18:00:00",
@@ -11,7 +157,7 @@
       ],
       "originalText": "2023-09-08, Luleå-HV71, 3-2, Omark",
       "note": "date 2023-09-08 -> 2023-09-28",
-      "decidedAt": "2026-09-13T21:47:07.611Z"
+      "decidedAt": "2026-10-28T20:14:53.866Z"
     },
     "redbear|2023-09-28t17:12:00": {
       "username": "Redbear",
@@ -23,7 +169,7 @@
       ],
       "originalText": "2023-09-08, Luleå-HV71, 5-1, Tyrväinen",
       "note": "date 2023-09-08 -> 2023-09-28",
-      "decidedAt": "2026-09-13T21:47:07.610Z"
+      "decidedAt": "2026-10-28T20:14:53.865Z"
     }
   }
 }

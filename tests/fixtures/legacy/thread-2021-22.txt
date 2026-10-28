@@ -1,0 +1,242 @@
+PostID,UserID,GameDate,Game,Guess,Scorer,ScorerPoint
+=== =====================================
+-294091,PM,2022-03-17,Luleå-Frölunda,3-2,Omark
+=== 294098,Puckad <<< Not a Guess. >>>:reserverat
+=== =====================================
+=== =====================================
+-294482,Urken,2022-03-22,Luleå-Skellefteå,5-2,Omark
+-294484,Rikky,2022-03-22,Luleå-Skellefteå,4-3,Omark
+294489,Hjalmar_Vuopio,2022-03-22,Luleå-Skellefteå,4-2,Berglund
+-294494,Puckad,2022-03-22,Luleå-Skellefteå,4-1,Tyrväinen.
+-294497,Bamsefar,2022-03-22,Luleå-Skellefteå,4-2,Omark
+-294505,Metheuz,2022-03-22,Luleå-Skellefteå,1-3,Linus Karlsson
+294509,Donten_,2022-03-22,Luleå-Skellefteå,3-2,Pontus Andreasson
+294520,Vilgot,2022-03-22,Luleå-Skellefteå,2-5,Sundsvik
+294521,Lasse Proppmätt,2022-03-22,Luleå-Skellefteå,4-2,Gustafsson
+294532,Pastorn,2022-03-22,Luleå-Skellefteå,1-4,Melker Karlsson
+294545,wilmus2007,2022-03-22,Luleå-Skellefteå,4-0,Pontus Andreasson
+294546,Sunderbyare,2022-03-22,Luleå-Skellefteå,4-2,Isac Brännström
+-294548,Redbear,2022-03-22,Luleå-Skellefteå,4-2,Tyrre
+294551,KaptenBlodskelett,2022-03-22,Luleå-Skellefteå,4-3,Erik
+-294552,HarryHaffa,2022-03-22,Luleå-Skellefteå,4-2,Linus Omark
+-294553,Norlin,2022-03-22,Luleå-Skellefteå,3-1,Tyrväinen
+294554,PM,2022-03-22,Luleå-Skellefteå,4-2,Andreasson
+-294556,JayDee,2022-03-22,Luleå-Skellefteå,4-2,Jack Connolly
+=== 294561,Puckad <<< Not a Guess. >>>:reserverat
+294906,Lasse Proppmätt,2022-03-24,Luleå-Malmö,4-1,Rask
+-294908,Rikky,2022-03-24,Luleå-Malmö,5-3,Omark
+-294910,Hjalmar_Vuopio,2022-03-24,Luleå-Malmö,6-0,Omark
+294911,Bamsefar,2022-03-24,Luleå-Malmö,4-1,Pontus Andreasson
+294913,Metheuz,2022-03-24,Luleå-Malmö,3-2,Andreasson
+294916,Puckad,2022-03-24,Luleå-Malmö,5-3,Tyrväinen
+294922,Vilgot,2022-03-24,Luleå-Malmö,3-1,Conolly
+294923,wilmus2007,2022-03-24,Luleå-Malmö,5-1,Pontus Andreasson
+-294930,Donten_,2022-03-24,Luleå-Malmö,4-2,Linus Omark
+294931,Urken,2022-03-24,Luleå-Malmö,6-1,Tyrväinen
+-294936,JayDee,2022-03-24,Luleå-Malmö,5-2,Linus Omark
+-294937,HarryHaffa,2022-03-24,Luleå-Malmö,4-3,Linus Omark
+-294938,Sunderbyare,2022-03-24,Luleå-Malmö,5-0,Linus Omark
+294943,Norlin,2022-03-24,Luleå-Malmö,4-1,Andreasson
+294944,PM,2022-03-24,Luleå-Malmö,4-1,Pontus Andreasson
+294945,Redbear,2022-03-24,Luleå-Malmö,4-2,Shinnimin
+-294947,KaptenBlodskelett,2022-03-24,Luleå-Malmö,4-2,Omark
+294948,Pastorn,2022-03-24,Luleå-Malmö,3-5,Carl Söderberg
+=== 294965,Puckad <<< Not a Guess. >>>:Reserverat!
+=== =====================================
+=== =====================================
+=== 295609,Puckad <<< Not a Guess. >>>:Ja, vad fasen vi kör!Tävligen pågår till vi har  LeMat pokalen eller är utslagna!
+-295610,Puckad,2022-03-31,Luleå-Örebro,3-0,Andreasson
+295611,Donten_,2022-03-31,Luleå-Örebro,3-2,Juhani Tyrväinen
+295614,wilmus2007,2022-03-31,Luleå-Örebro,3-2,Brendan Shinnimin
+295615,Redbear,2022-03-31,Luleå-Örebro,3-2,Tyrväinen
+-295622,Bamsefar,2022-03-31,Luleå-Örebro,4-3,Andreasson
+295623,Vilgot,2022-03-31,Luleå-Örebro,3-1,Tyrväinen
+295624,Urken,2022-03-31,Luleå-Örebro,5-2,Tyrväinen
+295626,KaptenBlodskelett,2022-03-31,Luleå-Örebro,4-2,Connolly
+-295629,HarryHaffa,2022-03-31,Luleå-Örebro,4-2,Linus Omark
+-295630,JayDee,2022-03-31,Luleå-Örebro,5-2,Andreasson
+296069,Puckad,2022-04-02,Örebro-Luleå,1-4,Omark
+=== 296071,Metheuz <<< Not a Guess. >>>:Avstår tävlan i slutspelet, känns för jinxigt att spekulera där i vinster/förluster.
+=== =====================================
+=== =====================================
+296072,Puckad,2022-04-02,Örebro-Luleå,1-4,Omark
+296073,Vilgot,2022-04-02,Örebro-Luleå,6-3,Abols
+296076,Bamsefar,2022-04-02,Örebro-Luleå,2-3,Nikupeteri
+296080,Urken,2022-04-02,Örebro-Luleå,2-5,Omark
+-296081,Donten_,2022-04-02,Örebro-Luleå,2-3,Pontus Andreasson
+296084,Norlin,2022-04-02,Örebro-Luleå,8-0,Abols
+-296094,wilmus2007,2022-04-02,Örebro-Luleå,2-3,Pontus Andreasson
+-296096,Redbear,2022-04-02,Örebro-Luleå,2-3,Andreasson
+296100,KaptenBlodskelett,2022-04-02,Örebro-Luleå,2-3,Tyrre
+296101,JayDee,2022-04-02,Örebro-Luleå,3-2,Robin Kovacs
+296558,Redbear,2022-04-04,Luleå-Örebro,4-1,Shinnimin
+296562,Puckad,2022-04-04,Luleå-Örebro,5-0,Shinnimin
+296563,HarryHaffa,2022-04-04,Luleå-Örebro,3-2,Linus Omark
+296564,wilmus2007,2022-04-04,Luleå-Örebro,3-2,Brendan Shinnimin
+296565,Urken,2022-04-04,Luleå-Örebro,5-2,Lepistö
+296569,KaptenBlodskelett,2022-04-04,Luleå-Örebro,4-2,Erik G
+296581,JayDee,2022-04-04,Luleå-Örebro,3-2,Linus Omark
+296588,Bamsefar,2022-04-04,Luleå-Örebro,3-2,Omark
+296590,Donten_,2022-04-04,Luleå-Örebro,3-2,Pontus Andreasson
+=== 296653,Puckad <<< Not a Guess. >>>:reserverat
+=== =====================================
+=== =====================================
+297067,Urken,2022-04-06,Örebro-Luleå,2-4,Einar
+297069,HarryHaffa,2022-04-06,Örebro-Luleå,2-3,Linus Omark
+297071,Vilgot,2022-04-06,Örebro-Luleå,3-4,Abols
+297073,wilmus2007,2022-04-06,Örebro-Luleå,2-3,Einar Emanuelsson
+297074,Bamsefar,2022-04-06,Örebro-Luleå,1-4,Einar Emanuelsson
+=== =====================================
+297081,Redbear,2022-04-06,Örebro-Luleå,2-4,Omark
+297087,JayDee,2022-04-06,Örebro-Luleå,2-5,Jack Connolly
+297089,KaptenBlodskelett,2022-04-06,Örebro-Luleå,2-3,Lepistö
+-297091,Donten_,2022-04-06,Örebro-Luleå,2-4,Pontus Andreasson
+=== 297094,Puckad <<< Not a Guess. >>>:Reserverat
+297596,HarryHaffa,2022-04-08,Luleå-Örebro,4-2,Linus Omark
+297599,Urken,2022-04-08,Luleå-Örebro,5-2,Själin
+-297601,Redbear,2022-04-08,Luleå-Örebro,3-1,Andreasson
+297604,Vilgot,2022-04-08,Luleå-Örebro,5-2,Mattson
+297610,JayDee,2022-04-08,Luleå-Örebro,3-1,Einar Emanuelsson
+-297613,wilmus2007,2022-04-08,Luleå-Örebro,5-1,Pontus Andreasson
+-297621,Donten_,2022-04-08,Luleå-Örebro,4-1,Pontus Andreasson
+297622,KaptenBlodskelett,2022-04-08,Luleå-Örebro,4-2,Erik G
+=== =====================================
+=== =====================================
+-297629,Puckad,2022-04-08,Luleå-Örebro,4-0,Andreasson
+=== =====================================
+=== =====================================
+=== 297650,Puckad <<< Not a Guess. >>>:RESERVERAT
+298611,Bamsefar,2022-04-15,Luleå-Frölunda,3-1,Omark
+298613,HarryHaffa,2022-04-15,Luleå-Frölunda,3-2,Linus Omark
+298615,Redbear,2022-04-15,Luleå-Frölunda,4-3,Tyrväinen
+-298632,JayDee,2022-04-15,Luleå-Frölunda,2-4,Elmer Söderblom
+-298640,Urken,2022-04-15,Luleå-Frölunda,2-4,Hitte-Joel
+298641,wilmus2007,2022-04-15,Luleå-Frölunda,3-2,Pontus Andreasson
+=== 298642,Marlene <<< Not a Guess. >>>:Det blir 10-0 till Frölunda
+298645,Donten_,2022-04-15,Luleå-Frölunda,4-2,Pontus Andreasson
+298648,KaptenBlodskelett,2022-04-15,Luleå-Frölunda,4-2,Tyrre
+=== 298661,Puckad <<< Not a Guess. >>>:Helvete ... glömde Reserverat
+299137,HarryHaffa,2022-04-17,Frölunda-Luleå,2-3,Linus Omark
+299145,Puckad,2022-04-17,Frölunda-Luleå,2-4,Einar
+299156,Donten_,2022-04-17,Frölunda-Luleå,4-1,Joel Lundkvist
+299164,Bamsefar,2022-04-17,Frölunda-Luleå,2-3,Einar
+-299166,KaptenBlodskelett,2022-04-17,Frölunda-Luleå,2-4,Tyrre
+299175,JayDee,2022-04-17,Frölunda-Luleå,4-2,Linus Omark
+299178,Urken,2022-04-17,Frölunda-Luleå,2-5,Omark
+299194,wilmus2007,2022-04-17,Frölunda-Luleå,2-3,Einar Emanuelsson
+299200,Redbear,2022-04-17,Frölunda-Luleå,2-3,Lepistö
+=== 299548,Puckad <<< Not a Guess. >>>:Reservat. Och åter från påsk semester.
+=== =====================================
+=== =====================================
+299667,Puckad,2022-04-19,Luleå-Frölunda,4-2,Honka
+-299669,Urken,2022-04-19,Luleå-Frölunda,4-2,Omark
+299689,Donten_,2022-04-19,Luleå-Frölunda,2-4,Joel Lundkvist
+299691,Bamsefar,2022-04-19,Luleå-Frölunda,4-2,Lepistö
+299697,KaptenBlodskelett,2022-04-19,Luleå-Frölunda,4-2,Einar
+299702,Hurlun,2022-04-19,Luleå-Frölunda,2-1,Connolly
+-299718,Redbear,2022-04-19,Luleå-Frölunda,4-3,Omark
+299719,wilmus2007,2022-04-19,Luleå-Frölunda,3-1,Einar Emanuelsson
+-299726,HarryHaffa,2022-04-19,Luleå-Frölunda,3-2,Linus Omark
+299727,JayDee,2022-04-19,Luleå-Frölunda,2-3,Max Friberg
+=== 299736,Puckad <<< Not a Guess. >>>:Reserverat
+300130,Blitzwagen,2022-04-21,Frölunda-Luleå,2-3,Pontus Andreasson
+300131,Urken,2022-04-21,Frölunda-Luleå,4-2,Borgman
+300132,Bamsefar,2022-04-21,Frölunda-Luleå,1-3,Andreasson
+300134,Puckad,2022-04-21,Frölunda-Luleå,0-3,Pontus Andreasson
+=== =====================================
+300137,wilmus2007,2022-04-21,Frölunda-Luleå,2-3,Pontus Andreasson
+300165,HarryHaffa,2022-04-21,Frölunda-luleå,2-3,Linus Omark
+300168,Donten_,2022-04-21,Frölunda-Luleå,4-2,Joel Lundkvist
+300175,Redbear,2022-04-21,Frölunda-Luleå,3-4,Andreasson
+300178,JayDee,2022-04-21,Frölunda-Luleå,3-2,Pontus Andreasson
+-300179,KaptenBlodskelett,2022-04-21,Frölunda-Luleå,2-4,Tyrre
+300541,Donten_,2022-04-23,Luleå-Frölunda,2-4,Joel Lundkvist
+-300544,HarryHaffa,2022-04-23,Luleå-Frölunda,3-2,Linus Omark
+-300548,JayDee,2022-04-23,Luleå-Frölunda,6-2,Pontus Andreasson
+-300552,Puckad,2022-04-23,Luleå-Frölunda,5-1,Pontus Andreasson
+-300563,Bamsefar,2022-04-23,Luleå-Frölunda,4-1,Omark
+300566,Urken,2022-04-23,Luleå-Frölunda,6-3,Tyrre
+-300568,Redbear,2022-04-23,Luleå-Frölunda,2-1,Omark
+-300580,wilmus2007,2022-04-13,Luleå-Frölunda,4-2,Linus Omark
+=== =====================================
+=== =====================================
+=== 300914,Puckad <<< Not a Guess. >>>:Bamsefar        24    2.667              Puckad        22    2.750   KaptenBlodskelett        21    2.333               Urken        20    2.000             Redbear        18    1.800          HarryHaffa        16    1.778          wilmus2007        16    1.600              JayDee        14    1.400             Donten_        10    1.000              Vilgot         6    1.500          Blitzwagen         1    1.000              Hurlun         1    1.000              Norlin         1    1.000
+-301230,Puckad,2022-04-30,Luleå-Färjestad,5-2,Tyrväinen
+301231,wilmus2007,2022-04-30,Luleå-Färjestad,3-2,Brendan Shinnimin
+301238,Blitzwagen,2022-04-30,Luleå-Färjestad,5-2,Linus Omark
+-301245,Urken,2022-04-30,Luleå-Färjestad,4-2,Tyrväinen
+301247,Bamsefar,2022-04-30,Luleå-Färjestad,3-2,Pontus Andreasson
+-301248,HarryHaffa,2022-04-30,Luleå-Färjestad,3-2,Juhanni Tyrvänien
+301249,JayDee,2022-04-30,Luleå-Färjestad,2-5,Joakim Nygård
+301250,Redbear,2022-04-30,Luleå-Färjestad,3-2,Shinnimin
+301258,Donten_,2022-04-30,Luleå-Färjestad,2-4,Gustav Rydahl
+-301262,KaptenBlodskelett,2022-04-30,Luleå-Färjestad,4-2,Tyrre
+301629,Blitzwagen,2022-05-02,Färjestad-Luleå,2-4,Sami Lepistö
+301632,KaptenBlodskelett,2022-05-02,Färjestad-Luleå,2-4,Shinnimin
+-301633,JayDee,2022-05-02,Färjestad-Luleå,4-3,Joakim Nygård
+301634,Bamsefar,2022-05-02,Färjestad-Luleå,2-4,Einar" Färjestaddräparn"
+301640,Urken,2022-05-02,Färjestad-Luleå,4-1,Rydahl
+301650,Puckad,2022-05-02,Färjestad-Luleå,0-2,Connolly
+301651,Donten_,2022-05-02,Färjestad-Luleå,4-2,Rydahl
+301652,wilmus2007,2022-05-02,Färjestad-Luleå,2-3,Pontus Andreasson
+301656,Redbear,2022-05-02,Färjestad-Luleå,2-5,Lepistö
+301657,HarryHaffa,2022-04-02,färjestad-luleå,2-3,Linus Omark
+-301967,Urken,2022-05-03,Luleå-Färjestad,4-2,Komarek
+-301968,KaptenBlodskelett,2022-05-03,Luleå-Färjestad,4-2,Tyrre
+-302007,HarryHaffa,2022-05-03,Luleå-Färjestad,3-2,juhani tyrväinen
+302008,Bamsefar,2022-05-03,Luleå-Färjestad,5-2,Omark
+-302009,Redbear,2022-05-03,Luleå-Färjestad,4-2,Komarek
+302014,Donten_,2022-05-03,Luleå-Färjestad,3-2,Gustav Rydahl
+302015,JayDee,2022-05-03,Luleå-Färjestad,3-2,Linus Omark
+-302021,wilmus2007,2022-05-03,Luleå-Färjestad,3-2,Einar Emanuelsson
+-302036,Puckad,2022-05-03,Luleå-Färjestad,3-1,Komarek
+=== 302040,Puckad <<< Not a Guess. >>>:reserverat
+302605,wilmus2007,2022-05-05,Färjestad-Luleå,2-4,Linus Omark
+302608,Donten_,2022-05-05,Färjestad-Luleå,5-2,lennström
+302612,Bamsefar,2022-05-05,Färjestad-Luleå,2-3,komarek
+=== =====================================
+=== =====================================
+-302620,Urken,2022-05-05,Färjestad-Luleå,5-2,Åslund
+302623,Blitzwagen,2022-05-05,Färjestad-Luleå,2-3,Linus Omark
+=== =====================================
+302626,KaptenBlodskelett,2022-05-05,Färjestad-Luleå,2-4,Tyrre
+302628,JayDee,2022-05-05,Färjestad-Luleå,2-5,Linus Omark
+302633,HarryHaffa,2022-05-05,färjestad-luleå,2-3,juhani tyrväinen
+302634,Puckad,2022-05-05,Färjestad-Luleå,1-2,Einar E
+=== 302640,Puckad <<< Not a Guess. >>>:Bamsefar        29    2.417              Puckad        28    2.545   KaptenBlodskelett        28    2.333               Urken        25    1.923             Redbear        22    1.692          HarryHaffa        20    1.667          wilmus2007        20    1.538              JayDee        16    1.231             Donten_        10    0.833              Vilgot         6    1.500          Blitzwagen         4    1.333              Hurlun         1    1.000              Norlin         1    1.000
+302645,Redbear,2022-05-05,Färjestad-Luleå,2-3,Emanuelsson
+=== 302794,Puckad <<< Not a Guess. >>>:Reserverat
+303173,Blitzwagen,2022-05-07,Luleå-Färjestad,4-2,Pontus Andreasson
+303174,Urken,2022-05-07,Luleå-Färjestad,2-5,Rydahl
+303177,Puckad,2022-05-07,Luleå-Färjestad,4-1,Andreasson
+303182,Redbear,2022-05-07,Luleå-Färjestad,3-1,Omark
+303184,JayDee,2022-05-07,Luleå-Färjestad,2-4,Rydahl
+303192,Donten_,2022-05-07,Luleå-Färjestad,3-4,Lennström
+303193,Bamsefar,2022-05-07,Luleå-Färjestad,3-2,Lepistö
+303195,wilmus2007,2022-05-07,Luleå-Färjestad,4-2,Linus Omark
+=== 303246,Puckad <<< Not a Guess. >>>:reserverat
+=== 303397,Puckad <<< Not a Guess. >>>:Donten_ skrev:2022-05-02, Färjestad - Luleå, 3-2, Gustav Rydahl @Donten_  ,Jag tar mig friheten att ändra tipset till den 3.e och till en hemmamatch för luleå.
+303399,Urken,2022-05-09,Färjestad-Luleå,5-2,Åslund
+=== =====================================
+=== =====================================
+303412,Puckad,2022-05-09,Färjestad-Luleå,2-5,Omark tippar tidigt eftersom jag leder.
+=== 303414,Urken <<< Not a Guess. >>>:Puckad skrev:2022-05-09, Färjestad - Luleå, 2-5, Omark tippar tidigt eftersom jag leder.Inte länge till
+303497,wilmus2007,2022-05-09,Färjestad-Luleå,1-5,Pontus Andreasson
+303498,JayDee,2022-05-09,Färjestad-Luleå,2-5,Erik Gustafsson
+303530,Redbear,2022-05-09,Färjestad-Luleå,2-4,Komarek
+-303535,Bamsefar,2022-05-09,Färjestad-Luleå,2-4,Einar Emanuelsson
+-303536,KaptenBlodskelett,2022-05-09,Färjestad-Luleå,2-5,Einar Emanuelsson
+303537,Donten_,2022-05-09,Färjestad-Luleå,4-3,Gustav Rydahl
+303540,HarryHaffa,2022-95-09,färjestad-luleå,2-3,Linus Omark
+=== ====================================
+303990,Blitzwagen,2022-05-12,Luleå-Färjestad,3-1,Komarek
+303992,Urken,2022-05-12,LuleåHockey-Ulfvarne,7-3,Omark
+303999,KaptenBlodskelett,2022-05-12,LuleåHockey-Färjestad,5-3,Omark
+304002,Puckad,2022-05-12,LuleåHockey-Färjestad,3-1,Einar
+304006,Bamsefar,2022-05-12,LuleåHockey-Färjestad,3-2,Einar Emanuelsson
+304024,Redbear,2022-05-12,Luleå-Färjestad,3-2,Einar Emanuelsson
+304031,HarryHaffa,2022-05-12,Luleå-Färjestad,3-2,Linus  Omark
+304037,JayDee,2022-05-12,Luleå-Färjestad,4-2,Linus Omark
+=== 304051,Puckad <<< Not a Guess. >>>:Reserverat
+=== =====================================
+=== =====================================

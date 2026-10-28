@@ -1,0 +1,1047 @@
+PostID,UserID,GameDate,Game,Guess,Scorer,ScorerPoint
+=== =====================================
+PostID,UserID,GameDate,Game,Guess,Scorer,ScorerPoint
+341425,Rönken,2023-09-14,Oskarshamn-Luleå,1-3,Linus Omark
+341426,Bamsefar,2023-09-14,Oskarshamn-Luleå,2-4,Shinnimin
+341428,Pastorn,2023-09-14,Oskarshamn-Luleå,4-1,Oksanen
+341430,Redbear,2023-09-14,Oskarshamn-Luleå,2-4,Tyrväinen
+341431,Metheuz,2023-09-14,Oskarshamn-Luleå,2-3,Oscar Engsund
+341432,NallePhu,2023-09-14,Oskarshamn-Luleå,2-5,Shinnimin
+341434,Norlin,2023-09-14,Oskarshamn-Luleå,2-3,Shinnimin
+341435,wilmus2007,2023-09-14,Oskarshamn-Luleå,2-3,Pontus Andreasson Och tack @rönken!Må vara premiär idag men tipstävlingen smäller f-n högre…
+341437,PM,2023-09-14,Oskarshamn-Luleå,2-3,Shinnimin
+341439,SatanicPanic,2023-09-14,Oskarshamn-Luleå,2-5,Engsund
+341443,KaptenBlodskelett,2023-09-14,Oskarshamn-Luleå,3-5,Engsund
+=== 341489,Rönken <<< Not a Guess. >>>:Resultat efter omgång 1:  AnvändarePoängPPGPastorn11.0wilmus200711.0KaptenBlodskelett11.0Rönken00.0Bamsefar00.0Redbear00.0Metheuz00.0NallePhu00.0Norlin00.0PM00.0SatanicPanic00.0
+=== 341519,Urken <<< Not a Guess. >>>:Fasen.. sen trådöppning, här hann man ju inte lägga ett tips. Rönk är Rönk!2023-09-16, Luleå - Timrå, 4-3, Andreasson
+341763,Rönken,2023-09-16,Luleå-Timrå,3-0,Linus Omark
+341764,Metheuz,2023-09-16,Luleå-Timrå,4-2,Shinnimin
+341767,SatanicPanic,2023-09-16,Luleå-Timrå,3-1,Pasic
+341783,NallePhu,2023-09-16,Luleå-Timrå,4-1,Ponta
+341789,pingu,2023-09-16,Luleå-Timrå,2-1,Omark
+341791,Pastorn,2023-09-16,Luleå-Timrå,3-5,Shinnimin
+341795,Sigge75,2023-09-16,Luleå-Timrå,4-0,Shinnimin
+341797,DaVoc,2023-09-16,Luleå-Timrå,3-2,Shinnimin
+341802,Sunderbyare,2023-09-16,Luleå-Timrå,3-5,Pontus Andreasson
+341804,wilmus2007,2023-09-16,Luleå-Timrå,3-2,Linus Omark
+341807,LulefanGBG,2023-09-16,Luleå-Timrå,3-4,Hanzl
+341808,Puckad,2023-09-16,Luleå-Timrå,4-2,Kempe
+341812,Redbear,2023-09-16,Luleå-Timrå,3-2,Shinnimin
+341820,PM,2023-09-16,Luleå-Timrå,2-3,Hanzl
+=== 341825,Rönken <<< Not a Guess. >>>:Resultat efter omgång 2:Namn:Poäng:PPG:Sigge7577.0wilmus200731.5Rönken31.5Metheuz31.5Pastorn21.0Redbear21.0NallePhu21.0pingu22.0DaVoc22.0Puckad22.0KaptenBlodskelett11.0SatanicPanic10.5Bamsefar00.0Norlin00.0PM00.0Sunderbyare00.0LulefanGBG00.0
+342002,Norlin,2023-09-21,Luleå-Örebro,4-1,Shinnimin
+342005,Vilgot,2023-09-21,Luleå-Örebro,1-1,Eklind
+=== 342006,LulefanGBG <<< Not a Guess. >>>:Tippade förlust sist och vi vann så vågArbinte annat än att tippa förkust igen: 2023-09-21, Luleå - Örebro: 3 - 4, Kempe
+342007,Puckad,2023-09-21,Luleå-Örebro,3-1,Andreasson
+342010,Bamsefar,2023-09-21,Luleå-Örebro,4-2,Kempe
+342011,SatanicPanic,2023-09-21,Luleå-Örebro,5-0,Einart
+=== 342016,Urken <<< Not a Guess. >>>:Jag ger inte mer för @Rönkens rättning än godtyckligt byggföretag som exponerats i Fuskbyggarna! Var är mina poäng?!  2023-09-21, Luleå - Örebro, 5-2, Omark
+342017,DaVoc,2023-09-21,Luleå-Örebro,3-2,Pasic
+342023,Sunderbyare,2023-09-21,Luleå-Örebro,3-2,Laaksonen
+342024,Sigge75,2023-09-21,Luleå-Örebro,5-2,Kempe
+342029,Lasse Proppmätt,2023-09-21,Luleå-Örebro,4-1,Tyrre
+342032,pingu,2023-09-21,Luleå-Örebro,5-4,Omark
+342057,NallePhu,2023-09-21,Luleå-Örebro,5-1,Omark
+342066,HarryHaffa,2023-09-21,Luleå-Örebro,3-2,Linus Omark
+342067,Rönken,2023-09-21,Luleå-Örebro,3-2,Linus Omark
+342068,Metheuz,2023-09-21,Luleå-Örebro,3-1,Pasic
+342069,Lajon,2023-09-21,Luleå-Örebro,2-1,Tyrväinen
+342073,Pastorn,2023-09-21,Luleå-Örebro,2-1,Shinnimin
+342084,wilmus2007,2023-09-21,Luleå-Örebro,4-2,Nicola Pasic
+342087,Redbear,2023-09-21,Luleå-Örebro,5-2,Shinnimin
+342094,PM,2023-09-21,Luleå-Örebro,3-2,Shinnimin
+=== =====================================
+=== =====================================
+=== =====================================
+PostID,UserID,GameDate,Game,Guess,Scorer,ScorerPoint
+=== =====================================
+=== =====================================
+342095,KaptenBlodskelett,2023-09-21,Luleå-Örebro,4-2,Kempe
+=== 342112,Rönken <<< Not a Guess. >>>:Resultat efter omgång 3:  Namn:Poäng:PPG:Sigge7584.0wilmus200741.33Rönken41.33Metheuz31.0Pastorn20.67Redbear31.0NallePhu20.67pingu21.0DaVoc31.5Puckad31.5KaptenBlodskelett21.0SatanicPanic10.33Bamsefar10.5Norlin00.0PM10.33Sunderbyare10.5LulefanGBG10.5Vilgot11.0Urken11.0LasseProppmätt00.0HarryHaffa11.0Lajon00.0
+342206,Metheuz,2023-09-23,Frölunda-Luleå,3-2,Malte Strömwall
+342208,Puckad,2023-09-23,Frölunda-Luleå,2-4,Shinnimin
+342209,Sigge75,2023-09-23,Frölunda-Luleå,2-3,Andreasson
+342210,Vilgot,2023-09-23,Frölunda-Luleå,4-1,Innala
+342211,Lasse Proppmätt,2023-09-23,Frölunda-Luleå,2-3,Sellgren
+342214,HarryHaffa,2023-09-22,Frölunda-Luleå,2-3,Linus Omark
+342215,Pastorn,2023-09-23,Frölunda-Luleå,1-2,Sellgren
+342216,pingu,2023-09-22,Frölunda-Luleå,5-1,Linus Omark
+342218,Rönken,2023-09-22,Frölunda-Luleå,4-2,Jesper Sellgren
+342219,Hjalmar_Vuopio,2023-09-22,Frölunda-Luleå,1-3,Shinnimin
+342233,wilmus2007,2023-09-23,Frölunda-Luleå,1-3,Linus Omark
+342236,Urken,2023-09-23,Frölunda-Luleå,2-4,Tyrväinen
+342237,Redbear,2023-09-23,Frölunda-Luleå,2-3,Omark
+342238,SatanicPanic,2023-09-23,Frölunda-Luleå,1-3,Kempe
+342240,Norlin,2023-09-22,Frölunda-Luleå,3-4,Laaksonen
+342244,KaptenBlodskelett,2023-09-23,Frölunda-Luleå,2-3,Kempe
+342249,PM,2023-09-23,Frölunda-Luleå,2-3,Pasic
+342250,Sunderbyare,2023-09-23,Frölunda-Luleå,1-3,Linus Omark
+=== 342252,Rönken <<< Not a Guess. >>>:Resultat efter omgång 4:  Namn:Poäng:PPG:Sigge7593.0Rönken51.25Puckad51.67wilmus200741.0Metheuz41.0Redbear41.0pingu41.33DaVoc31.5KaptenBlodskelett31.0Vilgot31.5Pastorn20.5NallePhu20.67PM20.5Urken21.0HarryHaffa21.0SatanicPanic10.25Bamsefar10.5Sunderbyare10.33LulefanGBG10.5LasseProppmätt10.5Hjalmar_Vuopio11.0Norlin00.0Lajon00.0
+=== 342525,Urken <<< Not a Guess. >>>:Lägger fler tips, då jag imorgon far på utlandsresa. Kopiera inte facit nu, boys..2023-09-28, Luleå - HV71, 5-2, Omark2023-09-30, Luleå - Linköping, 5-2, Shinnimin2023-10-05, Rögle - Luleå, 2-5, Connolly
+342527,SatanicPanic,2023-09-28,Luleå-HV71,5-2,Omark
+=== 342531,Hedanders <<< Not a Guess. >>>:Efter fyra spelade matcher känner jag att ni fått nog med handikapp.2023-09-28, Luleå - HV71, 4-1, Shinmimin
+342533,Vilgot,2023-09-28,Luleå-HV71,4-3,Shinnimin
+342535,Puckad,2023-09-28,Luleå-HV71,5-2,Kempe
+342536,Metheuz,2023-09-28,Luleå-HV71,4-2,Isac Brännström
+342537,LulefanGBG,2023-09-28,Luleå-HV71,3-0,Tyrväinen
+342540,Sigge75,2023-09-28,Luleå-HV71,4-2,Omark
+342554,Rönken,2023-09-28,Luleå-HV71,5-2,Omark
+342555,Lasse Proppmätt,2023-09-28,Luleå-HV71,3-1,Brännström
+342556,Pastorn,2023-09-28,Luleå-HV71,2-1,Kempe
+342557,Hjalmar_Vuopio,2023-09-28,Luleå-HV71,4-0,omark
+342558,wilmus2007,2023-09-28,Luleå-Hv71,5-1,Nicola Pasic
+342559,NallePhu,2023-09-28,Luleå-HV71,5-2,Omark
+342560,Redbear,2023-09-08,Luleå-HV71,5-1,Tyrväinen
+342562,Sunderbyare,2023-09-08,Luleå-HV71,4-2,Pasic
+342563,HarryHaffa,2023-09-08,Luleå-HV71,3-2,Linus Omark
+342564,KaptenBlodskelett,2023-09-08,Luleå-HV71,4-2,Kempe
+342566,PM,2023-09-08,Luleå-HV71,3-2,Pasic
+342567,DaVoc,2023-09-28,Luleå-Hv71,4-2,Shinnimin
+342568,Hjalmar_Vuopio,2023-09-28,Luleå-Hv71,3-1,Andreasson
+=== 342641,Rönken <<< Not a Guess. >>>:Resultat efter omgång 5:Namn:Poäng:PPG:Puckad123.0Sigge75112.75Rönken112.2Urken82.67NallePhu82.0SatanicPanic71.4KaptenBlodskelett61.5wilmus200761.2Metheuz61.2Redbear61.2DaVoc51.67pingu41.33Vilgot41.33HarryHaffa41.33Pastorn40.8PM40.8Sunderbyare30.75Hjalmar_Vuopio21.0LulefanGBG20.67LasseProppmätt20.67Hedanders11.0Bamsefar10.5Norlin00.0Lajon00.0
+342791,HarryHaffa,2023-09-30,Luleå-Linköping,4-2,Mario Kempe
+342793,Puckad,2023-09-30,Luleå-Linköping,3-0,Pasic
+342795,Pastorn,2023-09-30,Luleå-Linköping,2-1,Shinnimin
+342796,Vilgot,2023-09-30,Luleå-Linköping,2-0,Eklind
+342797,SatanicPanic,2023-09-30,Luleå-Linköping,4-1,Kempe
+342798,Rönken,2023-09-30,Luleå-Linköping,4-2,Jesper Sellgren
+342803,Sunderbyare,2023-09-30,Luleå-Linköping,3-0,Omark
+=== =====================================
+342804,Metheuz,2023-09-30,Luleå-Linköping,2-0,Andreasson
+342806,LulefanGBG,2023-09-30,Luleå-Linköping,4-1,Shinnimin
+342807,Hjalmar_Vuopio,2023-09-30,Luleå-Linköping,5-1,Einar
+342808,Bamsefar,2023-09-30,Luleå-Linköping,5-1,pasic
+342809,Lasse Proppmätt,2023-09-30,Luleå-Linköping,6-2,Pasic
+342812,Sigge75,2023-09-30,Luleå-Linköping,2-0,Shinnimin
+342814,Metheuz,2023-09-30,Luleå-Linköping,2-0,Pasic
+342817,DaVoc,2023-09-30,Luleå-Linköping,3-2,Sellgren
+342830,Redbear,2023-09-30,Luleå-Linköping,3-1,Pasic
+342832,wilmus2007,2023-09-30,Luleå-Linköping,5-1,Nicola Pasic
+342846,NallePhu,2023-09-30,Luleå-Linköping,6-2,Kempe
+342853,PM,2023-09-30,Luleå-Linköping,3-2,Pasic
+342861,KaptenBlodskelett,2023-09-30,Luleå-Linköping,4-2,Hardegård
+=== 342978,Rönken <<< Not a Guess. >>>:Resultat efter omgång 6: Namn:Poäng:PPG:SatanicPanic142.33Puckad132.6Sigge75132.6Rönken132.17Urken102.5NallePhu102.0LulefanGBG92.25KaptenBlodskelett81.6wilmus200781.33Redbear81.33HarryHaffa71.75Pastorn71.17Metheuz71.17DaVoc61.5Vilgot61.5PM50.83pingu41.33Hjalmar_Vuopio41.33Sunderbyare40.8Bamsefar31.0LasseProppmätt30.75Hedanders11.0Norlin00.0Lajon00.0Många poäng som delades ut i kväll, SatanicPanic och LulefanGBG fick alla rätt
+343003,Rönken,2023-10-05,Rögle-Luleå,0-5,Linus Omark
+343007,Puckad,2023-10-05,Rögle-Luleå,2-3,Shinnimin
+343024,Sunderbyare,2023-10-05,Rögle-Luleå,2-5,Andreasson
+343067,Pastorn,2023-10-05,Rögle-Luleå,4-1,Tambellini
+343071,SatanicPanic,2023-10-05,Rögle-Luleå,0-3,Pasic
+343073,Bamsefar,2023-10-05,Rögle-Luleå,2-4,Pasic
+343082,Sigge75,2023-10-05,Rögle-Luleå,2-3,Andreasson
+343113,Norlin,2023-10-05,Rögle-Luleå,1-4,Sellgren
+343116,Metheuz,2023-10-05,Rögle-Luleå,2-3,Zaar
+343121,Hedanders,2023-10-05,Rögle-Luleå,2-4,Shinnimin
+343128,NallePhu,2023-10-05,Rögle-Luleå,2-4,Laxen
+343152,Vilgot,2023-10-05,Rögle-Luleå,3-3,Gustafsson
+343155,Lasse Proppmätt,2023-10-05,Rögle-Luleå,5-2,Shinnimin
+343177,LulefanGBG,2023-10-05,Rögle-Luleå,3-2,Everberg
+343184,HarryHaffa,2023-10-05,Rögle-Luleå,2-3,Mario Kempe.
+343187,wilmus2007,2023-10-05,Rögle-Luleå,2-4,Nicola Pasic
+343188,KaptenBlodskelett,2023-10-05,Rögle-Luleå,3-4,Kempe
+343189,Redbear,2023-10-05,Rögle-Luleå,2-3,Kempe
+343190,DaVoc,2023-10-05,Rögle-Luleå,2-4,Andreasson
+343197,PM,2023-10-05,Luleå - Linköping,2-3,pasic
+=== 343199,Rönken <<< Not a Guess. >>>:Resultat efter omgång 7:  Namn:Poäng:PPG:SatanicPanic142.33Puckad132.6Sigge75132.6Rönken132.17Urken102.5NallePhu102.0LulefanGBG92.25KaptenBlodskelett81.6wilmus200781.33Redbear81.33HarryHaffa71.75Pastorn71.17Metheuz71.17DaVoc61.5Vilgot61.5PM50.83pingu41.33Hjalmar_Vuopio41.33Sunderbyare40.8Bamsefar31.0LasseProppmätt30.75Hedanders11.0Norlin00.0Lajon00.0Tipsen var ungefär i samma nivå som Luleås resultat
+=== 343216,PM <<< Not a Guess. >>>:PM skrev:Luleå - Linköping 2-3 , pasicPanik i sista minuten! Sorry!Skulle vara Rögle - Luleå 2 - 3 PasicFörstår om det inte gäller.
+343363,Norlin,2023-10-07,Malmö-Luleå,2-3,Shinnimin
+343364,Metheuz,2023-10-07,Malmö-Luleå,1-3,Eklind
+343365,Sigge75,2023-10-07,Malmö-Luleå,2-4,Kempe
+343368,Urken,2023-10-07,Malmö-Luleå,2-5,Shinnimin
+343376,DaVoc,2023-10-07,Malmö-Luleå,2-4,Shinnimin
+343380,NallePhu,2023-10-07,Malmö-Luleå,1-3,Kempe
+343382,Pastorn,2023-10-07,Malmö-Luleå,1-4,Shinnimin
+343395,HarryHaffa,2023-10-07,Malmö-Luleå,2-3,Mario Kempe
+343398,Lasse Proppmätt,2023-10-07,Malmö-Luleå,4-3,Laaksonen
+343399,Puckad,2023-10-07,Malmö-Luleå,2-4,Laaksonen
+343400,Vilgot,2023-10-07,Malmö-Luleå,2-2,omark
+343401,SatanicPanic,2023-10-07,Malmö-Luleå,1-4,Kempe
+343420,Hjalmar_Vuopio,2023-10-07,Malmö-Luleå,1-3,Omark
+343426,Rönken,2023-10-07,Malmö-Luleå,0-5,Jesper Sellgren
+=== =====================================
+343428,wilmus2007,2023-10-07,Malmö-Luleå,2-4,Pasic
+343429,KaptenBlodskelett,2023-10-07,Malmö-Luleå,2-3,Pasic
+343431,PM,2023-10-07,Malmö-Luleå,2-3,Pasic
+343432,Redbear,2023-10-07,Malmö-Luleå,2-3,Eklind
+=== 343437,Rönken <<< Not a Guess. >>>:Resultat efter omgång 8:  Namn:Poäng:PPG:SatanicPanic162.0Puckad142.0Sigge75142.0Rönken141.75NallePhu121.71Urken112.2LulefanGBG102.0Pastorn101.25Redbear101.25Metheuz101.25KaptenBlodskelett91.29wilmus200791.13HarryHaffa81.33DaVoc71.17Vilgot71.17Hjalmar_Vuopio61.5PM60.75pingu41.33LasseProppmätt40.67Sunderbyare40.67Bamsefar30.75Norlin20.4Hedanders10.5Lajon00.0
+343751,Pastorn,2023-10-12,Luleå-MoDo,5-1,Shinnimin
+343752,SatanicPanic,2023-10-12,Luleå-MoDo,3-1,Kempe
+343753,Sigge75,2023-10-12,Luleå-MoDo,4-3,Andreasson
+343755,Puckad,2023-10-12,Luleå-MoDo,2-0,Kempe
+343762,LulefanGBG,2023-10-12,Luleå-MoDo,6-0,Shinnimin
+343764,Vilgot,2023-10-12,Luleå-Modo,2-1,Eklind
+343766,NallePhu,2023-10-12,Luleå-MoDo,5-2,Kempe
+343769,Rönken,2023-10-12,Luleå-Modo,5-0,Linus OmarkTredje gången gillt Sassa brassa mandelmassa - vi vill höra nätet rassla!#huggochslåluleå
+343779,Urken,2023-10-12,Luleå-Modo,2-5,kivihalme
+=== 343793,Flippass,Kivihalme spelar väl för Malmö eller har jag missat något?
+=== 343794,Urken <<< Not a Guess. >>>:Urken skrev:2023-10-12, Luleå - Modo, 2-5, kivihalme2023-10-12, Luleå - Modo, 2-5, WoodsTack till Flippass som puttade mig i rätt riktning här.
+343838,Norlin,2023-10-12,Luleå-Modo,4-2,Shinnimin
+343845,Bamsefar,2023-10-12,Luleå-Modo,4-2,Andreasson
+343876,Lasse Proppmätt,2023-10-12,Luleå-MoDo,3-2,Omark
+343877,Hedanders,2023-10-12,Luleå-MoDo,1-4,Riley Woods
+343878,Metheuz,2023-10-12,Luleå-MoDo,1-2,Kempe
+343881,HarryHaffa,2023-10-12,Luleå-MoDo,3-2,Brendan Shinnimin
+343890,wilmus2007,2023-10-12,Luleå-Modo,3-2,Nicola Pasic
+343891,Redbear,2023-10-12,Luleå-Modo,5-1,Kempe
+343897,DaVoc,2023-10-12,Luleå-Modo,4-2,Laaksonen
+343900,KaptenBlodskelett,2023-10-12,Luleå-Modo,5-2,Laaksonen
+343903,PM,2023-10-12,Luleå-Modo,3-2,Pasic
+=== 343911,Rönken <<< Not a Guess. >>>:Resultat efter omgång 9:  NamnPoängPPGSatanicPanic222.44Puckad151.88Sigge75151.88Rönken151.67NallePhu131.63Pastorn131.44LulefanGBG122.0Redbear121.33Urken111.83HarryHaffa111.57wilmus2007111.22KaptenBlodskelett101.25Metheuz101.11Vilgot91.29DaVoc81.14PM80.89Hjalmar_Vuopio61.5LasseProppmätt60.86pingu41.33Bamsefar40.8Norlin40.67Sunderbyare40.67Hedanders10.33Lajon00.0
+344140,HarryHaffa,2023-10-14,Växjö-Luleå,2-3,Brendan Shinnimin
+344142,Urken,2023-10-14,Växjö-Luleå,4-2,Brendan Shinnimin
+344154,Puckad,2023-10-14,Växjö-Luleå,1-4,Andreasson
+344164,NallePhu,2023-10-14,Växjö-Luleå,2-4,Hardy
+344166,SatanicPanic,2023-10-14,Växjö-Luleå,1-3,Berglund
+344168,Vilgot,2023-10-14,Växjö-Luleå,1-1,Andreasson
+344188,Lasse Proppmätt,2023-10-14,Växjö-Luleå,3-1,Eklind
+344191,Metheuz,2023-10-14,Växjö-Luleå,2-3,Marcus Sylvegård
+344192,LulefanGBG,2023-10-14,Växjö-Luleå,1-4,Laaksonen
+344196,Bamsefar,2023-10-14,Växjö-Luleå,2-5,Shinnimin
+344197,Pastorn,2023-10-14,Växjö-Luleå,1-2,Kempe
+344198,KaptenBlodskelett,2023-10-14,Växjö-Luleå,1-2,Pasic
+344199,Sigge75,2023-10-14,Växjö-Luleå,4-2,Brendan Shinnimin
+344201,Rönken,2023-10-14,Växjö-Luleå,1-3,Brendan Shinnimin
+344203,Sunderbyare,2023-10-14,Växjö-Luleå,2-3,Pontus Andreasson
+344204,Hjalmar_Vuopio,2023-10-14,Växjö-Luleå,2-4,Kempe
+344208,Redbear,2023-10-14,Växjö-Luleå,2-3,Shinnimin
+344217,wilmus2007,2023-10-14,Växjö-Luleå,2-3,Nicola Pasic
+344224,PM,2023-10-14,Växjö-Luleå,2-3,Pasic
+344225,DaVoc,2023-10-14,Växjö-Luleå,1-3,Shinnimin
+=== 344249,Rönken <<< Not a Guess. >>>:Resultat efter omgång 10:  NamnPoängPPGSatanicPanic232.3Puckad161.78Rönken161.6Sigge75151.67NallePhu151.67Pastorn151.5Redbear141.4LulefanGBG131.86HarryHaffa131.63wilmus2007131.3Metheuz121.2Urken111.57KaptenBlodskelett111.22Bamsefar101.67PM101.0Hjalmar_Vuopio91.8Vilgot91.13DaVoc91.13LasseProppmätt70.88Sunderbyare60.86pingu41.33Norlin40.67Hedanders10.33Lajon00.0
+344548,Puckad,2023-10-19,Luleå-Färjestad,4-2,Andreasson
+=== =====================================
+344552,Urken,2023-10-19,Luleå-Färjestad,2-5,Tomasek
+344553,SatanicPanic,2023-10-19,Luleå-Färjestad,2-1,Emanuelsson
+344555,Lasse Proppmätt,2023-10-19,Luleå-Färjestad,4-1,Andreasson
+344560,LHF96,2023-10-19,Luleå-Färjestad,3-1,Einar färjestadsdräparen Emanuelsson
+344579,NallePhu,2023-10-19,Luleå-Färjestad,2-4,Lindqvist
+344582,Norlin,2023-10-19,Luleå-Färjestad,2-3,Ejdsell
+344584,Sunderbyare,2023-10-19,Luleå-Färjestad,1-2,Per Åslund
+344585,Sigge75,2023-10-19,Luleå-Färjestad,4-3,Andreasson
+344597,Pastorn,2023-10-19,Luleå-Färjestad,3-2,Omark
+344598,Hedanders,2023-10-19,Luleå-Färjestad,1-4,Ejdsell
+344599,Bamsefar,2023-10-19,Luleå-Färjestad,3-2,Omark
+344601,Vilgot,2023-10-19,Luleå-Färjestad,3-4,Åslund
+344603,HarryHaffa,2023-10-19,Luleå-Färjestad,3-2,Brendan Shinnimin
+344605,Metheuz,2023-10-19,Luleå-Färjestad,1-2,Ejdsell
+344607,Rönken,2023-10-19,Luleå-Färjestad,4-1,Pontus Andreasson
+344617,Hjalmar_Vuopio,2023-10-19,Luleå-Färjestad,2-1,Shinnimin
+344633,Redbear,2023-10-19,Luleå-Färjestad,2-1,Tyrväinen
+344638,wilmus2007,2023-10-19,Luleå-Färjestad,4-2,Nicola Pasic
+344639,PM,2023-10-19,Luleå-Färjestad,3-2,Pasic
+344640,KaptenBlodskelett,2023-10-19,Luleå-Färjestad,4-2,Kempe
+344644,DaVoc,2023-10-19,Luleå-Färjestad,4-1,Shinnimin
+=== 344646,Urken <<< Not a Guess. >>>:Resultat efter omgång 11:  NamnPoängPPGSatanicPanic292.64Redbear201.82Rönken181.64Puckad171.7Sigge75161.6NallePhu161.6Pastorn161.45Hjalmar_Vuopio152.5HarryHaffa141.56wilmus2007141.27LulefanGBG131.86Metheuz131.18Urken121.5KaptenBlodskelett121.2Bamsefar111.57DaVoc111.22PM111.0Vilgot91.0LasseProppmätt91.0Norlin60.86Sunderbyare60.75pingu41.33LHF9622.0Hedanders20.5Lajon00.0
+344884,Hedanders,1023-10-21,Skellefteå-Luleå,3-2,Sandin-Pelikka
+344890,SatanicPanic,2023-10-21,Skellefteå-Luleå,1-3,Laaksonen
+344901,Rönken,2023-10-21,Skellefteå-Luleå,2-3,BredanShinnimin
+344914,Sigge75,2023-10-21,Skellefteå-Luleå,2-3,Laaksonen
+344920,Pastorn,2023-10-21,Skellefteå-Luleå,3-4,Pasic
+344926,Metheuz,2023-10-21,Skellefteå-Luleå,3-2,Hugg
+344928,Vilgot,2023-10-21,Skellefteå-Luleå,2-1,Max Lindholm
+344929,SatanicPanic,2023-10-21,Skellefteå-Luleå,1-3,Laaksonen
+344930,Puckad,2023-10-21,Skellefteå-Luleå,1-3,EG
+344931,Bamsefar,2023-10-21,Skellefteå-Luleå,2-3,Tyrväinen
+344933,Urken,2023-10-21,Skellefteå-Luleå,5-2,Hugg
+344941,Lasse Proppmätt,2023-10-21,Skellefteå-Luleå,1-2,Eklind
+344945,DaVoc,2023-10-21,Skellefteå-Luleå,2-3,Kempe
+344946,NallePhu,2023-10-21,Skellefteå-Luleå,4-3,Hugg
+344951,Sunderbyare,2023-10-21,Skellefteå-Luleå,2-4,Linus Omark
+344952,LulefanGBG,2023-10-21,Skellefteå-Luleå,2-1,Zeb Forsberg
+344953,HarryHaffa,2023-10-21,Skellefteå-Luleå,2-3,Brendan Shinnimin
+344975,Hjalmar_Vuopio,2023-10-21,Skellefteå-Luleå,0-1,Hardegård
+344976,Redbear,2023-10-21,Skellefteå-Luleå,2-4,Eklind
+344984,PM,2023-10-21,Skellefteå-Luleå,2-3,Pasic
+345001,wilmus2007,2023-10-21,Skellefteå-Luleå,2-3,nicola pasiv
+345006,Norlin,2023-10-21,Skellefteå-Luleå,1-3,Shinnimin
+=== 345015,Rönken <<< Not a Guess. >>>:Resultat efter omgång 12:  NamnPoängPPGSatanicPanic302.5Hjalmar_Vuopio213.0Redbear211.75Rönken191.58Puckad181.64Sigge75171.55Pastorn171.42NallePhu161.45HarryHaffa151.5wilmus2007151.25LulefanGBG141.75DaVoc131.3Metheuz131.08Bamsefar121.5Urken121.33KaptenBlodskelett121.2PM121.0Vilgot101.0LasseProppmätt101.0Norlin70.88Sunderbyare70.78pingu41.33LHF9622.0Hedanders20.4Lajon00.0
+345251,Norlin,2023-10-26,Luleå-Leksand,3-2,Sellgren(Lägger tidigt tips då jag har en tendens att glömma bort annars)
+345252,LulefanGBG,2023-10-26,Luleå-Leksand,4-1,Shinnimin
+345253,Urken,2023-10-26,Luleå-Leksand,4-2,Shinnimin
+345254,SatanicPanic,2023-10-26,Luleå-Leksand,5-1,Eklind
+345256,Vilgot,2023-10-26,Luleå-Leksand,4-3,Cehlarik
+=== =====================================
+345259,Sunderbyare,2023-10-26,Luleå-Leksand,4-1,Pontus Andreasson
+345260,Puckad,2023-10-26,Luleå-Leksand,3-0,Omark
+345261,Sigge75,2023-10-26,Luleå-Leksand,4-0,Eklind
+345279,Rönken,2023-10-26,Luleå-Leksand,4-0,Eklind
+345291,Hjalmar_Vuopio,2023-10-26,Luleå-Leksand,3-1,Pontus Själin
+345293,Hedanders,2023-10-26,Luleå-Leksand,1-3,Cehlarik
+345294,Lasse Proppmätt,2023-10-26,Luleå-Leksand,5-1,Andreasson
+345295,HarryHaffa,2023-10-26,Luleå-Leksand,4-1,Brendan Shinnimin
+345302,Norlin,2023-10-26,Luleå-Leksand,3-1,Hardegård
+345304,Pastorn,2023-10-26,Luleå-Leksand,2-1,Pasic
+345305,Bamsefar,2023-10-26,Luleå-Leksand,5-2,Kempe
+345306,Metheuz,2023-10-26,Luleå-Leksand,3-1,Pontus Andreasson
+345307,wilmus2007,2023-10-26,Luleå-Leksand,5-1,Pasic
+345308,Redbear,2023-10-26,Luleå-Leksand,3-2,Andreasson
+345311,NallePhu,2023-10-26,Luleå-Leksand,5-1,PONTA!
+345313,PM,2023-10-26,Luleå-Leksand,3-2,Pasic
+345316,DaVoc,2023-10-26,Luleå-Leksand,4-1,Shinnimin
+345321,KaptenBlodskelett,2023-10-26,Luleå-Leksand,5-1,Connolly
+=== 345323,Urken <<< Not a Guess. >>>:Resultat efter omgång 13:  NamnPoängPPGSatanicPanic302.31Hjalmar_Vuopio212.63Redbear211.62Rönken191.46Puckad181.5Sigge75171.42Pastorn171.31NallePhu161.33HarryHaffa151.36wilmus2007151.15LulefanGBG141.56DaVoc131.18Metheuz131.0Bamsefar121.33Urken121.2KaptenBlodskelett121.09PM120.92Vilgot100.91LasseProppmätt100.91Norlin70.78Sunderbyare70.7pingu41.33Hedanders40.67LHF9622.0Lajon00.0
+345525,Lasse Proppmätt,2023-10-28,Modo-Luleå,2-5,Shinnimin
+345527,NallePhu,2023-10-28,Modo-Luleå,1-4,Limpan tajm!!!!
+345528,Vilgot,2023-10-28,Modo-Luleå,2-2,Woods
+345531,Metheuz,2023-10-28,Modo-Luleå,2-3,Kempe Är på plats imorgon!
+345536,Hedanders,2023-10-28,Modo-Luleå,4-1,Aagard
+345539,HarryHaffa,2023-10-28,MoDo-Luleå,2-3,Linus Omark
+345541,Puckad,2023-10-28,MoDo-Luleå,1-3,Andreasson
+345545,SatanicPanic,2023-10-28,modo-Luleå,0-3,Kempe
+345546,Sunderbyare,2023-10-28,modo-Luleå,2-3,Brendan Shinnimin
+345547,Pastorn,2023-10-28,MoDo-Luleå,0-4,Pasic
+345549,Norlin,2023-10-28,MoDo-Luleå,1-3,Eklind
+345551,LulefanGBG,2023-10-28,MoDo-Luleå,3-2,Sellgren
+345552,Urken,2023-10-28,Modo-Luleå,4-2,Aagaard
+345555,Rönken,2023-10-28,Modo-Luleå,0-4,Linus Omark 
+345561,Bamsefar,2023-10-28,Modo-Luleå,1-4,Kempe
+345562,KaptenBlodskelett,2023-10-28,Modo-Luleå,2-3,Kempe
+345563,Sigge75,2023-10-28,Modo-Luleå,3-4,Shinnimin
+345580,Redbear,2023-10-28,Modo-Luleå,2-4,Emanuelsson
+345584,wilmus2007,2023-10-28,Modo-Luleå,2-3,Nicola Pasic
+345585,PM,2023-10-28,Modo-Luleå,2-3,Nicola Pasic
+345586,Hjalmar_Vuopio,2023-10-28,MoDo-Luleå,1-3,Hållander
+=== 345591,Rönken <<< Not a Guess. >>>:Resultat efter omgång 14:  NamnPoängPPGSatanicPanic312.21Redbear231.64Hjalmar_Vuopio222.44Rönken201.43Puckad191.46Sigge75181.38Pastorn181.29HarryHaffa171.42NallePhu171.31wilmus2007171.21LasseProppmätt161.33LulefanGBG151.5Metheuz151.07KaptenBlodskelett141.17PM141.0Bamsefar131.3DaVoc131.18Urken131.18Vilgot110.92Norlin90.9Sunderbyare90.82Hedanders50.71pingu41.33LHF9622.0Lajon00.0
+345804,Lasse Proppmätt,2023-11-02,FBK-Luleå,2-3,Kempe
+345805,Puckad,2023-11-02,FBK-Luleå,1-2,Hardegård
+345806,LulefanGBG,2023-11-02,Färjestad-Luleå,2-1,Omark
+345809,SatanicPanic,2023-11-02,Färjestad-Luleå,1-2,Einar
+345810,Vilgot,2023-11-02,Färjestad-Luleå,3-2,Åslund
+345814,NallePhu,2023-11-02,Färjestad-Luleå,4-2,Åslund
+345817,Sigge75,2023-11-02,FBK-Luleå,4-3,Kempe
+345885,Pastorn,2023-11-02,Färjestad-Luleå,3-0,Linus Johansson
+345886,Metheuz,2023-11-02,Färjestad-Luleå,3-1,Tomasek
+=== =====================================
+345889,HarryHaffa,2023-11-02,Färjestad-Luleå,2-3,Mario Kempe
+345905,Vilgot,2023-11-02,Färjestad-Luleå,4-3,Åslund
+345911,Bamsefar,2023-11-02,Färjestad-Luleå,2-3,Pasic
+345912,Hjalmar_Vuopio,2023-11-02,Färjestad-Luleå,5-2,Allard
+345913,Sunderbyare,2023-11-02,Färjestad-Luleå,4-1,Linus Johansson
+345914,Lasse Proppmätt,2023-11-02,FBK-Luleå,2-3,Ändrar målskytt då Kempe mest troligt inte är med ikväll så jag slår väl till med högoddsaren Einar
+345915,wilmus2007,2023-11-02,Färjestad-Luleå,2-3,Pontus Andreasson
+345916,Sigge75,2023-11-02,FBK-Luleå,4-3,AndreassonÄndrar också.
+345917,Urken,2023-11-02,Färjestad-Luleå,6-2,Tomasek
+345930,HarryHaffa,2023-11-02,Färjestad-Luleå,2-3,Brendan Shinnimin
+345931,Redbear,2023-11-02,Färjestad-Luleå,3-4,Allard
+345934,Norlin,2023-11-02,Färjestad-Luleå,2-4,Tyrväinen
+345938,DaVoc,2023-11-02,Färjestad-Luleå,3-2,Ejdsell
+345945,PM,2023-11-02,Färjestad-Luleå,4-1,Nygård
+=== 345951,Urken <<< Not a Guess. >>>:Resultat efter omgång 15:  NamnPoängPPGSatanicPanic312.07Hjalmar_Vuopio232.3Redbear231.53Sigge75201.43Rönken201.43HarryHaffa191.46Puckad191.36Pastorn191.27NallePhu181.29wilmus2007181.2LasseProppmätt171.31Metheuz171.13LulefanGBG161.45Urken151.25PM151.0Bamsefar141.27DaVoc141.17KaptenBlodskelett141.17Vilgot131.0Sunderbyare100.83Norlin90.82Hedanders50.71pingu41.33LHF9622.0Lajon00.0
+346272,Sunderbyare,2023-11-04,Luleå-Rögle,4-2,Linus Omark
+346285,Sigge75,2023-11-04,Luleå-Rögle,4-1,Shinnimin
+346295,Rönken,2023-11-04,Luleå-Rögle,5-1,Linus Omark
+346296,Bamsefar,2023-11-04,Luleå-Rögle,4-2,Pasic
+346300,Urken,2023-11-04,Luleå-Rögle,2-5,Shinnimin
+346320,Lasse Proppmätt,2023-11-04,Luleå-Rögle,3-1,Andreasson
+346327,Sigge75,2023-11-04,Luleå-Rögle,4-1,Shinnimin
+346333,Metheuz,2023-11-04,Luleå-Rögle,4-1,Allard
+346334,Vilgot,2023-11-04,Luleå-Rögle,5-3,Berglund
+346337,Puckad,2023-11-04,Luleå-Rögle,3-1,Andreasson
+346339,PM,2023-11-04,Luleå-Rögle,3-2,Pasic
+346340,SatanicPanic,2023-11-04,Luleå-Rögle,3-1,Lilja
+346342,DaVoc,2023-11-04,Luleå-Rögle,4-2,Eklind
+346344,NallePhu,2023-11-04,Luleå-Rögle,2-4,Tambellini
+346349,Hedanders,2023-11-04,Luleå-Rögle,2-5,Tambellini
+346351,Hjalmar_Vuopio,2023-11-04,Luleå-Rögle,5-3,Shinnimin
+346369,wilmus2007,2023-11-04,LuleåRögle,5-1,S Nicola Pasic
+346370,HarryHaffa,2023-11-04,Luleå-Rögle,3-2,Mario Kempe
+346378,Redbear,2023-11-02,Luleå-Rögle,3-1,Tyrre
+346380,KaptenBlodskelett,2023-11-02,Luleå-Rögle,4-2,Laaksonen
+=== 346412,Puckad <<< Not a Guess. >>>:Resultat efter omgång 16:Eftersom det är landslagsuppehåll inkluderar vi lite fler parametrar        NamnPoängPPGFullpoängareRätt målskyttRätt slutresultatSatanicPanic322.0114Hjalmar_Vuopio242.18033Redbear241.5021Sigge75211.4131Rönken211.4021HarryHaffa201.43030Puckad201.33131Pastorn191.27050NallePhu191.27011Urken181.38041LasseProppmätt181.29011wilmus2007181.13020Metheuz171.06040LulefanGBG161.45131PM161.0000Bamsefar141.17001DaVoc141.08020KaptenBlodskelett141.08010Vilgot130.93010Sunderbyare110.85010Norlin90.82030Hedanders70.88020pingu41.33010LHF9622.0000Lajon00.0000
+346891,Metheuz,2023-11-16,Timrå-Luleå,2-4,Dahlén
+346892,Puckad,2023-11-16,Timrå-Luleå,2-5,Andreasson
+346894,Urken,2023-11-16,Timrå-Luleå,4-2,Hanzl
+346901,Lasse Proppmätt,2023-11-16,Timrå-Luleå,5-1,Dahle'n
+346903,LulefanGBG,2023-11-16,Timrå-Luleå,4-3,Päjärvi
+346904,HarryHaffa,2023-11-16,Timrå-Luleå,2-3,Mario Kempe
+346905,Rönken,2023-11-16,Timrå-Luleå,0-3,Mario Kempe
+346906,Vilgot,2023-11-16,Timrå-Luleå,1-3,Connely
+346928,Norlin,2023-11-16,Timrå-Luleå,2-5,Shinnimin
+346931,wilmus2007,2023-11-16,Timrå-Luleå,1-4,Pontus Andreasson
+346933,Pastorn,2023-11-16,Timrå-Luleå,2-3,Andreasson
+346934,SatanicPanic,2023-11-16,Timrå-Luleå,1-3,Eklind
+346935,Hjalmar_Vuopio,2023-11-16,Timrå-Luleå,2-4,Kempe
+346936,Sigge75,2023-11-16,Timrå-Luleå,0-3,Kempe
+=== =====================================
+346939,Redbear,2023-11-16,Timrå-Luleå,2-4,Kempe
+346940,PM,2023-11-16,Timrå-Luleå,2-3,Pasic
+346941,KaptenBlodskelett,2023-11-16,Timrå-Luleå,3-4,Eklind
+346942,DaVoc,2023-11-16,Timrå-Luleå,2-4,Marcus Hardegård
+346944,NallePhu,2023-11-16,Timrå-Luleå,2-4,Kempe
+=== 346947,Rönken <<< Not a Guess. >>>:Resultat efter omgång 17:   NamnPoängPPGSatanicPanic342.0Puckad271.69Hjalmar_Vuopio262.17Redbear261.53HarryHaffa221.47Sigge75221.38Pastorn221.38Rönken221.38NallePhu211.31Metheuz201.18wilmus2007201.18LasseProppmätt191.27Urken181.29PM181.06LulefanGBG161.33DaVoc161.14KaptenBlodskelett161.14Norlin151.25Bamsefar141.17Vilgot140.93Sunderbyare110.85Hedanders70.88pingu41.33LHF9622.0Lajon00.0
+347183,HarryHaffa,2023-11-18,Luleå-Frölunda,3-2,Mario Kempe
+347186,Vilgot,2023-11-18,Luleå-Frölunda,2-3,Lasu
+347189,Bamsefar,2023-11-18,Luleå-Frölunda,3-1,Andreasson
+347196,Sigge75,2023-11-18,Luleå-Frölunda,4-2,Mario Kempe
+347198,Urken,2023-11-18,Luleå-Frölunda,4-2,Shinnimin
+347199,Lasse Proppmätt,2023-11-18,Luleå-Frölunda,1-4,Lasu
+347204,Rönken,2023-11-18,Luleå-Frölunda,4-2,Brendan Shinnimin
+347206,SatanicPanic,2023-11-18,Luleå-Frölunda,3-1,Eklind
+347209,Hjalmar_Vuopio,2023-11-18,Luleå-Frölunda,2-1,Brendan Shinnimin
+347211,NallePhu,2023-11-18,Luleå-Frölunda,4-1,Omark
+347213,PM,2023-11-18,Luleå-Frölunda,3-2,Eklind
+347214,Pastorn,2023-11-18,Luleå-Frölunda,4-3,Innala
+347217,wilmus2007,2023-11-18,Luleå-Frölunda,3-2,Pontus Andreasson
+347218,Norlin,2023-11-18,Luleå-Frölunda,3-1,Hardegård
+347219,Redbear,2023–11-18,Luleå-Frölunda,3-2,Eklind
+347220,KaptenBlodskelett,2023–11-18,Luleå-Frölunda,4-2,Allard
+347221,Metheuz,2023-11-18,Luleå-Frölunda,2-3,Malte Strömwall
+347222,DaVoc,2023–11-18,Luleå-Frölunda,4-2,Andreasson
+=== 347225,Rönken <<< Not a Guess. >>>:Resultat efter omgång 18:   NamnPoängPPGSatanicPanic351.94Sigge75281.65Rönken281.65Redbear281.56Hjalmar_Vuopio272.08Puckad271.69Urken241.6HarryHaffa241.5Pastorn241.41NallePhu241.41DaVoc221.47KaptenBlodskelett221.47wilmus2007221.22Metheuz201.11PM201.11LasseProppmätt191.19Norlin171.31LulefanGBG161.33Bamsefar151.15Vilgot140.88Sunderbyare110.85Hedanders70.88pingu41.33LHF9622.0Lajon00.0
+347499,Rönken,2023-11-23,Leksand-Luleå,3-5,Linus OmarkAdmin-kampen i tabellen är återigen på rätt spår
+=== 347501,Puckad <<< Not a Guess. >>>:Rönken skrev:2023-11-23, Leksand - Luleå, 3-5, Linus OmarkAdmin-kampen i tabellen är återigen på rätt spår Äh, jag lämnade ju WO i senaste matchen så du skulle bli glad...
+347503,Sigge75,2023-11-23,Leksand-Luleå,3-4,Linus Omark
+347504,Hedanders,2023-11-23,Leksand-Luleå,4-1,Cehlarik
+347505,SatanicPanic,2023-11-23,Leksand-Luleå,1-4,Eklind
+347506,Urken,2023-11-23,Leksand-Luleå,4-2,Cehlarik
+347508,LulefanGBG,2023-11-23,Leksand-Luleå,3-1,Hrivik
+347514,Vilgot,2023-11-23,Leksand-Luleå,3-3,Veronneau
+347516,Puckad,2023-11-23,Leksand-Luleå,2-4,Andreasson
+347519,Lasse Proppmätt,2023-11-23,Leksand-Luleå,4-3,Veronneau
+347524,Metheuz,2023-11-23,Leksand-Luleå,3-2,Veronneau
+347527,HarryHaffa,2023-11-23,Leksand-Luleå,2-3,Mario Kempe
+347535,Pastorn,2023-11-23,Leksand-Luleå,1-4,Shinnimin
+347540,Bamsefar,2023-11-23,Leksand-Luleå,2-4,Andreasson
+347542,wilmus2007,2023-11-23,Leksand-Luleå,2-4,Mario Kempe
+347543,Hjalmar_Vuopio,2023-11-23,Leksand-Luleå,2-3,Pontus Själin
+347546,Redbear,2023-11-23,Leksand-Luleå,3-4,Eklind
+347547,DaVoc,2023-11-23,Leksand-Luleå,2-4,Eklind
+347548,KaptenBlodskelett,2023-11-23,Leksand-Luleå,2-3,Kempe
+347553,NallePhu,2023-11-23,Leksand-Luleå,2-5,Omark
+347556,PM,2023-11-23,Leksand-Luleå,2-3,Eklind
+=== 347567,Urken <<< Not a Guess. >>>:Resultat efter omgång 19
+347702,Metheuz,2023-11-25,Luleå-Oskarshamn,6-1,Andreasson
+347706,Hedanders,2023-11-25,Luleå-Oskarshamn,2-4,Karlqvist(Nu vänder IKO:s trend)
+347707,Sigge75,2023-11-25,Luleå-Oskarshamn,3-1,Andreasson
+=== =====================================
+347708,Puckad,2023-11-25,Luleå-Oskarshamn,5-3,Andreasson
+347710,Bamsefar,2023-11-25,Luleå-Oskarshamn,6-2,Eklind
+347711,Vilgot,2023-11-25,Luleå-Oskarshamn,3-1,Karlqvist
+347728,Urken,2023-11-25,Luleå-Oskarshamn,5-2,Eklind
+347733,Sigge75,2023-11-25,Luleå-Oskarshamn,4-0,Omark
+347737,LulefanGBG,2023-11-25,Luleå-Oskarshamn,2-4,Andreasson
+347738,HarryHaffa,2023-11-25,Luleå-Oskarshamn,4-2,Mario Kempe
+347739,SatanicPanic,2023-11-25,Luleå-Oskarshamn,3-1,Patrik Karlkvist
+347742,Rönken,2023-11-25,Luleå-Oskarshamn,5-0,Eklind
+347744,Pastorn,2023-11-25,Luleå-Oskarshamn,4-3,Shinnimin
+347745,DaVoc,2023-11-25,Luleå-Oskarshamn,4-1,Andreasson
+347746,NallePhu,2023-11-25,2023-11-25,Luleå-Oskarshamn,5-2,Pasic
+347748,Lasse Proppmätt,2023-11-25,Luleå-Oskarshamn,1-4,Karlkvist
+347753,PM,2023-11-25,Luleå-Oskarshamn:3-2,Pasic
+347754,Redbear,2023-11-25,Luleå-Oskarshamn,4-1,Omar
+347756,Hjalmar_Vuopio,2023-11-25,Luleå-Oskarshamn,4-1,Eklind
+347759,wilmus2007,2023-11-25,Luleå-Oskarshamn,5-1,Oliver Eklind
+347764,KaptenBlodskelett,2023-11-25,Luleå-Oskarshamn,4-2,Allard
+=== 347798,Rönken <<< Not a Guess. >>>:Resultat efter omgång 20:
+=== 347859,Redbear <<< Not a Guess. >>>:Redbear skrev:2023-11-25, Luleå-Oskarshamn, 4-1, OmarHoppad Rönken förstår att det skulle stå Omark istället för Omar
+=== 347930,Hjalmar_Vuopio <<< Not a Guess. >>>:Redbear skrev:Redbear skrev:2023-11-25, Luleå-Oskarshamn, 4-1, OmarHoppad Rönken förstår att det skulle stå Omark istället för Omar 2023-11-28, Örebro-Luleå, 2-3, Mulla Omar(k)
+347932,Metheuz,2023-11-28,Örebro-Luleå,3-2,Emil Larsson
+347936,Norlin,2023-11-28,Örebro-Luleå,1-3,Erik Gustafsson
+347955,Sigge75,2023-11-28,Örebro-Luleå,3-4,Omark
+347966,DaVoc,2023-11-28,Örebro-Luleå,2-3,Marcus Hardegård
+347969,Puckad,2023-11-28,Örebro-Luleå,1-2,Shinnimin
+347973,HarryHaffa,2023-11-28,Örebro-Luleå,2-3,Mario Kempe
+347979,SatanicPanic,2023-11-28,Örebro-Luleå,4-1,Larsson
+347982,Lasse Proppmätt,2023-11-28,Örebro-Luleå,4-2,Mastomäki
+347984,Urken,2023-11-28,Örebro-Luleå,5-2,Lekkerimäki
+347985,Sunderbyare,2023-11-28,Örebro-Luleå,2-3,Linus Omark
+347986,Hedanders,2023-11-28,Örebro-Luleå,4-1,Lekkerimäki
+347988,Vilgot,2023-11-28,Örebro-Luleå,4-2,Leino
+347990,LulefanGBG,2023-11-28,Örebro-Luleå,4-3,Hardegård
+348006,Rönken,2023-11-28,Örebro-Luleå,2-5,Eklind
+348018,Pastorn,2023-11-28,Örebro-Luleå,2-4,Björninen
+348020,wilmus2007,2023-11-28,Örebro-Luleå,1-3,Pontus Andreasson
+348023,NallePhu,2023-11-28,Örebro-Luleå,4-2,EEEEMIIIIL Larsson!
+348024,pingu,2023-11-28,Örebro-Luleå,4-3,Callgren
+348029,Redbear,2023-11-28,Örebro-Luleå,2-4,Shinnimin
+348031,KaptenBlodskelett,2023-11-28,Örebro-Luleå,2-3,Shinnimin
+348034,Bamsefar,2023-11-28,Örebro-Luleå,2-4,Andreasson
+=== 348044,Rönken <<< Not a Guess. >>>:Resultat efter omgång 21:
+348251,Metheuz,2023-11-30,Luleå-Skellefteå,2-3,Axel Sandin Pellikka
+348252,Vilgot,2023-11-30,LuleåSkellefteå,5-2,Berglund
+348255,Blitzwagen,2023-11-30,Luleå-Skellefteå,2-5,Shinnimin
+348257,SatanicPanic,2023-11-30,Luleå-Skellefteå,1-2,Johnsson
+348262,Puckad,2023-11-30,Luleå-Skellefteå,1-0,Andreasson
+348268,LulefanGBG,2023-11-30,Luleå-Skellefteå,2-3,Andreas Johnsson
+348269,Lasse Proppmätt,2023-11-30,Luleå-Skellefteå,1-5,Pudas
+=== =====================================
+348272,Rönken,2023-11-30,Luleå-Skellefteå,4-3,Linus Omark
+348273,NallePhu,2023-11-30,Luleå-Skellefteå,1-5,Lindholm
+348274,Urken,2023-11-30,Luleå-Skellefteå,2-4,Shinnimin
+348276,Hjalmar_Vuopio,2023-11-30,Luleå-Skellefteå,2-1,Berglund
+348279,Redbear,2023-11-30,Luleå-Skellefteå,4-2,Pasic
+348280,HarryHaffa,2023-11-30,Luleå-Skellefteå,3-2,Brendan Shinnimin
+348283,wilmus2007,2023-11-30,Luleå-Skellefteå,3-2,Erik Gustavsson
+348284,KaptenBlodskelett,2023-11-30,Luleå-Skellefteå,3-2,Allard
+348285,Pastorn,2023-11-30,Luleå-Skellefteå,1-2,Pär Lindholm
+348286,DaVoc,2023-11-30,Luleå-Skellefteå,3-2,Shinnimin
+348287,Hedanders,2023-11-30,Luleå-Skellefteå,1-4,Pudas
+348288,Bamsefar,2023-11-30,Luleå-Skellefteå,3-1,Andreasson
+348290,Norlin,2023-11-30,Luleå-Skellefteå,3-1,Shinnimin
+=== 348416,Rönken <<< Not a Guess. >>>:Resultat efter omgång 22:
+348491,Urken,2023-12-02,Luleå-Växjö,4-2,Eklind
+348492,LulefanGBG,2023-12-02,Luleå-Växjö,5-4,Omark
+348493,Sigge75,2023-12-02,Luleå-Växjö,3-2,Eklind
+348494,Lasse Proppmätt,2023-12-02,Luleå-Växjö,1-5,Rosen
+348495,SatanicPanic,2023-12-02,Luleå-Växjö,1-3,Sylvegård
+348497,Vilgot,2023-12-02,Luleå-Växjö,1-3,Kossila
+348499,Bamsefar,2023-12-02,Luleå-Växjö,3-2,Andreasson
+348500,Norlin,2023-12-02,Luleå-Växjö,4-2,Eklind
+348501,Puckad,2023-12-02,Luleå-Växjö,4-3,Shinnimin
+348503,Rönken,2023-12-02,Luleå-Växjö,3-0,Brendan Shinnimin
+348506,HarryHaffa,2023-12-02,Luleå-Växjö,3-2,Mario Kempe
+348507,Metheuz,2023-12-02,Luleå-Växjö,3-2,Kossila
+348513,NallePhu,2023-12-02,Luleå-Växjö,4-2,Omark
+348517,wilmus2007,2023-12-02,Luleå-Växjö,4-2,Mario Kempe
+348522,Hjalmar_Vuopio,2023-12-02,Luleå-Växjö,5-2,Shinnimin
+348525,DaVoc,2023-12-02,Luleå-Växjö,4-2,Laaksonen
+348526,Pastorn,2023-12-02,Luleå-Växjö,3-1,Pasic
+348527,Redbear,2023-12-02,Luleå-Växjö,4-2,Kempe
+348530,Hedanders,2023-12-02,Luleå-Växjö,1-3,Rosén
+348533,PM,2023-12-02,Luleå-Växjö,2-5,Kossila
+=== 348560,Rönken <<< Not a Guess. >>>:Resultat efter r omgång 23:
+348703,Lasse Proppmätt,2023-12-07,HV71-Luleå,5-3,Brännström
+348705,Metheuz,2023-12-07,HV71-Luleå,2-3,Andreasson
+348707,LulefanGBG,2023-12-07,HV71-Luleå,5-2,Shinnimin
+348712,Vilgot,2023-12-07,HV71-Luleå,1-4,pacic
+348713,Puckad,2023-12-07,HV71-Luleå,2-3,Hardegård
+348714,Urken,2023-12-07,HV71-Luleå,2-5,Hardegård
+348719,HarryHaffa,2023-12-07,HV71-Luleå,2-3,Oscar Eklind
+348722,Sigge75,2023-12-07,HV71-Luleå,3-4,Eklind
+348723,SatanicPanic,2023-12-07,HV71-Luleå,0-4,Andreasson
+348724,Rönken,2023-12-07,HV71-Luleå,1-5,Pontus AndreassonNästa rättning sker sannolikt i morgon.  @Urken kommer att presenta priset i samband med andra eller om det var tredje advent har jag fått höra
+348725,Norlin,2023-12-07,HV71-Luleå,2-3,Eklind
+348726,NallePhu,2023-12-07,HV71-Luleå,2-4,Hardy
+348727,Bamsefar,2023-12-07,HV71-Luleå,1-4,Omark
+348729,Hedanders,2023-12-07,HV71-Luleå,5-2,Shore
+348732,Sigge75,2023-12-07,HV71-Luleå,3-4,Tyrväinen.Ändrar tipset eftersom Eklind tydligen inte spelar ikväll.
+=== =====================================
+348734,Pastorn,2023-12-07,HV71-Luleå,0-4,Pasic
+=== 348735,HarryHaffa <<< Not a Guess. >>>:HarryHaffa skrev:2023-12-07,  HV71- Luleå,  2-3,  Oscar Eklind  Ändrar målskytt pga frånvaro till Markus Hardegård
+348736,wilmus2007,2023-12-07,Hv71-Luleå,1-3,Pontus Andreasson
+348737,PM,2023-12-07,HV71-Luleå,2-3,Pasic
+=== 348738,Norlin <<< Not a Guess. >>>:Norlin skrev:2023-12-07, HV71 - Luleå, 2-3, EklindÄndrar också målskytt2023-12-07, HV71 - Luleå, 2-3, Olle
+348739,Hjalmar_Vuopio,2023-12-07,Hv71-Luleå,2-5,Connolly
+=== 348741,DaVoc,2023-12-07,HV71-Luleå:2-3,Nikola Pasic
+348744,Redbear,2023-12-07,HV71-Luleå,2-4,Tyrväinen
+=== 348745,KaptenBlodskelett,2023-12-07,HV71-Luleå:2-4,Allard
+=== 348938,Lasse Proppmätt,2023-12-09,Linköpin-Luleå:5-1,Greco
+=== 348939,SatanicPanic,2023-12-09,Linköpin-Luleå:2-3,Shinimin
+348945,Vilgot,2023-12-09,Linköping-Luleå,4-2,Strandberg
+348948,Metheuz,2023-12-09,Linköping-Luleå,4-1,Rattie
+=== 348957,Sigge75,2023-12-09,Linköping-Luleå:3-5,Shinnimin
+348966,Hedanders,2023-12-09,Linköping-Luleå,4-2,Rattie
+348973,Puckad,2023-12-09,Linköping-Luleå,1-2,Eklind
+348974,Urken,2023-12-09,Linköping-Luleå,4-2,Shinnimin
+348975,HarryHaffa,2023-12-09,Linköping-Luleå,2-3,Brendan Shinnimin
+348976,Hjalmar_Vuopio,2023-12-09,Linköping-Luleå,3-2,John Nyberg
+348979,NallePhu,2023-12-09,Linköping-Luleå,4-2,Greco
+348996,Bamsefar,2023-12-09,Linköping-Luleå,3-5,Omark
+348999,Rönken,2023-12-09,Linköping-Luleå,3-4,Linus Omark
+349019,wilmus2007,2023-12-09,Linköping-Luleå,2-4,Brendan Shinnimin
+349023,Redbear,2023-12-09,Linköping-Luleå,2-4,Hardegård
+=== 349024,LulefanGBG,2023-12-09,Linköping-Luleå:4-2,Rattie
+349025,DaVoc,2023-12-09,Linköping-Luleå,3-4,Oskari Laaksonen
+349032,PM,2023-12-09,Linköping-Luleå,2-3,PasicHan måste ju fan måla nångång!
+349034,KaptenBlodskelett,2023-12-09,Linköping-Luleå,2-3,Allard
+349035,Pastorn,2023-12-09,Linköping.Luleå,0-3,Shinnimin
+=== 349206,Rönken <<< Not a Guess. >>>:Resultat efter omgång 24:Resultat efter omgång 25:
+349506,Metheuz,2023-12-26,Luleå-Malmö,4-1,Andreasson
+349510,Rönken,2023-12-26,Luleå-Malmö,5-1,Linus Omark
+349511,Pontaking,2023-12-26,Luleå-Malmö,2-1,Frederic Allard
+349512,Sigge75,2023-12-26,Luleå-Malmö,4-0,Linus Omark
+349540,Hedanders,2023-12-26,Luleå-Malmö,1-4,Händemark
+349557,Vilgot,2023-12-26,Luleå-Malmö,3-3,Andreasson
+349558,NallePhu,2023-12-26,Luleå-Malmö,4-2,Ponta
+349568,Urken,2023-12-26,Luleå-Malmö,5-2,Shinnimin
+349570,Lasse Proppmätt,2023-12-26,Luleå-Malmö,1-4,Simon Åkerström
+349583,Pastorn,2023-12-26,Luleå-Malmö,5-0,Pasic
+349588,HarryHaffa,2023-12-26,Luleå-Malmö,3-2,Brendan Shinimin
+349591,Bamsefar,2023-12-26,Luleå-Malmö,4-2,Andreasson
+349592,KaptenBlodskelett,2023-12-26,Luleå-Malmö,3-2,Allard
+349593,Redbear,2023-12-26,Luleå-Malmö,5-1,Omark
+=== 349599,wilmus2007 <<< Not a Guess. >>>:2923-12-26, Luleå - Malmö, 4-0, Pontus Andreasson
+349603,DaVoc,2023-12-26,Luleå-Malmö,4-2,Shinnimin
+349605,SatanicPanic,2023-12-26,Luleå-Malmö,5-1,Omark
+349615,Hjalmar_Vuopio,2023-12-26,Luleå-Malmö,6-2,Lilja
+=== 349619,Urken <<< Not a Guess. >>>:Resultat efter omgång 26:
+349823,Metheuz,2023-12-28,Luleå-Färjestad,1-5,Tomasek
+=== =====================================
+349832,Hjalmar_Vuopio,2023-12-28,Luleå-Färjestad,0-9,Jonathan Andersson
+349920,NallePhu,2023-12-28,Luleå-Färjestad,2-6,Åslund
+349945,Sigge75,2023-12-28,Luleå-Färjestad,5-4,Andreasson
+349970,Puckad,2023-12-28,Luleå-Färjestad,4-2,Hedkvist
+349975,Urken,2023-12-28,Luleå-Färjestad,1-5,Åslund
+349991,Hedanders,2023-12-28,Luleå-Färjestad,1-6,Tomasek
+=== 349995,trallgöken <<< Not a Guess. >>>:2,61 ggr pengarna på FBKFattar ingenting? Must be my Lucky day
+350025,Vilgot,2023-12-28,Luleå-Färjestad,3-1,Berglund
+350026,Lasse Proppmätt,2023-12-28,Luleå-Färjestad,1-4,Ejdsell
+350029,Rönken,2023-12-28,Luleå-Färjestad,3-2,Pontus Andreasson
+350053,SatanicPanic,2023-12-28,Luleå-Färjestad,1-5,Ejdsell
+=== 350055,Bamsefar,2023-12-28,Luleå-Färjestad3-1,Einar
+350072,HarryHaffa,2023-12-28,Luleå-Färjestad,3-2,Linus Omark
+350077,wilmus2007,2023-12-28,Luleå-Färjestad,3-2,Oskar Eklind
+350083,Redbear,2023-12-28,Luleå-Färjestad,5-4,Omark
+350090,KaptenBlodskelett,2023-12-28,Luleå-Färjestad,3-2,Allard
+350101,DaVoc,2023-12-28,Luleå-Färjestad,3-1,Eklind
+=== 350123,LulefanGBG,2023-12-28,Luleå-Färjestad,1-8,OmarkSedanvinnervi7,e avgörande finalen i Karlstad...*önsketänkande*
+=== 350134,Urken <<< Not a Guess. >>>:Ändrar målskytt till Tomasek då Åslund inte spelar.
+=== 350141,Urken <<< Not a Guess. >>>:Resultat efter omgång 27:
+350499,Urken,2023-12-30,Skellefteå-Luleå,5-1,Heikkinen
+350505,Vilgot,2023-12-30,Skellefteå-Luleå,2-1,Max Lindholm
+350528,Lasse Proppmätt,2023-12-30,Skellefteå-Luleå,4-1,Pudas
+350538,Sigge75,2023-12-30,Skellefteå-Luleå,2-3,Eklind
+350541,Bamsefar,2023-12-30,Skellefteå-Luleå,1-4,Hedqvist
+350544,SatanicPanic,2023-12-30,Skellefteå-Luleå,4-1,Pudas
+350547,Puckad,2023-12-30,Skellefteå-Luleå,0-1,Andreasson
+350550,LulefanGBG,2023-12-30,Skellefteå-Luleå,3-2,Hardegård
+350570,HarryHaffa,2023-12-30,Skellefteå-Luleå,2-3,Jonas Berglund
+350571,DaVoc,2023-12-30,Skellefteå-Luleå,2-3,Oscar Eklind
+350573,Metheuz,2023-12-30,Skellefteå-Luleå,3-0,Andreas Johnson
+350576,LHF90,2023-12-30,Skellefteå-Luleå,1-4,Hedqvist
+350583,Pastorn,2023-12-30,Skellefteå-Luleå,0-3,Allard
+350588,Hjalmar_Vuopio,2023-12-30,Skellefteå-Luleå,1-2,Eklind
+350594,KaptenBlodskelett,2023-12-30,Skellefteå-Luleå,2-3,Allard
+350597,NallePhu,2023-12-30,Skellefteå-Luleå,2-3,Ponta
+350600,wilmus2007,2023-12-30,Skellefteå-Luleå,1-2,Isak Hedqvist
+350610,Redbear,2023-12-30,Skellefteå-Luleå,2-4,Andreasson
+351249,Lasse Proppmätt,2024-01-04,Luleå-Modo,1-4,Rundblad
+351253,Puckad,2024-01-04,Luleå-Modo,3-1,Andreasson
+351254,Metheuz,2024-01-04,Luleå-Modo,3-2,Eklind
+351256,Rönken,2024-01-04,Luleå-Modo,3-0,Linus Omark
+351259,Sigge75,2024-01-04,Luleå-Modo,5-2,Hardegård
+351266,Bamsefar,2024-01-04,Luleå-Modo,4-1,Andreasson
+351270,Urken,2024-01-04,Luleå-Modo,3-1,Connolly
+351273,Hedanders,2024-01-04,Luleå-Modo,1-4,Aagard
+351275,HarryHaffa,2024-01-04,Luleå-Modo,3-2,Marcus Hardegård.
+351286,SatanicPanic,2024-01-04,Luleå-Modo,2-5,Omark
+351287,KaptenBlodskelett,2024-01-04,Luleå-Modo,4-2,Allard
+351294,Vilgot,2024-01-04,Luleå-Modo,5-2,Andreasson
+=== =====================================
+351298,NallePhu,2024-01-04,Luleå-Modo,5-3,Omark
+351302,DaVoc,2024-01-04,Luleå-Modo,4-1,Sellgren
+351314,Pastorn,2024-01-04,Luleå-MoDo,3-1,Pasic
+351318,Redbear,2023-01-04,Luleå-Modo,3-2,Omark
+351327,wilmus2007,2023-01-04,Luleå-Modo,5-1,Linus Omark
+351332,Hjalmar_Vuopio,2023-01-04,Luleå-Modo,4-2,Marcus Hardegård
+351751,Lasse Proppmätt,2024-01-06,Luleå-Timrå,2-5,Hållander
+351762,Urken,2024-01-07,Luleå-Timrå,2-4,Hållander
+351766,Vilgot,2024-01-06,Luleå-Timrå,2-4,Dahlen
+351796,Hedanders,2024-01-06,Luleå-Timrå,1-4,Pääjärvi
+351812,HarryHaffa,2024-01-06,Luleå-Timrå,3-2,Jonas Berglund
+351814,Bamsefar,2024-01-06,Luleå-Timrå,5-2,Omark
+351817,Sigge75,2024-01-06,Luleå-Timrå,3-1,Omark
+351842,Metheuz,2024-01-06,Luleå-Timrå,1-4,Dahlén
+351855,NallePhu,2024-01-06,Luleå-Timrå,2-5,Fille Hållander
+351863,Puckad,2024-01-06,Luleå-Timrå,4-3,Pasic
+351884,Pastorn,2024-01-06,Luleå-Timrå,4-1,Nikupeteri
+351892,wilmus2007,2024-01-06,Luleå-Timrå,5-2,Oskar Eklind
+351895,DaVoc,2024-01-06,Luleå-Timrå,5-2,David Rautio
+351900,Redbear,2024-01-06,Luleå-Timrå,4-2,Hedqvist
+351903,KaptenBlodskelett,2024-01-06,Luleå-Timrå,3-2,Allard
+352828,HarryHaffa,2024-01-11,Oskarshamn-Luleå,2-3,Brendan Shinnimin
+352829,Lasse Proppmätt,2024-01-11,Oskarshamn-Luleå,4-2,Karlkvist
+352844,Vilgot,2024-01-11,Oskarshamn-Luleå,3-2,Jasek
+352849,NallePhu,2024-01-11,Oskarshamn-Luleå,6-2,Jasek
+352861,KaptenBlodskelett,2024-01-11,Oskarshamn-Luleå,2-4,Shinnimin
+352863,Metheuz,2024-01-11,Oskarshamn-Luleå,2-3,Hardegård
+352883,Bamsefar,2024-01-11,Oskarshamn-Luleå,2-5,Eklind
+352895,Hedanders,2024-01-11,Oskarshamn-Luleå,4-1,Oksanen
+352902,DaVoc,2024-01-11,Oskarshamn-Luleå,2-4,Brendan Shinnimin
+352910,Puckad,2024-01-11,Oskarshamn-Luleå,3-4,Omark
+352911,wilmus2007,2024-01-11,Oskarshamn-Luleå,2-3,David Lilja
+352912,SatanicPanic,2024-01-11,Oskarshamn-Luleå,5-1,Engsund
+352913,Urken,2024-01-11,Oskarshamn-Luleå,6-2,Oksanen
+352914,Sigge75,2024-01-11,Oskarshamn-Luleå,2-4,Tyrväinen
+352929,Pastorn,2024-01-11,Oskarshamn-Luleå,2-5,Pasic
+353182,Lasse Proppmätt,2024-01-13,Luleå-HV71,2-5,Brännström
+353185,Pastorn,2024-01-13,Luleå-HV71,3-1,Hedqvist
+353186,Hedanders,2024-01-13,Luleå-HV71,2-4,Isac Brännström
+353188,Metheuz,2024-01-13,Luleå-HV71,4-1,Lilja
+353191,Sigge75,2024-01-13,Luleå-HV71,2-0,Omark
+353192,HarryHaffa,2024-01-13,Luleå-HV71,3-2,Brendan Shinnimin
+353193,Vilgot,2024-01-13,Luleå-HV71,4-2,Berglund
+353195,Urken,2024-01-13,Luleå-Hv71,2-4,Brännström
+353196,SatanicPanic,2024-01-13,Luleå-HV71,3-1,Lilja
+353198,Hjalmar_Vuopio,2024-01-13,Luleå-HV71,5-2,Oscar Eklind
+353203,Redbear,2024-01-13,Luleå-HV71,3-2,Andreasson
+353205,Bamsefar,2024-01-13,Luleå-HV71,4-2,Eklind
+353208,wilmus2007,2024-01-13,Luleå-HV-71,5-1,David Lilja
+353210,KaptenBlodskelett,2024-01-13,Luleå-HV-71,4-2,Allard
+=== =====================================
+353211,DaVoc,2024-01-13,Luleå-HV71,4-2,Shinnimin
+353575,Lasse Proppmätt,2024-01-18,Rögle-Luleå,5-1,Tambellini
+353591,Sigge75,2024-01-18,Rögle-Luleå,2-3,Andreasson
+353604,HarryHaffa,2024-01-18,Rögle-Luleå,2-3,Brendan Shinnimin
+353605,Vilgot,2024-01-18,Rögle-Luleå,3-2,Tambellini
+353608,Urken,2024-01-18,Rögle-Luleå,4-2,Chris Abbott
+353609,Metheuz,2024-01-18,Rögle-Luleå,3-1,Abols
+353610,SatanicPanic,2024-01-18,Rögle-Luleå,2-0,Abols
+353618,Pastorn,2024-01-18,Rögle-Luleå,1-4,Allard
+353623,wilmus2007,2024-01-18,Rögle-Luleå,2-4,Brendan Shinnimin
+=== 353632,KaptenBlodskelett <<< Not a Guess. >>>:Rögle - Luleå, 2-3, Allard
+353634,Puckad,2024-01-18,Rögle-Luleå,1-3,Brodecki
+353638,Redbear,2024-01-08,Rögle-Luleå,1-4,Berglund
+353641,Hjalmar_Vuopio,2024-01-08,Rögle-Luleå,1-2,Oscar Eklind
+353643,DaVoc,2024-01-08,Rögle-Luleå,2-3,Brendan Shinnimin
+353644,Sunderbyare,2024-01-08,Rögle-Luleå,1-3,Linus Omark
+353646,Bamsefar,2024-01-18,Rögle-Luleå,2-3,Tyrväinen
+353652,Hedanders,2024-01-18,Rögle-Luleå,4-1,Tambellini
+=== 353677,Urken <<< Not a Guess. >>>:Reserverat.  @Hedanders tips ogiltigförklaras, då det inkom två minuter efter officiell tid för matchstart.
+353879,HarryHaffa,2024-01-20,Malmö-Luleå,2-3,Brendan Shinnimin.
+353880,Urken,2024-01-20,Malmö-Luleå,4-2,Kuokkonen
+353881,Hjalmar_Vuopio,2024-01-20,Malmö-Luleå,2-6,Einar
+353882,Sigge75,2024-01-20,Malmö-Luleå,3-5,Brendan Shinnimin
+353884,Bamsefar,2024-01-20,Malmö-Luleå,1-3,Eklind
+353885,Lasse Proppmätt,2024-01-20,Malmö-Luleå,4-1,Pajuniemi
+353889,Puckad,2024-01-20,Malmö-Luleå,0-4,Eklind
+353890,SatanicPanic,2024-01-20,Malmö-Luleå,1-4,Shinimin
+353891,Metheuz,2024-01-20,Malmö-Luleå,1-4,Berglund
+353894,Vilgot,2024-01-20,Malmö-Luleå,2-3,Gustafsson
+353905,DaVoc,2024-01-20,Malmö-Luleå,2-3,Oscar eklind
+353907,Pastorn,2024-01-20,Malmö-Luleå,0-3,Allard
+353916,Redbear,2024-01-20,Malmö-Luleå,2-4,Eklind
+353919,wilmus2007,2024-01-20,Malmö-Luleå,0-3,Oskar Eklind
+353920,KaptenBlodskelett,2024-01-20,Malmö-Luleå,2-3,Allard
+353921,Sunderbyare,2024-01-20,Malmö-Luleå,2-4,Linus Omark
+=== 353971,Rönken <<< Not a Guess. >>>:Reserverat.
+354169,Lasse Proppmätt,2024-01-23,Luleå-Växjö,0-4,Emil Sylvegård
+354170,Sigge75,2024-01-23,Luleå-Växjö,2-4,Robert Rosén
+=== 354177,Bamsefar,2024-01-23Luleå-Växjö,2-3,Omark
+354178,Puckad,2024-01-23,Luleå-Växjö,3-2,Shinnimin
+=== 354180,Bamsefar <<< Not a Guess. >>>:Bamsefar skrev:2024-01-23 Luleå  - Växjö , 2-3 , Omark Ändrar mitt tips till 3-2 , naturligtvis
+354186,SatanicPanic,2024-01-23,Luleå-Växjö,0-3,Emil Sylvegård
+=== 354193,Metheuz,2024-01-23Luleå-Växjö,1-2,Joel Persson
+=== 354195,Urken,2024-01-23Luleå-Växjö,1-4,Joel Persson
+354201,Vilgot,2024-01-23,Luleå-Växjö,1-3,Blichenfeld
+354215,Hedanders,2024-01-23,Luleå-Växjö,1-5,Marcus Sylvegård
+354223,HarryHaffa,2024-01-24,Luleå-Växjö,2-1,Brendan Shinnimin
+354257,Pastorn,2024-01-24,Luleå-Växjö,2-0,Jonas Berglund
+354258,Redbear,2024-01-23,Luleå-Växjö,4-1,Omark
+354265,wilmus2007,2024-01-23,Luleå-Växjö,3-2,Brendan Shinnimin
+=== =====================================
+354268,DaVoc,2024-01-23,Luleå-Växjö,3-2,Oscar Eklind
+354269,Sunderbyare,2024-01-23,Luleå-Växjö,2-1,Jonas Berglund
+354270,KaptenBlodskelett,2024-01-23,Luleå-Växjö,4-2,Shinnimin
+=== 354378,Puckad <<< Not a Guess. >>>:Reserverat till dig  @Rönken
+354517,HarryHaffa,2024-01-25,Luleå-Leksand,3-2,Brendan Shinnimin
+354520,Sigge75,2024-01-25,Luleå-Leksand,4-1,Brendan Shinnimin
+354531,Hjalmar_Vuopio,2024-01-25,Luleå-Leksand,3-1,Olli Nikupeteri
+354533,Metheuz,2024-01-25,Luleå-Leksand,2-4,Cehlarik
+354540,Lasse Proppmätt,2024-01-25,Luleå-Leksand,2-5,Cehlarik
+354541,Vilgot,2024-01-25,Luleå-Leksand,1-4,Elvenes
+354554,SatanicPanic,2024-01-25,Luleå-Leksand,3-4,Cehlarik
+354568,Bamsefar,2024-01-25,Luleå-Leksand,5-3,Einar
+354569,Sunderbyare,2024-01-25,Luleå-Leksand,4-2,Pontus Andreasson
+354571,Redbear,2024-01.25,Luleå-Leksand,4-3,Eklind
+354579,Puckad,2024-01-25,Luleå-Leksand,3-1,Hardegård
+354581,DaVoc,2024-01-25,Luleå-Leksand,3-2,Oscar Eklind
+354584,Urken,2024-01-25,Luleå-Leksand,2-5,Cehlarik
+354585,Pastorn,2024-01-25,Luleå-Leksand,3-1,Lang
+354586,KaptenBlodskelett,2024-01-25,Luleå-Leksand,4-2,Allard
+354589,wilmus2007,2024-01-25,Luleå-Leksand,4-1,Linus Omark
+354592,Hedanders,2024-01-25,Luleå-Leksand,2-5,Hrivik
+=== 354595,Urken <<< Not a Guess. >>>:Hedanders tips råknas ej, postat efter officiell matchstartstid.Reserverat.
+354991,Lasse Proppmätt,2024-01-27,Luleå-Linköping,2-5,Little
+355002,Hedanders,2024-01-27,Luleå-Linköping,2-4,Rattie
+355036,Sigge75,2024-01-27,Luleå-Linköping,4-3,Brendan Shinnimin
+355037,Hjalmar_Vuopio,2024-01-27,Luleå-Linköping,3-2,Brendan Shinnimin
+355038,Vilgot,2024-01-27,LuleåLinköping,2-1,Rattie
+355046,Bamsefar,2024-01-27,Luleå-Linköping,4-2,Omark
+355048,Urken,2024-01-27,Luleå-Linköping,4-2,Andreasson
+355053,Puckad,2024-01-27,Luleå-Linköping,4-1,Lilja
+355056,DaVoc,2024-01-27,Luleå-Linköping,4-2,Brendan Shinnimin
+355057,HarryHaffa,2024-01-27,Luleå-Linköping,3-2,Brendan Shinnimin.
+355059,Metheuz,2024-01-27,Luleå-Linköping,2-3,Russell
+355061,SatanicPanic,2024-01-27,Luleå-Linköping,3-1,Hardegård
+=== 355063,Redbear,2024-01-24,Luleå-Linköping4-2,Omark
+355065,Pastorn,2024-01-27,Luleå-Linköping,2-0,Allard
+355069,wilmus2007,2024-01-27,Luleå-Linköping,4-2,Nicola Pasic
+355071,KaptenBlodskelett,2024-01-27,Luleå-Linköping,3-2,Allard
+355078,Sunderbyare,2024-01-27,Luleå-Linköping,3-1,Pontus Andreasson
+=== 355084,Urken <<< Not a Guess. >>>:Reserverat.
+355378,Hedanders,2024-01-30,Växjö-Luleå,5-1,M Sylvegård
+355461,Sunderbyare,2024-01-30,Växjö-Luleå,7-2,Marcus Sylvegård
+355463,Sigge75,2024-01-30,Växjö-Luleå,2-3,Allard
+355465,Puckad,2024-01-30,Växjö-Luleå,1-3,Omark
+355468,SatanicPanic,2024-01-30,Växjö-Luleå,5-0,M Sylvegård
+355469,Bamsefar,2024-01-30,Växjö-Luleå,2-3,Wozniak
+355482,Lasse Proppmätt,2024-01-30,Växjö-Luleå,7-0,Rosen
+355483,Vilgot,2024-01-30,Växjö-Luleå,4-1,Persson
+355488,Pastorn,2024-01-30,Växjö-Luleå,3-1,Eklind
+355498,Metheuz,2024-01-30,Växjö-Luleå,3-1,M Sylvegård
+=== =====================================
+355513,Hjalmar_Vuopio,2024-01-30,Växjö-Luleå,0-3,Isac Hedqvist
+355524,HarryHaffa,2024-01-30,Växjö-Luleå,5-2,Brendan Shinnimin
+355535,wilmus2007,2024-01-30,Växjö-Luleå,2-3,Wozniak
+355537,DaVoc,2024-01-30,Växjö-Luleå,2-4,Brendan Shinnimin
+355546,KaptenBlodskelett,2024-01-30,Växjö-Luleå,2-3,Allard
+355549,Redbear,2023-01-30,Växjö-Luleå,2-3,Shinnimin
+=== 355624,Urken <<< Not a Guess. >>>:Reserverat.
+355940,HarryHaffa,2024-02-01,Luleå-Örebro,3-2,Brendan Shinnimin
+355942,Hedanders,2024-02-01,Luleå-Örebro,1-4,Emil Larsson
+355943,SatanicPanic,2024-02-01,Luleå-Örebro,1-3,Emil Larsson
+355944,Lasse Proppmätt,2024-02-01,Luleå-Örebro,2-5,Allard
+355945,Vilgot,2024-02-01,Luleå-Örebro,3-4,Mastomäki
+355946,Metheuz,2024-02-01,Luleå-Örebro,4-2,Omark
+355949,Puckad,2024-02-01,Luleå-Örebro,2-1,Pasic
+355959,wilmus2007,2024-02-01,Luleå-Örebro,4-1,Brendan Shinnimin
+355961,Pastorn,2024-02-01,Luleå-Örebro,2-1,Nikupeteri
+355963,Sigge75,2024-02-01,Luleå-Örebro,5-1,Brendan Shinnimin
+355964,DaVoc,2024-02-01,Luleå-Örebro,3-1,Marcus Hardegård
+355967,Redbear,2024-02-01,Luleå-Örebro,3-2,Omark
+355968,Bamsefar,2024-02-01,Luleå-Örebro,5-2,brodecki
+=== 355970,Urken,2024-02-01,Luleå-1-4,Wikman
+355972,KaptenBlodskelett,2024-02-01,Luleå-Örebro,4-2,Allard
+355973,Sunderbyare,2024-02-01,Luleå-Örebro,3-1,Linus Omark
+355978,Hjalmar_Vuopio,2024-02-01,Luleå-Örebro,4-1,David Lilja
+=== 355980,Urken <<< Not a Guess. >>>:Reserverat.
+356173,Lasse Proppmätt,2024-02-03,Frölunda-Luleå,4-1,Lasu
+356185,Sigge75,2024-02-03,Frölunda-Luleå,4-2,Strömwall
+356191,Vilgot,2024-02-03,Frölunda-Luleå,3-0,Strömvall
+356201,Metheuz,2024-02-03,Frölunda-Luleå,4-1,Strömvall
+356202,Bamsefar,2024-02-03,Frölunda-Luleå,2-4,Brodecki
+356203,Urken,2024-02-03,Frölunda-Luleå,2-4,Andreasson
+356205,SatanicPanic,2024-02-03,Frölunda-Luleå,2-1,Friberg
+356208,HarryHaffa,2024-02-03,Frölunda-Luleå,2-3,Brendan Shinnimin
+356214,DaVoc,2024-02-03,Frölunda-Luleå,2-3,Oscar Eklind
+356215,Puckad,2024-02-03,Frölunda-Luleå,1-4,Andreasson
+356218,Sunderbyare,2024-02-03,Frölunda-Luleå,2-3,Pontus Andreasson
+356220,wilmus2007,2024-02-03,Frölunda-Luleå,1-3,Brendan Shinnimin
+356221,Redbear,2024-02-03,Frölunda-Luleå,2-5,Shinnimin
+356222,Pastorn,2024-02-03,Frölunda-Luleå,0-3,Nikupeteri
+356226,KaptenBlodskelett,2024-02-03,Frölunda-Luleå,2-3,Allard
+=== 356228,Urken <<< Not a Guess. >>>:Reserverat.
+356728,Puckad,2024-02-13,Luleå-Malmö,4-1,Andreasson
+356805,Lasse Proppmätt,2024-02-13,Luleå-Malmö,2-5,Sallinen
+356828,Urken,2024-02-13,Luleå-Malmö,2-4,Shinnimin
+356835,Sigge75,2024-02-13,Luleå-Malmö,4-2,Shinnimin
+356849,HarryHaffa,2024-02-13,Luleå-Malmö,3-2,Brendan Shinimin
+356850,Vilgot,2024-02-13,Luleå-Malmö,2-4,Persson
+356852,SatanicPanic,2024-02-13,Luleå-Malmö,1-3,Shinnimin
+356853,Hedanders,2024-02-13,Luleå-Malmö,1-4,Händemark
+356856,Metheuz,2024-02-13,Luleå-Malmö,3-1,Pasic
+=== =====================================
+356912,DaVoc,2024-02-13,Luleå-Malmö,3-2,Eklind
+356918,wilmus2007,2024-02-13,Luleå-Malmö,5-1,Einar Emanuelsson
+356921,Redbear,2024-02-13,Luleå-Malmö,4-0,Shinnimin
+356929,Hjalmar_Vuopio,2024-02-13,Luleå-Malmö,3-1,Shinnimin
+356937,Bamsefar,2024-02-13,Luleå-Malmö,3-1,Tyrväinen
+356939,KaptenBlodskelett,2024-02-13,Luleå-Malmö,3-2,Allard
+357276,Lasse Proppmätt,2024-02-15,Hiv71-Luleå,4-2,Brännström
+357289,Vilgot,2024-02-15,HV-71-Luleå,1-3,Shinnimin
+357304,HarryHaffa,2024-02-15,HV71-LULEÅ,3-2,Brendan Shinnimin
+357327,SatanicPanic,2024-02-15,hv71-Luleå,3-2,Brännström
+357332,Metheuz,2024-02-15,HV-71-Luleå,2-3,André Petersson
+357365,DaVoc,2024-02-15,HV-71-Luleå,2-4,Linus Omark
+357376,Sigge75,2024-02-15,HV-71-Luleå,2-4,Shinnimin
+357395,Urken,2024-02-15,hv71-Luleå,2-4,Shinnimin
+357407,Redbear,2024-02-15,HV71-Luleå,1-5,Shinnimin
+357415,wilmus2007,2024-02-15,HV71-Luleå,1-5,Oskar Eklind
+357423,KaptenBlodskelett,2024-02-15,HV71-Luleå,2-4,Allard
+357428,Hjalmar_Vuopio,2024-02-15,HV71-Luleå,1-4,Hedqvist
+=== 357436,Urken <<< Not a Guess. >>>:Reserverat.
+357874,HarryHaffa,2024-02-17,Linköping-Luleå,2-3,
+357875,Sigge75,2024-02-17,Linköping-Luleå,4-2,Fantenberg
+357876,Vilgot,2024-02-17,Linköping-Luleå,2-1,Russel
+357877,Metheuz,2024-02-17,Linköping-Luleå,5-1,Rattie
+357878,Bamsefar,2024-02-17,Linköping-Luleå,2-3,Einar
+357879,Lasse Proppmätt,2024-02-17,Linköping-Luleå,5-1,Gallò
+357880,SatanicPanic,2024-02-17,Linköping-Luleå,3-2,Gallo
+=== 357882,HarryHaffa <<< Not a Guess. >>>:HarryHaffa skrev:2024-02-17, Linköping- Luleå,  2-3 2024-02-17, Linköping- Luleå,  2-3 , Brendan Shinnimin
+357888,wilmus2007,2024-02-17,Linköping-Luleå,1-3,Oskar Eklind
+=== 357889,wilmus2007 <<< Not a Guess. >>>:Kommer det poäng sammanställning snart?
+357890,Björnpappa,2024-02-17,Linköping-Luleå,0-3,Joel Lassinantti
+357891,KaptenBlodskelett,2024-02-17,Linköping-Luleå,2-4,Shinnimin
+357892,Redbear,2024-02-17,Linköping-Luleå,2-3,Andreasson
+357894,Hjalmar_Vuopio,2024-02-17,Linköping-Luleå,1-2,Shinnimin
+357898,DaVoc,2024-02-17,Linköping-Luleå,2-3,Brendan Shinnimin
+358373,Lasse Proppmätt,2024-02-22,Luleå-Oskarshamn,1-4,Engsund
+358378,Flippass,2024-02-22,Lule-Oskarshamn,8-0,Ola
+358424,Sigge75,2024-02-22,Luleå-Oskarshamn,4-3,Einar
+=== 358451,Bamsefar,2024-02-22,Luleå-Oskarsham,5-2,Tyrväinen,
+358485,Hedanders,2024-02-22,Luleå-Oskarshamn,1-3,Lodin
+358505,Metheuz,2024-02-22,Luleå-Oskarshamn,3-2,Brodecki
+358516,HarryHaffa,2024-02-22,Luleå-Oskarshamn,3-2,Brendan Shinnimin
+358531,SatanicPanic,2024-02-22,Luleå-Oskarshamn,2-3,Shinnimin
+358534,Vilgot,2024-02-22,Luleå-Oskarshamn,2-4,Engsund
+358537,DaVoc,2024-02-22,Luleå-Oskarshamn,4-2,Brendan Shinnimin
+358543,KaptenBlodskelett,2024-02-22,Luleå-Oskarshamn,5-2,Omark
+358546,Hjalmar_Vuopio,2024-02-22,Luleå-Oskarshamn,4-1,Oskari Laaksonen
+358547,Redbear,2024-02-22,Luleå-Oskarshamn,4-1,Shinnimin
+358548,wilmus2007,2024-02-22,Luleå-Oskarshamn,5-1,Jacob Ihs Wozniak
+=== 358682,Urken <<< Not a Guess. >>>:Reserverat.
+=== 358688,Lasse Proppmätt,2024-02-24,Leksand-Luleå5-1,Cehlarik
+=== =====================================
+=== 358772,Urken,2024-02-24,Leksand-Luleå5-2,Shinnimin
+=== 358774,Sigge75,2024-02-24,Leksand-Luleå2-3,Andreasson
+358775,Bamsefar,2024-02-24,Leksand-Luleå,3-4,Allard
+=== 358802,SatanicPanic,2024-02-24,Leksand-Luleå3-1,Cehlarik
+=== 358803,Metheuz,2024-02-24,Leksand-Luleå4-2,Cehlarik
+358807,HarryHaffa,2024-02-24,Leksand-Luleå,2-3,Brendan Shinnimin
+358812,Hjalmar_Vuopio,2024-02-24,Leksand-Luleå,2-5,Ludvig Jansson
+358813,Vilgot,2024-02-24,Leksand-Luleå,3-1,Elvenes
+358818,KaptenBlodskelett,2024-02-24,Leksand-Luleå,2-4,Shinnimin
+=== 358822,wilmus2007,2024-02-24,Leksand-Luleå2-3,Linus Omark
+358823,Redbear,2024-02-24,Leksand-Luleå,2-3,Brodecki
+=== 358858,Redbear <<< Not a Guess. >>>:.
+359200,Pastorn,2024-02-27,Luleå-Skellefteå,3-0,Allard
+359201,SatanicPanic,2024-02-27,Luleå-Skellefteå,1-5,Pudas
+359202,Sigge75,2024-02-27,Luleå-Skellefteå,2-1,Tyrväinen
+359213,Lasse Proppmätt,2024-02-27,Luleå-Skellefteå,2-3,Eklind
+359216,Metheuz,2024-02-27,Luleå-Skellefteå,2-4,Pudas
+359219,Puckad,2024-02-27,Luleå-Skellefteå,3-1,Shinnimin
+359236,HarryHaffa,2024-02-27,Luleå-Skellefteå,3-2,Brendan Shinnimin
+359241,Hjalmar_Vuopio,2024-02-27,Luleå-Skellefteå,2-1,Brodecki
+359242,Vilgot,2024-02-27,LuleåSkellefteå,1-4,Pudas
+359248,Bamsefar,2024-02-27,LuleåSkellefteå,3-2,Brodecki
+359257,Hedanders,2024-02-27,Luleå-Skellefteå,1-4,Sikura
+359262,wilmus2007,2024-02-27,Luleå-Skellefteå,2-1,Brendan Shinnimin
+359264,DaVoc,2024-02-27,Luleå-Skellefteå,3-1,Brendan Shinnimin
+359265,Redbear,2024-02-27,Luleå-Skellefteå,3-2,Shinnimin
+359266,Urken,2024-02-27,Luleå-Skellefteå,2-6,Pudas
+359270,KaptenBlodskelett,2024-02-27,Luleå-Skellefteå,4-2,Shinnimin
+=== 359272,Urken <<< Not a Guess. >>>:Reserverat.
+359388,Lasse Proppmätt,2024-02-29,Örebro-Luleå,4-1,Mastomäki
+359408,Pastorn,2024-02-29,Örebro-Luleå,0-3,Hardegård
+359411,Sigge75,2024-02-29,Örebro-Luleå,3-4,Einar
+359414,SatanicPanic,2024-02-29,Örebro-Luleå,3-1,Lekkerimäki
+359430,Hedanders,2024-02-29,Örebro-Luleå,4-2,Lekkerimäki
+359458,Hjalmar_Vuopio,2024-02-29,Örebro-Luleå,0-1,Connolly
+359465,Vilgot,2024-02-29,ÖrebroLuleå,2-3,Emanuelsson
+359468,Metheuz,2024-02-29,Örebro-Luleå,1-3,Andreasson
+359475,Bamsefar,2024-02-29,Örebro-Luleå,2-4,Brodecki
+359496,wilmus2007,2024-02-29,Örebro-Luleå,2-3,Brendan Shinnimin
+359498,HarryHaffa,2024-02-29,Örebro-Luleå,2-3,Brendan Shinnimin
+359502,DaVoc,2024-02-29,Örebro-Luleå,2-3,Marcus Hardegård
+359504,Redbear,2024-02-29,Örebro-Luleå,0-3,Andreasson
+359508,KaptenBlodskelett,2024-02-29,Örebro-Luleå,2-4,Sellgren
+=== 359613,Urken <<< Not a Guess. >>>:Reserverat.
+359692,Lasse Proppmätt,2024-03-02,Luleå-Rögle,2-4,Zaar
+359694,SatanicPanic,2024-03-02,Luleå-Rögle,3-1,Pasic
+359711,Sigge75,2024-03-02,Luleå-Rögle,3-1,Tyrväinen
+359726,Hedanders,2024-03-02,Luleå-Rögle,1-4,Tambellini
+359730,Vilgot,2024-03-02,Luleå-Rögle,2-1,Sundsvik
+359736,DaVoc,2024-03-02,Luleå-Rögle,3-1,Oscar Eklind
+=== =====================================
+359755,Hjalmar_Vuopio,2024-03-02,Luleå-Rögle,4-2,Shinnimin
+359757,Metheuz,2024-03-02,Luleå-Rögle,4-1,Eklind
+359759,Urken,2024-03-02,Luleå-Rögle,4-2,Omark
+359761,HarryHaffa,2024-03-02,Luleå-Rögle,3-2,Brendan Shinnimin
+359764,Bamsefar,2024-03-02,Luleå-Rögle,4-2,Tyrväinen
+359768,Redbear,2024-03-03,Luleå-Rögle,3-1,Omark
+359769,Pastorn,2024-03-02,Luleå-Rögle,3-0,Brodecki
+359770,wilmus2007,2024-03-02,Luleå-Rögle,4-1,Pontus Andreasson
+359773,KaptenBlodskelett,2024-03-02,Luleå-Rögle,4-2,Shinnimin
+=== 359813,Urken <<< Not a Guess. >>>:Reserverat.
+359971,Hedanders,2024-03-05,MoDo-Luleå,5-2,Dickinson
+359985,SatanicPanic,2024-03-05,MoDo-Luleå,3-1,Shinimin
+359987,Bamsefar,2024-03-05,MoDo-Luleå,2-3,Andreasson
+360032,Vilgot,2024-03-05,MoDo-Luleå,3-1,Bernhardt
+360033,Sigge75,2024-03-05,MoDo-Luleå,3-4,Andreasson
+360034,Metheuz,2024-03-05,MoDo-Luleå,3-2,Ranta
+360035,DaVoc,2024-03-05,MoDo-Luleå,2-3,Brendan Shinnimin
+360038,Lasse Proppmätt,2024-03-05,MoDo-Luleå,4-1,Rundblad
+360041,wilmus2007,2024-03-05,Modo-Luleå,1-5,Oskar Eklind
+360042,Hjalmar_Vuopio,2024-03-05,MoDo-Luleå,1-3,Oskari Laaksonen
+360043,Pastorn,2024-03-05,MoDo-Luleå,0-3,Pasic
+360044,HarryHaffa,2024-03-05,MoDo-Luleå,2-3,Brendan Shinnimin
+360046,Redbear,2024-03-05,Modo-Luleå,2-3,Andreasson
+360047,KaptenBlodskelett,2024-03-05,Modo-Luleå,2-4,Omark
+360156,Pastorn,2024-03-07,Luleå-Frölunda,3-0,Lilja
+360158,SatanicPanic,2024-03-07,Luleå-Frölunda,4-1,Tyrväinen
+360159,Sigge75,2024-03-07,Luleå-Frölunda,4-0,Omark
+360165,Vilgot,2024-03-07,Luleå-Frölunda,3-2,Friberg
+360167,Bamsefar,2024-03-07,Luleå-Frölunda,3-2,Andreasson
+360168,Hjalmar_Vuopio,2024-03-07,Luleå-Frölunda,2-1,Shinnimin
+360170,Metheuz,2024-03-07,Luleå-Frölunda,1-4,Malte Strömwall
+360171,Puckad,2024-03-07,Luleå-Frölunda,2-0,EG
+360172,Lasse Proppmätt,2024-03-07,Luleå-Frölunda,2-5,Malte Strömwall
+=== 360183,HarryHaffa,2024-03-07,Luleå-Frölunda3-2,Brendan Shinnimin
+=== 360186,Redbear,2024-03-07,Luleå-Frölunda4-2,Shinnimin
+=== 360189,KaptenBlodskelett,2024-03-07,Luleå-Frölunda5-2,Allard
+360192,wilmus2007,2024-03-07,Luleå-Frölunda,3-2,Oskar Eklind
+=== 360193,DaVoc,2024-03-07,Luleå-Frölunda3-2,Brendas Shinnimin
+=== 360197,Urken <<< Not a Guess. >>>:Reserverat.
+360333,Pastorn,2024-03-09,Timrå-Luleå,0-3,Lilja
+360371,SatanicPanic,2024-03-09,Timrå-Luleå,1-3,Shinimin
+360380,Metheuz,2024-03-09,Timrå-Luleå,3-2,Hållander
+360384,Lasse Proppmätt,2024-03-09,Timrå-Luleå,4-1,Hållander
+360385,Puckad,2024-03-09,Timrå-Luleå,3-0,Hållander
+360386,Sigge75,2024-03-09,Timrå-Luleå,2-3,Tyrväinen
+360388,HarryHaffa,2024-03-09,Timrå-Luleå,2-3,Brendan Shinnimin
+360397,Redbear,2024-03-09,Timrå-Luleå,3-4,Omark
+360399,wilmus2007,2024-03-09,Timrå-Luleå,2-3,Brendan Shinnimin
+360400,Hedanders,2024-03-09,Timrå-Luleå,4-1,Lander
+=== 360463,Urken <<< Not a Guess. >>>:Reserverat.
+=== =====================================
+360587,Lasse Proppmätt,2024-03-12,Färjestad-Luleå,4-1,Ejdsell
+360598,Hjalmar_Vuopio,2024-03-12,Färjestad-Luleå,2-5,Shinnimin
+360601,Vilgot,2024-03-12,Färjestad-Luleå,5-0,Nygård
+360602,Sigge75,2024-03-12,Färjestad-Luleå,3-4,Linus Omark
+360611,HarryHaffa,2024-04-12,Färjestad-Luleå,2-3,Brendan Shinnimin
+360616,Puckad,2024-04-12,Färjestad-Luleå,0-2,Tyrväinen
+360618,SatanicPanic,2024-04-12,Färjestad-Luleå,2-3,Lilja
+360624,Pastorn,2024-03-12,Färjestad-Luleå,0-3,Emanuelsson
+360626,Hedanders,2024-03-12,Färjestad-Luleå,4-1,Ejdsell
+360631,wilmus2007,2024-03-12,Färjestad-Luleå,2-3,David Lilja
+360632,Metheuz,2024-03-12,Färjestad-Luleå,3-2,Tomasek
+360635,HarryHaffa,2024-04-12,Färjestad-Luleå,2-3,Brendan Shinnimin
+360636,Redbear,2024-03-12,Färjestad-Luleå,1-2,Eklind
+360637,KaptenBlodskelett,2024-03-12,Färjestad-Luleå,2-3,Erik G
+360848,Lasse Proppmätt,2024-03-14,Örebro-Luleå,4-1,Lekkerimäki
+=== 360849,SatanicPanic <<< Not a Guess. >>>:Lasse Proppmätt skrev:2024-03-14, Örebro - Luleå, 4-1, LekkerimäkiÄr inte tipstävlingen bara för grundserien?
+360929,wilmus2007,2024-03-14,Örebro-Luleå,2-3,Brendan Shinnimin
+360940,HarryHaffa,2024-03-14,Örebro-Luleå,2-3,Brendan Shinnimin
+360942,Puckad,2024-03-14,Örebro-Luleå,1-3,Brendan Shinnimin
+360946,Redbear,2023-03-14,Örebro-Luleå,2-3,Omark
+360947,Vilgot,2024-03-14,ÖrebroLuleå,1-2,omark
+360948,Hjalmar_Vuopio,2023-03-14,Örebro-Luleå,1-5,Brodecki
+360949,SatanicPanic,2024-03-14,Örebro-Luleå,1-4,Berglund
+=== 361038,Puckad <<< Not a Guess. >>>:Reserverat
+361254,Lasse Proppmätt,2024-03-16,Luleå-Örebro,1-4,Mastomäki
+361255,Sigge75,2024-03-16,Luleå-Örebro,3-1,Emanuelsson
+361279,SatanicPanic,2024-03-16,Luleå-Örebro,4-0,Allard
+361280,Hedanders,2024-03-16,Luleå-Örebro,1-3,Glenn Gustafsson
+361287,Vilgot,2024-03-16,Luleå-Örebro,4-3,Leino
+361290,HarryHaffa,2024-03-16,Luleå-Örebro,3-2,Brendan Shinnimin
+361328,wilmus2007,2024-03-16,Luleå-Örebro,3-2,Brendan Shinnimin
+=== 361329,Metheuz <<< Not a Guess. >>>:Varför fortsätter den här tipstråden? Har ju alla tidigare år bara inkluderat grundserien vilket står i trådtiteln också. Borde det inte vara slut och dags för rättning nu?
+=== 361330,SatanicPanic <<< Not a Guess. >>>:Metheuz skrev:Varför fortsätter den här tipstråden? Har ju alla tidigare år bara inkluderat grundserien vilket står i trådtiteln också. Borde det inte vara slut och dags för rättning nu?Jag ställde frågan tidigare men fick ingen respons alls så jag följde bara strömmen
+361331,Metheuz,2024-03-16,Luleå-Örebro,1-2,Hardegård
+361332,Bamsefar,2024-03-16,Luleå-Örebro,5-2,Hardegård
+361344,Hjalmar_Vuopio,2024-03-16,Luleå-Örebro,1-0,Berglund
+=== 361440,Puckad <<< Not a Guess. >>>:Reserverat
+361727,wilmus2007,2024-03-18,Luleå-Örebro,3-2,Brendan Shinnimin
+361732,Sigge75,2024-03-18,Luleå-Örebro,3-2,Emanuelsson
+361734,Metheuz,2024-03-18,Luleå-Örebro,3-1,Andreasson
+361740,Lasse Proppmätt,2024-03-18,Luleå-Örebro,1-4,Mastomäki
+361747,HarryHaffa,2024-03-18,Luleå-Örebro,3-2,Brendan Shinnimin
+361751,SatanicPanic,2024-03-18,Luleå-Örebro,4-0,Andreasson
+=== 361851,Puckad <<< Not a Guess. >>>:Reserverat
+362355,Lasse Proppmätt,2024-03-21,Växjö-Luleå,4-1,Marcus Sylvegård
+362365,Sigge75,2024-03-21,Växjö-Luleå,2-3,Emanuelsson
+362371,Metheuz,2024-03-21,Växjö-Luleå,3-2,Rosén
+362374,Puckad,2024-03-21,Växjö-Luleå,0-2,Shinnimin
+362377,HarryHaffa,2024-03-21,Växjö-Luleå,2-3,Brendan Shinnimin
+362378,wilmus2007,2024-03-21,Växjö-Luleå,2-4,Brendan Shinnimin
+=== =====================================
+362388,Hjalmar_Vuopio,2024-03-21,Växjö-Luleå,0-2,Erik Gustafsson
+362392,Vilgot,2024-03-21,VäxjöLuleå,4-0,Rosen
+362688,Lasse Proppmätt,2024-03-23,Växjö-Luleå,4-1,Rosen
+362782,HarryHaffa,2024-03-24,Växjö-Luleå,2-3,Linus Omark
+362792,Sigge75,2024-03-24,Växjö-Luleå,2-3,Emanuelsson
+362799,Vilgot,2023-03-23,VäxjöLuleå,4-1,Rosen
+362805,wilmus2007,2023-03-23,Växjö-Luleå,2-3,Brendan Shinnimin
+363176,Lasse Proppmätt,2023-03-25,Luleå-Växjö,1-3,Rosen
+363200,Vilgot,2024-03-25,Luleå-Växjö,1-2,Persson
+363203,Sigge75,2024-03-25,Luleå-Växjö,3-2,Omark
+363204,wilmus2007,2024-03-25,Luleå-Växjö,3-1,Pontus Andreasson
+363565,Lasse Proppmätt,2024-03-27,Luleå-Växjö,1-7,Marcus Sylvegård
+363684,Sigge75,2024-03-27,Luleå-Växjö,4-2,Andreasson
+363685,wilmus2007,2024-03-27,Luleå-Växjö,3-1,Linus Omark
+363688,Vilgot,2024-03-27,Luleå-Växjö,2-5,L. Nilsson
+=== 364595,wilmus2007 <<< Not a Guess. >>>:Kommer det en sluttabell?
+=== 365858,Metheuz <<< Not a Guess. >>>:Verkar kört med rättningen…
+=== 366234,Redbear <<< Not a Guess. >>>:Vem var det som vann tipstävlingen för grundserien?
+=== =====================================
+=== =====================================

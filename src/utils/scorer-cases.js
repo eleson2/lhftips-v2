@@ -1,5 +1,4 @@
 import { getMatches, getGuessesByMatch, getGoalscorers } from '../db/queries.js';
-import { isLulea } from './team-matcher.js';
 import { matchScorer } from './player-matcher.js';
 import { findVerdict } from './scorer-verdicts.js';
 import { loadSuggestions, getSuggestion } from './scorer-suggestions.js';
@@ -30,12 +29,12 @@ export const CASE = {
  */
 export const CONFIDENT = 0.85;
 
-/** The goalscorers a guess is scored against for a given match. */
-export function scorerCandidates(allGoalscorers, match) {
-  const luleaTeam = match.lulea_is_home ? match.home_team : match.away_team;
-  return allGoalscorers
-    .filter(g => isLulea(g.team) || g.team === luleaTeam)
-    .map(g => g.player_name);
+/**
+ * The goalscorers a guess is scored against for a given match: every scorer in
+ * the game, either team (rule 3.1, "målskytten kan vara från endera lag").
+ */
+export function scorerCandidates(allGoalscorers) {
+  return [...new Set(allGoalscorers.map(g => g.player_name))];
 }
 
 /**
@@ -58,7 +57,7 @@ export async function collectScorerCases(verdictStore, { from = null, to = null,
   for (const match of matches) {
     if (match.home_score === null) continue; // not played yet
 
-    const candidates = scorerCandidates(await getGoalscorers(match.id), match);
+    const candidates = scorerCandidates(await getGoalscorers(match.id));
     if (candidates.length === 0) continue;
 
     for (const guess of await getGuessesByMatch(match.id)) {

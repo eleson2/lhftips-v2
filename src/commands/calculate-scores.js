@@ -6,13 +6,12 @@ import {
   upsertScore
 } from '../db/queries.js';
 import { beginTransaction, commit, rollback } from '../db/database.js';
-import { isLulea } from '../utils/team-matcher.js';
 import { calculateScore } from '../utils/scoring.js';
 import { matchScorer } from '../utils/player-matcher.js';
 import { loadRegistry, saveRegistry, learnVariation } from '../utils/player-registry.js';
 import { ReviewCollector, REVIEW } from '../utils/review.js';
 import { loadVerdicts, findVerdict, verdictOverride } from '../utils/scorer-verdicts.js';
-import { CONFIDENT } from '../utils/scorer-cases.js';
+import { CONFIDENT, scorerCandidates } from '../utils/scorer-cases.js';
 
 /**
  * Calculate scores command handler
@@ -69,13 +68,8 @@ export async function calculateScores(options = {}) {
       continue;
     }
 
-    // Get Luleå scorers for this match
-    const allGoalscorers = await getGoalscorers(match.id);
-    const luleaTeam = match.lulea_is_home ? match.home_team : match.away_team;
-
-    const luleaScorerNames = allGoalscorers
-      .filter(g => isLulea(g.team) || g.team === luleaTeam)
-      .map(g => g.player_name);
+    // Scorers from both teams count (rule 3.1)
+    const scorerNames = scorerCandidates(await getGoalscorers(match.id));
 
     // Get all guesses for this match
     const guesses = await getGuessesByMatch(match.id);
@@ -97,14 +91,14 @@ export async function calculateScores(options = {}) {
           })
         : { verdict: null, stale: false };
 
-      const scores = calculateScore(guess, match, luleaScorerNames, verdictOverride(found.verdict));
+      const scores = calculateScore(guess, match, scorerNames, verdictOverride(found.verdict));
       if (found.verdict) verdictCount++;
 
       // Scorer review + conservative auto-learning. Only relevant when the user
       // named a scorer and the game was actually played with known scorers.
-      if (guess.predicted_scorer && luleaScorerNames.length > 0) {
-        const sm = matchScorer(guess.predicted_scorer, luleaScorerNames);
-        const detail = `guessed "${guess.predicted_scorer}", actual: [${luleaScorerNames.join(', ')}]`;
+      if (guess.predicted_scorer && scorerNames.length > 0) {
+        const sm = matchScorer(guess.predicted_scorer, scorerNames);
+        const detail = `guessed "${guess.predicted_scorer}", actual: [${scorerNames.join(', ')}]`;
 
         if (found.stale) {
           const old = verdicts.verdicts[found.key];

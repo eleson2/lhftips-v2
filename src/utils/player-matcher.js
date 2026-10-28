@@ -63,10 +63,18 @@ export function classifyMatch(guessedName, actualName, threshold = 0.4) {
   const ca = resolveCanonical(actualName);
   if (cg && ca && cg === ca) return { matched: true, method: 'registry', confidence: 0.95 };
 
+  // The guess is a known spelling of a different registry player ("Leskinen"
+  // is Otto Leskinen, so it must not fuzz its way onto Valtteri Puustinen).
+  if (cg && ca && cg !== ca) return { matched: false, method: null, confidence: 0 };
+
   // Last-name equality (very common — guesses often give surname only).
   const gl = getLastName(g);
   const al = getLastName(a);
   if (gl === al && gl.length >= 3) return { matched: true, method: 'lastname', confidence: 0.85 };
+
+  // A guess that already names a known player only matches an unknown scorer
+  // (e.g. an opponent) on an equal last name, never on a near-spelling.
+  if (cg) return { matched: false, method: null, confidence: 0 };
 
   // Fuzzy on the full normalized names.
   const fuse = new Fuse([a], { threshold, includeScore: true });

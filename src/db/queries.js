@@ -139,8 +139,23 @@ export async function clearGoalscorers(matchId) {
   return stmt.run(matchId);
 }
 
+/**
+ * Does the incoming guess come from a later post than the stored one?
+ *
+ * Post ids decide it whenever both sides have one: they are integers the forum
+ * hands out in order, so there are no ties and no formats to read. Timestamps
+ * are the fallback, and a poor one — they have minute resolution, so a user who
+ * corrects a guess within the same minute compares equal and loses, and any
+ * post whose date the board renders in a shape the scraper cannot read arrives
+ * blank, which loses to everything.
+ */
+export function isLaterPost(postId, postTimestamp, existing) {
+  if (postId != null && existing.post_id != null) return postId > existing.post_id;
+  return postTimestamp > existing.post_timestamp;
+}
+
 // Guess queries
-export async function upsertGuess(userId, matchId, postTimestamp, rawText, homeScore, awayScore, scorer, isValid) {
+export async function upsertGuess(userId, matchId, postTimestamp, rawText, homeScore, awayScore, scorer, isValid, postId = null) {
   const db = await getDatabase();
 
   // Check if there's an existing guess
@@ -149,10 +164,19 @@ export async function upsertGuess(userId, matchId, postTimestamp, rawText, homeS
   `).get(userId, matchId);
 
   if (existing) {
-    // Only update if new guess is later but still valid
-    if (postTimestamp > existing.post_timestamp && isValid) {
+    // A later post replaces the stored guess. So does the same post read
+    // again, when what it says has changed: a hand-corrected row keeps the id
+    // of the post it fixes, and the corrected version is the one that counts.
+    const samePostChanged = postId != null && postId === existing.post_id && (
+      rawText !== existing.raw_text ||
+      homeScore !== existing.predicted_home_score ||
+      awayScore !== existing.predicted_away_score ||
+      (scorer ?? null) !== (existing.predicted_scorer ?? null)
+    );
+    if ((isLaterPost(postId, postTimestamp, existing) || samePostChanged) && isValid) {
       const stmt = prepare(`
         UPDATE guesses SET
+          post_id = ?,
           post_timestamp = ?,
           raw_text = ?,
           predicted_home_score = ?,
@@ -161,19 +185,27 @@ export async function upsertGuess(userId, matchId, postTimestamp, rawText, homeS
           is_valid = ?
         WHERE id = ?
       `);
-      return stmt.run(postTimestamp, rawText, homeScore, awayScore, scorer, isValid ? 1 : 0, existing.id);
+      return stmt.run(postId, postTimestamp, rawText, homeScore, awayScore, scorer, isValid ? 1 : 0, existing.id);
+    }
+
+    // Same guess, but we now know which post it came from. Record that without
+    // touching the guess itself, so the next comparison can use the id — a
+    // re-import of unchanged rows is otherwise the one moment the id would
+    // never be filled in.
+    if (postId != null && existing.post_id == null) {
+      prepare('UPDATE guesses SET post_id = ? WHERE id = ?').run(postId, existing.id);
     }
     return { changes: 0 };
   }
 
   const stmt = prepare(`
     INSERT INTO guesses (
-      user_id, match_id, post_timestamp, raw_text,
+      user_id, match_id, post_id, post_timestamp, raw_text,
       predicted_home_score, predicted_away_score, predicted_scorer, is_valid
     )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
-  return stmt.run(userId, matchId, postTimestamp, rawText, homeScore, awayScore, scorer, isValid ? 1 : 0);
+  return stmt.run(userId, matchId, postId, postTimestamp, rawText, homeScore, awayScore, scorer, isValid ? 1 : 0);
 }
 
 export async function getGuessesByMatch(matchId) {
@@ -285,18 +317,29 @@ export async function getStandings(fromDate = null, toDate = null) {
       SUM(CASE WHEN s.total_pts = 7 THEN 1 ELSE 0 END) AS full,
       ROUND(CAST(SUM(s.total_pts) AS FLOAT) / COUNT(s.id), 2) AS ppg,
       SUM(s.scorer_pts) AS scorers,
-      SUM(CASE WHEN s.exact_result_pts > 0 THEN 1 ELSE 0 END) AS results
+      SUM(CASE WHEN s.exact_result_pts > 0 THEN 1 ELSE 0 END) AS results,
+      SUM(CASE WHEN m.match_date = latest.d THEN s.total_pts END) AS last_round
     FROM scores s
     JOIN guesses g ON s.guess_id = g.id
     JOIN users u ON g.user_id = u.id
     JOIN matches m ON g.match_id = m.id
+    CROSS JOIN latest
     WHERE g.is_valid = 1
   `;
+  // latest = the most recent scored game in range; users who skipped it get NULL.
+  let range = '';
   const params = [];
-  if (fromDate) { query += ' AND m.match_date >= ?'; params.push(fromDate); }
-  if (toDate) { query += ' AND m.match_date <= ?'; params.push(toDate); }
-  query += ' GROUP BY u.id ORDER BY points DESC, ppg DESC';
-  return prepare(query).all(...params);
+  if (fromDate) { range += ' AND m.match_date >= ?'; params.push(fromDate); }
+  if (toDate) { range += ' AND m.match_date <= ?'; params.push(toDate); }
+  query = `
+    WITH latest AS (
+      SELECT MAX(m.match_date) AS d
+      FROM scores s
+      JOIN guesses g ON s.guess_id = g.id
+      JOIN matches m ON g.match_id = m.id
+      WHERE g.is_valid = 1${range}
+    )` + query + range + ' GROUP BY u.id ORDER BY points DESC, ppg DESC';
+  return prepare(query).all(...params, ...params);
 }
 
 // The perfect (7-point) guesses, for the "Fullpoängare" section.

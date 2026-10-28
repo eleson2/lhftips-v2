@@ -4,7 +4,7 @@ import { needsGoalscorerFetch } from '../src/commands/scrape-results.js';
 import {
   extractThreadId, saveScrapeState, loadScrapeState, setScrapeState, clearScrapeState,
 } from '../src/utils/scrape-state.js';
-import { postKey, postKeyOfLine, removeRowsForPosts } from '../src/utils/csv.js';
+import { postKey, postKeyOfLine, postIdKey, postKeysOf, removeRowsForPosts, CSV_HEADER } from '../src/utils/csv.js';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { rmSync, existsSync } from 'fs';
@@ -205,5 +205,52 @@ describe('re-reading must replace rows, not duplicate them', () => {
 
   test('post keys ignore case and stray whitespace', () => {
     assert.strictEqual(postKey('PM', '2026-10-01T18:00:00'), postKey('  pm ', '2026-10-01T18:00:00'));
+  });
+});
+
+describe('post id is the identity when the CSV carries one', () => {
+  const header = CSV_HEADER;
+  const lines = [
+    header,
+    'PM,2026-10-01T18:00:00,2026-10-01,Luleå HF,HV71,3,2,Brännström,raw,4711',
+    'Urken,,2026-10-04,Rögle BK,Luleå HF,1,2,Nässén,raw,4712',
+    '#Bamsefar @2026-10-05T18:00:00 p4713: hejsan allihopa',
+    '#[dismissed]Puckad p4714: reserverat',
+  ];
+
+  test('a data row is identified by its post id', () => {
+    assert.strictEqual(postKeyOfLine(lines[1]), postIdKey(4711));
+  });
+
+  test('a row whose timestamp the scraper could not read is still identified', () => {
+    // The whole point: no timestamp, but the post is not anonymous.
+    assert.strictEqual(postKeyOfLine(lines[2]), postIdKey(4712));
+  });
+
+  test('a review comment line carries the id too', () => {
+    assert.strictEqual(postKeyOfLine(lines[3]), postIdKey(4713));
+  });
+
+  test('an id-only comment line (no timestamp) is still identified', () => {
+    assert.strictEqual(postKeyOfLine(lines[4]), postIdKey(4714));
+  });
+
+  test('a re-read post matches its old row by id and by name+timestamp alike', () => {
+    // The row in the file predates the post_id column; the scraper now knows
+    // the id. Both must be recognised as the same post, or the rewind duplicates it.
+    const old = ['PM,2026-10-01T18:00:00,2026-10-01,Luleå HF,HV71,3,2,Brännström,raw'];
+    const { removed } = removeRowsForPosts(old, postKeysOf('PM', '2026-10-01T18:00:00', 4711));
+    assert.strictEqual(removed, 1);
+  });
+
+  test('two posts by one user in the same minute stay distinct', () => {
+    const same = [
+      header,
+      'PM,2026-10-01T18:00:00,2026-10-01,Luleå HF,HV71,3,2,Brännström,raw,4711',
+      'PM,2026-10-01T18:00:00,2026-10-01,Luleå HF,HV71,4,1,Omark,raw,4715',
+    ];
+    const { lines: kept, removed } = removeRowsForPosts(same, postKeysOf('PM', '2026-10-01T18:00:00', 4715));
+    assert.strictEqual(removed, 1, 'only the re-read post, not its namesake a minute earlier');
+    assert.ok(kept.some(l => l.endsWith(',4711')));
   });
 });

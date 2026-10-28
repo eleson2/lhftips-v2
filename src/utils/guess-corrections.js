@@ -32,12 +32,13 @@ export const CORRECTION = {
 /**
  * Natural key for a correction: the post it is about.
  *
- * Post *id* would be the obvious key, but the review UI works from the CSV,
- * which never carried one — username + post timestamp is the identity available
- * on both sides (the scraper has it, the CSV has it), so that is the key. The
- * post id is recorded alongside when known, for tracing.
+ * The forum post id when it is known — one integer the board never reformats.
+ * username + post timestamp is the fallback, for corrections recorded from the
+ * `correct` CLI (which addresses posts that way) and for everything filed
+ * before the CSV carried an id. Lookups try both, so neither kind is lost.
  */
-export function correctionKey(username, timestamp) {
+export function correctionKey(username, timestamp, postId = null) {
+  if (postId != null && postId !== '') return `p${postId}`;
   const norm = (s) => String(s ?? '').trim().replace(/\s+/g, ' ').toLowerCase();
   return `${norm(username)}|${norm(timestamp)}`;
 }
@@ -87,14 +88,35 @@ export function setCorrection(store, { username, timestamp, postId = null, kind,
     decidedAt: new Date().toISOString(),
   };
   store.corrections = store.corrections || {};
-  store.corrections[correctionKey(username, timestamp)] = record;
+  const key = correctionKey(username, timestamp, postId);
+  store.corrections[key] = record;
+
+  // A post filed under the old composite key and now re-decided under its id
+  // would otherwise be recorded twice, and the stale one would outlive the post.
+  const legacy = correctionKey(username, timestamp);
+  if (legacy !== key) delete store.corrections[legacy];
+
   return record;
 }
 
 export function removeCorrection(store, key) {
-  if (!store.corrections || !(key in store.corrections)) return false;
-  delete store.corrections[key];
-  return true;
+  if (!store.corrections) return false;
+  if (key in store.corrections) {
+    delete store.corrections[key];
+    return true;
+  }
+
+  // A correction filed under its post id is still addressed as username +
+  // timestamp by the `correct` CLI, which never has an id to offer. Fall back
+  // to the identity recorded inside the entry rather than making the caller
+  // guess which key form was used.
+  for (const [k, c] of Object.entries(store.corrections)) {
+    if (correctionKey(c.username, c.timestamp) === key) {
+      delete store.corrections[k];
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -106,9 +128,21 @@ export function removeCorrection(store, key) {
  *
  * @returns {{ key:string, correction:GuessCorrection|null, stale:boolean }}
  */
-export function findCorrection(store, { username, timestamp, content = null }) {
-  const key = correctionKey(username, timestamp);
-  const c = store.corrections?.[key] ?? null;
+export function findCorrection(store, { username, timestamp, postId = null, content = null }) {
+  // Id key first, then the composite one: a correction recorded before the CSV
+  // carried post ids (or through the `correct` CLI) is still about this post.
+  const key = correctionKey(username, timestamp, postId);
+  const legacy = correctionKey(username, timestamp);
+
+  let c = store.corrections?.[key] ?? null;
+  if (!c) {
+    const fallback = store.corrections?.[legacy] ?? null;
+    // The composite key cannot tell two posts a minute apart by one user apart.
+    // If the entry names a different post, it is not about this one — the
+    // fallback is for entries that never knew an id, not a loose match.
+    const aboutAnotherPost = fallback?.postId != null && postId != null && fallback.postId !== postId;
+    if (fallback && !aboutAnotherPost) c = fallback;
+  }
   if (!c) return { key, correction: null, stale: false };
 
   // Only judge staleness when we actually have the post text to compare and a
@@ -137,6 +171,7 @@ export function applyCorrection(post, parsedRows, store) {
   const { key, correction, stale } = findCorrection(store, {
     username: post.username,
     timestamp: post.timestamp,
+    postId: post.postId ?? null,
     content: post.content,
   });
 
